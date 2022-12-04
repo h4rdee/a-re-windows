@@ -18,5 +18,8 @@ class UITabBar:
             height = element_scheme['element_pos']['h']
         )
 
+    def get_all_tabs(self) -> list:
+        return self.__tabs
+
     def get_tk_object(self) -> ttk.Notebook:
         return self.__tk_object

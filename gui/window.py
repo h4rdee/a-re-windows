@@ -4,6 +4,7 @@ import tkinter.font as tkFont
 
 from tkinter import ttk
 
+from .elements.tab_bar import UITabBar
 from .element import Element
 from .layout import Layout
 
@@ -42,6 +43,13 @@ class Window:
     def __construct_elements(self, window_scheme: dict) -> None:
         for element_scheme in window_scheme['elements']:
             self.__elements.append(Element(self.__window_obj, element_scheme))
+            
+            current_element = self.__elements[-1].get()
+            if isinstance(current_element, UITabBar): # is last appended element a tab bar?
+                for tab in current_element.get_all_tabs(): # need to populate its tabs with their elements
+                    for sub_element in tab.get_element_scheme()['elements']:
+                        print(f'adding {sub_element} on tab {tab}')
+                        self.__elements.append(Element(tab.get_tk_object(), sub_element))
 
     def get(self) -> tk.Tk:
         return self.__window_obj
