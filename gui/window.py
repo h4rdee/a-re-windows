@@ -48,7 +48,6 @@ class Window:
             if isinstance(current_element, UITabBar): # is last appended element a tab bar?
                 for tab in current_element.get_all_tabs(): # need to populate its tabs with their elements
                     for sub_element in tab.get_element_scheme()['elements']:
-                        print(f'adding {sub_element} on tab {tab}')
                         self.__elements.append(Element(tab.get_tk_object(), sub_element))
 
     def get(self) -> tk.Tk:

@@ -3,7 +3,7 @@ import json
 class Layout:
     def __init__(self, layout_path: str) -> None:
         try:
-            with open(layout_path, 'r') as layout_file:
+            with open(layout_path, 'r', encoding='utf-8') as layout_file:
                 try:
                     self.__layout_json = json.load(layout_file)
                 except json.JSONDecodeError:
