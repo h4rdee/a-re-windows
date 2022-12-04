@@ -6,7 +6,6 @@ import tkinter as tk
 
 from chlorophyll import CodeView
 
-
 class UITextBox:
     def __init__(self, root_object: tk.Tk, element_scheme: dict) -> None:
         self.__tk_object = CodeView(
