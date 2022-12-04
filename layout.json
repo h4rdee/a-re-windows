@@ -12,28 +12,32 @@
         "relative_path": "\\themes\\breeze-dark\\breeze-dark.tcl"
       },
       "elements": [
-        {
-          "element_id": 0,
-          "element_alias": "TEST_LABEL",
-          "element_text": "test label",
-          "element_pos": {
-            "x": 20,
-            "y": 20,
-            "w": 0,
-            "h": 0
-          }
-        },
-        {
-          "element_id": 1,
-          "element_alias": "TEST_BUTTON",
-          "element_text": "test button",
-          "element_pos": {
-            "x": 20,
-            "y": 50,
-            "w": 100,
-            "h": 30
-          }
-        }
+		{
+		  "element_id": 2,
+		  "element_alias": "TEST_TABBAR",
+		  "element_pos": {
+			"x": 10,
+            "y": 10,
+            "w": 780,
+            "h": 480
+		  },
+		  "tabs": [
+		    {
+			  "element_text": "test tab 1",
+			  "element_alias": "TEST_TAB_1",
+			  "elements": [
+			    
+			  ]
+			},
+			{
+			  "element_text": "test tab 2",
+			  "element_alias": "TEST_TAB_2",
+			  "elements": [
+			    
+			  ]
+			}
+		  ]
+		}
       ]
     }
   ]

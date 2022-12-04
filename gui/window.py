@@ -3,6 +3,7 @@ import tkinter as tk
 import tkinter.font as tkFont
 
 from tkinter import ttk
+
 from .element import Element
 from .layout import Layout
 
@@ -14,19 +15,28 @@ class Window:
         self.__alias = window_scheme['window_alias']
         self.__elements = list()
 
+        # include theme from layout
         self.__window_obj.tk.call(
             "source", 
             f'{os.getcwd()}{window_scheme["window_theme"]["relative_path"]}'
         )
 
+        # use theme from layout
         self.__window_style.theme_use(window_scheme['window_theme']['name'])
+
+        # remove silly dashed line which appears when tab is selected
+        self.__window_style.configure("Tab", focuscolor=self.__window_style.configure(".")["background"])
+
+        # set window title
         self.__window_obj.title(window_scheme['window_name'])
 
+        # set window dimensions
         self.__window_obj.configure(
             width=window_scheme['window_size']['width'],
             height=window_scheme['window_size']['height']
         )
 
+        # construct elements from layout
         self.__construct_elements(window_scheme)
 
     def __construct_elements(self, window_scheme: dict) -> None:
