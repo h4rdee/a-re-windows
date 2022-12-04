@@ -25,7 +25,7 @@
             {
               "element_text": "Welcome!",
               "element_alias": "TAB_WELCOME",
-			  "element_state": true,
+              "element_state": true,
               "elements": [
                 {
                   "element_id": 0,
@@ -51,14 +51,14 @@
                 }
               ]
             },
-			{
+            {
               "element_text": "YARA",
               "element_alias": "TAB_YARA",
-			  "element_state": false,
+              "element_state": false,
               "elements": [
-			    {
-				  "element_id": 1,
-				  "element_alias": "BUTTON_LOAD_YARA_RULE",
+                {
+                  "element_id": 1,
+                  "element_alias": "BUTTON_LOAD_YARA_RULE",
                   "element_text": "Load rule",
                   "element_pos": {
                     "x": 10,
@@ -66,10 +66,10 @@
                     "w": 100,
                     "h": 30
                   }
-				},
-				{
-				  "element_id": 1,
-				  "element_alias": "BUTTON_YARA_ANALYZE",
+                },
+                {
+                  "element_id": 1,
+                  "element_alias": "BUTTON_YARA_ANALYZE",
                   "element_text": "Analyze",
                   "element_pos": {
                     "x": 110,
@@ -77,31 +77,31 @@
                     "w": 100,
                     "h": 30
                   }
-				},
-			    {
-				  "element_id": 3,
-				  "element_alias": "TEXTBOX_YARA_RULE",
-				  "element_text": "Paste your YARA rule here, or press 'Load rule' button to load rule from the file..",
-				  "element_readonly": false,
-				  "element_pos": {
-					"x": 10,
+                },
+                {
+                  "element_id": 3,
+                  "element_alias": "TEXTBOX_YARA_RULE",
+                  "element_text": "Paste your YARA rule here, or press 'Load rule' button to load rule from the file..",
+                  "element_readonly": false,
+                  "element_pos": {
+                    "x": 10,
                     "y": 50,
                     "w": 775,
                     "h": 310
-				  }
-				},
-				{
-				  "element_id": 3,
-				  "element_alias": "TEXTBOX_YARA_RESULT",
-				  "element_text": "",
-				  "element_readonly": true,
-				  "element_pos": {
-					"x": 10,
+                  }
+                },
+                {
+                  "element_id": 3,
+                  "element_alias": "TEXTBOX_YARA_RESULT",
+                  "element_text": "",
+                  "element_readonly": true,
+                  "element_pos": {
+                    "x": 10,
                     "y": 350,
                     "w": 775,
                     "h": 110
-				  }
-				}
+                  }
+                }
               ]
             }
           ]
