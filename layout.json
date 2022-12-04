@@ -12,32 +12,46 @@
         "relative_path": "\\themes\\breeze-dark\\breeze-dark.tcl"
       },
       "elements": [
-		{
-		  "element_id": 2,
-		  "element_alias": "TEST_TABBAR",
-		  "element_pos": {
-			"x": 10,
+        {
+          "element_id": 2,
+          "element_alias": "TAB_BAR_MAIN",
+          "element_pos": {
+            "x": 10,
             "y": 10,
             "w": 780,
             "h": 480
-		  },
-		  "tabs": [
-		    {
-			  "element_text": "test tab 1",
-			  "element_alias": "TEST_TAB_1",
-			  "elements": [
-			    
-			  ]
-			},
-			{
-			  "element_text": "test tab 2",
-			  "element_alias": "TEST_TAB_2",
-			  "elements": [
-			    
-			  ]
-			}
-		  ]
-		}
+          },
+          "tabs": [
+            {
+              "element_text": "Welcome!",
+              "element_alias": "TAB_WELCOME",
+              "elements": [
+                {
+                  "element_id": 0,
+                  "element_alias": "LABEL_INFO",
+                  "element_text": "Welcome to A-RE Windows! It's a tool to make malware analysts, reverse-engineers and others lifes easier.\nPlease, select a sample that you want to analyze:",
+                  "element_pos": {
+                    "x": 10,
+                    "y": 10,
+                    "w": 0,
+                    "h": 0
+                  }
+                },
+                {
+                  "element_id": 1,
+                  "element_alias": "BUTTON_LOAD_SAMPLE",
+                  "element_text": "Load sample!",
+                  "element_pos": {
+                    "x": 12,
+                    "y": 50,
+                    "w": 100,
+                    "h": 30
+                  }
+                }
+              ]
+            },
+          ]
+        }
       ]
     }
   ]
