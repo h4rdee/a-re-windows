@@ -1,0 +1,40 @@
+{
+  "windows": [
+    {
+	  "window_alias": "main",
+      "window_name": "A-RE Windows",
+      "window_size": {
+        "width": 800,
+        "height": 500
+      },
+	  "window_theme": {
+	    "name": "breeze-dark",
+	    "relative_path": "\\themes\\breeze-dark\\breeze-dark.tcl"
+      },
+      "elements": [
+	    {
+		  "element_id": 0,
+		  "element_alias": "TEST_LABEL",
+		  "element_text": "test label",
+		  "element_pos": {
+            "x": 20,
+            "y": 20,
+			"w": 0,
+			"h": 0
+          }
+	    },
+		{
+		  "element_id": 1,
+		  "element_alias": "TEST_BUTTON",
+		  "element_text": "test button",
+		  "element_pos": {
+            "x": 20,
+            "y": 50,
+			"w": 100,
+			"h": 30
+          }
+	    }
+      ]
+    }
+  ]
+}
