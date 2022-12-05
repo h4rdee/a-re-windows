@@ -30,15 +30,27 @@ class YaraIntegration:
                         self.__yara_rule = yara_rule.read()
                         tk_object.replace("1.0", tk.END, self.__yara_rule)
                         tk_object.highlight_all()
+
         except FileNotFoundError:
             print("[!] yara rule wasn't selected")
-            return
-
-        rule = yara.compile(source=self.__yara_rule)
-        # todo
 
     def __yara_analyze_pressed(self, event) -> None:
-        print("YARA ANALYZE PRESSED")
+        result = str()
+        rule = yara.compile(source=self.__yara_rule)
+        for match in rule.match(data=self.__binary_buffer):
+            result += f"Sample matched YARA rule {match}\n"
+
+        for element in self.__elements:
+            tk_object = element.get().get_tk_object()
+            element_alias = element.get_alias()
+            if element_alias == 'TEXTBOX_YARA_RESULT':
+                tk_object['state'] = 'normal'
+                tk_object.replace("1.0", tk.END, result)
+                tk_object.highlight_all()
+                tk_object['state'] = 'disabled'
+
+    def sample_loaded_event(self, binary_buffer: bytes) -> None:
+        self.__binary_buffer = binary_buffer
 
     def register_element(self, element) -> None:
         self.__elements.append(element)
