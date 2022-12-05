@@ -37,6 +37,9 @@ class Window:
             height=window_scheme['window_size']['height']
         )
 
+        # center window (hack!)
+        self.__window_obj.eval('tk::PlaceWindow . center')
+
         # construct elements from layout
         self.__construct_elements(window_scheme)
 
