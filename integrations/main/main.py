@@ -28,6 +28,33 @@ class MainIntegration:
 
         return EYaraRuleType.RULE_UNKNOWN
 
+    def __get_info_string_by_rule_type(self, yara_match, rule_type: EYaraRuleType) -> str:
+        info = str()
+        name = str()
+        version = str()
+
+        # name (if any)
+        try: name = yara_match[rule_type]['name']
+        except: name = "<unknown>"
+
+        # version (if any)
+        try: version = f"({yara_match[rule_type]['version']})"
+        except: version = "(unknown version)"
+
+        if rule_type == EYaraRuleType.RULE_COMPILER:
+            info = f"Compiler info: {name} {version}"
+        elif rule_type == EYaraRuleType.RULE_PACKER:
+            info = f"Packer info: {name} {version}"
+        elif rule_type == EYaraRuleType.RULE_INSTALLER:
+            info = f"Installer info: {name} {version}"
+
+        return info
+
+    def __update_sample_info(self, yara_match) -> None:
+        rule_type = list(yara_match.keys())[0]
+        info_string = self.__get_info_string_by_rule_type(yara_match, rule_type)
+        self.__tk_compiler_info.config(text=info_string)
+
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
         for integration in self.__integrations:
@@ -54,18 +81,7 @@ class MainIntegration:
                         print(f"[!] yara error, rule {filename} - {ex}")
 
         for yara_match in yara_matches:
-            if list(yara_match.keys())[0] == EYaraRuleType.RULE_COMPILER:
-                # compiler name (if any)
-                try: compiler_name = yara_match[EYaraRuleType.RULE_COMPILER]['name']
-                except: compiler_name = "<unknown>"
-
-                # compiler version (if any)
-                try: compiler_version = f"({yara_match[EYaraRuleType.RULE_COMPILER]['version']})"
-                except: compiler_version = "(unknown version)"
-
-                self.__tk_compiler_info.config(
-                    text=f"Compiler info: {compiler_name} {compiler_version}"
-                )
+            self.__update_sample_info(yara_match)
 
     def __load_sample_pressed(self, event) -> None:
         filetypes = (
