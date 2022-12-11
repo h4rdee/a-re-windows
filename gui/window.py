@@ -5,8 +5,8 @@ import tkinter.font as tkFont
 from tkinter import ttk
 
 from .elements.tab_bar import UITabBar
+from .elements.groupbox import UIGroupBox
 from .element import Element
-from .layout import Layout
 
 class Window:
     def __init__(self, window_scheme: dict) -> None:
@@ -48,10 +48,19 @@ class Window:
             self.__elements.append(Element(self.__window_obj, element_scheme))
             
             current_element = self.__elements[-1].get()
+            last_element = None
+
+            # TODO: this is ugly, it has to be recursive
             if isinstance(current_element, UITabBar): # is last appended element a tab bar?
                 for tab in current_element.get_all_tabs(): # need to populate its tabs with their elements
                     for sub_element in tab.get_element_scheme()['elements']:
-                        self.__elements.append(Element(tab.get_tk_object(), sub_element))
+
+                        last_element = Element(tab.get_tk_object(), sub_element)
+                        self.__elements.append(last_element)
+
+                        if isinstance(last_element.get(), UIGroupBox): # is appended element a groupbox?
+                            for group_element in last_element.get().get_element_scheme()['elements']: # populate as well
+                                self.__elements.append(Element(last_element.get().get_tk_object(), group_element))
 
     def get(self) -> tk.Tk:
         return self.__window_obj
