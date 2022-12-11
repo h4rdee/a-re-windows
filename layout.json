@@ -9,7 +9,7 @@
       },
       "window_theme": {
         "name": "breeze-dark",
-        "relative_path": "\\themes\\breeze-dark\\breeze-dark.tcl"
+        "relative_path": "//themes//breeze-dark//breeze-dark.tcl"
       },
       "elements": [
         {
