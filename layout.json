@@ -49,19 +49,19 @@
                     "h": 30
                   }
                 },
-				{
-				  "element_id": 4,
-				  "element_alias": "GROUPBOX_GENERAL_INFO",
-				  "element_text": "Sample info:",
-				  "element_pos": {
+                {
+                  "element_id": 4,
+                  "element_alias": "GROUPBOX_GENERAL_INFO",
+                  "element_text": "Sample info:",
+                  "element_pos": {
                     "x": 12,
                     "y": 100,
                     "w": 755,
                     "h": 340
                   },
-				  "elements": [
+                  "elements": [
                     {
-					  "element_id": 0,
+                      "element_id": 0,
                       "element_alias": "LABEL_COMPILER_INFO",
                       "element_text": "Compiler info: <unknown>",
                       "element_pos": {
@@ -70,9 +70,9 @@
                         "w": 0,
                         "h": 0
                       }
-					},
-					{
-					  "element_id": 0,
+                    },
+                    {
+                      "element_id": 0,
                       "element_alias": "LABEL_PACKER_INFO",
                       "element_text": "Packer info: <unknown>",
                       "element_pos": {
@@ -81,9 +81,9 @@
                         "w": 0,
                         "h": 0
                       }
-					},
-					{
-					  "element_id": 0,
+                    },
+                    {
+                      "element_id": 0,
                       "element_alias": "LABEL_INSTALLER_INFO",
                       "element_text": "Installer info: <unknown>",
                       "element_pos": {
@@ -92,9 +92,9 @@
                         "w": 0,
                         "h": 0
                       }
-					}
-				  ]
-				}
+                    }
+                  ]
+                }
               ]
             },
             {
