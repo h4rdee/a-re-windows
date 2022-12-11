@@ -8,6 +8,7 @@ from tkinter import filedialog as fd
 class YaraIntegration:
     def __init__(self) -> None:
         self.__elements = list()
+        self.__yara_rule = None
 
     def __load_yara_rule_pressed(self, event) -> None:
         filetypes = (
@@ -27,7 +28,6 @@ class YaraIntegration:
                     tk_object = element.get().get_tk_object()
                     element_alias = element.get_alias()
                     if element_alias == 'TEXTBOX_YARA_RULE':
-                        self.__yara_rule = yara_rule.read()
                         tk_object.replace("1.0", tk.END, self.__yara_rule)
                         tk_object.highlight_all()
 
@@ -36,7 +36,13 @@ class YaraIntegration:
 
     def __yara_analyze_pressed(self, event) -> None:
         result = str()
-        rule = yara.compile(source=self.__yara_rule)
+        self.__yara_rule = self.__tk_yara_rule.get("1.0", tk.END)
+            
+        try: rule = yara.compile(source=self.__yara_rule)
+        except yara.SyntaxError as ex:
+            print(f"[!] yara error - {ex}")
+            return
+
         for match in rule.match(data=self.__binary_buffer):
             result += f"Sample matched YARA rule {match}\n"
 
@@ -59,10 +65,13 @@ class YaraIntegration:
         for element in self.__elements:
             tk_object = element.get().get_tk_object()
             element_alias = element.get_alias()
+
             if element_alias == 'BUTTON_LOAD_YARA_RULE':
                 tk_object.bind("<Button-1>", self.__load_yara_rule_pressed)
             elif element_alias == 'BUTTON_YARA_ANALYZE':
                 tk_object.bind("<Button-1>", self.__yara_analyze_pressed)
+            elif element_alias == 'TEXTBOX_YARA_RULE':
+                self.__tk_yara_rule = tk_object
 
     def request_needed_elements(self) -> list:
         return [
