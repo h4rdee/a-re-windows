@@ -97,7 +97,7 @@ class MainIntegration:
         for yara_match in yara_matches:
             self.__update_sample_info(yara_match)
 
-    def __load_sample_pressed(self, event) -> None:
+    def __load_sample_pressed(self) -> None:
         filetypes = (
             ('Sample', '*.bin *.exe *.dll'),
             ('All files', '*.*')
@@ -127,7 +127,7 @@ class MainIntegration:
             element_alias = element.get_alias()
 
             if element_alias == 'BUTTON_LOAD_SAMPLE':
-                tk_object.bind("<Button-1>", self.__load_sample_pressed)
+                tk_object.config(command=self.__load_sample_pressed)
             elif element_alias == 'LABEL_COMPILER_INFO':
                 self.__tk_compiler_info = tk_object
             elif element_alias == 'LABEL_PACKER_INFO':

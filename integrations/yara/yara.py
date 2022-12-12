@@ -10,7 +10,7 @@ class YaraIntegration:
         self.__elements = list()
         self.__yara_rule = None
 
-    def __load_yara_rule_pressed(self, event) -> None:
+    def __load_yara_rule_pressed(self) -> None:
         filetypes = (
             ('YARA rule', '*.yar *.yara'),
             ('All files', '*.*')
@@ -31,7 +31,7 @@ class YaraIntegration:
         except FileNotFoundError:
             print("[!] yara rule wasn't selected")
 
-    def __yara_analyze_pressed(self, event) -> None:
+    def __yara_analyze_pressed(self) -> None:
         result = str()
         self.__yara_rule = self.__tk_yara_rule.get("1.0", tk.END)
             
@@ -64,9 +64,9 @@ class YaraIntegration:
             element_alias = element.get_alias()
 
             if element_alias == 'BUTTON_LOAD_YARA_RULE':
-                tk_object.bind("<Button-1>", self.__load_yara_rule_pressed)
+                tk_object.config(command=self.__load_yara_rule_pressed)
             elif element_alias == 'BUTTON_YARA_ANALYZE':
-                tk_object.bind("<Button-1>", self.__yara_analyze_pressed)
+                tk_object.config(command=self.__yara_analyze_pressed)
             elif element_alias == 'TEXTBOX_YARA_RULE':
                 self.__tk_yara_rule = tk_object
 
