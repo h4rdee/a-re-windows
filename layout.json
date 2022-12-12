@@ -15,12 +15,7 @@
         {
           "element_id": 2,
           "element_alias": "TAB_BAR_MAIN",
-          "element_pos": {
-            "x": 10,
-            "y": 10,
-            "w": 780,
-            "h": 480
-          },
+          "element_pos": { "x": 10, "y": 10, "w": 780, "h": 480 },
           "tabs": [
             {
               "element_text": "Welcome!",
@@ -31,95 +26,55 @@
                   "element_id": 0,
                   "element_alias": "LABEL_INFO",
                   "element_text": "Welcome to A-RE Windows! It's a tool to make malware analysts, reverse-engineers and others lifes easier.\nPlease, select a sample that you want to analyze:",
-                  "element_pos": {
-                    "x": 10,
-                    "y": 10,
-                    "w": 0,
-                    "h": 0
-                  }
+                  "element_pos": { "x": 10, "y": 10, "w": 0, "h": 0 }
                 },
                 {
                   "element_id": 1,
                   "element_alias": "BUTTON_LOAD_SAMPLE",
                   "element_text": "Load sample!",
-                  "element_pos": {
-                    "x": 12,
-                    "y": 50,
-                    "w": 100,
-                    "h": 30
-                  }
+                  "element_pos": { "x": 12, "y": 50, "w": 100, "h": 30 }
                 },
                 {
                   "element_id": 4,
                   "element_alias": "GROUPBOX_GENERAL_INFO",
                   "element_text": "Sample info:",
-                  "element_pos": {
-                    "x": 12,
-                    "y": 100,
-                    "w": 755,
-                    "h": 340
-                  },
+                  "element_pos": { "x": 12, "y": 100, "w": 755, "h": 340 },
                   "elements": [
                     {
                       "element_id": 0,
                       "element_alias": "LABEL_COMPILER_INFO",
                       "element_text": "Compiler info: <unknown>",
-                      "element_pos": {
-                        "x": 10,
-                        "y": 5,
-                        "w": 0,
-                        "h": 0
-                      }
+                      "element_pos": { "x": 10, "y": 5, "w": 0, "h": 0 }
                     },
                     {
                       "element_id": 0,
                       "element_alias": "LABEL_PACKER_INFO",
                       "element_text": "Packer info: <unknown>",
-                      "element_pos": {
-                        "x": 10,
-                        "y": 25,
-                        "w": 0,
-                        "h": 0
-                      }
+                      "element_pos": { "x": 10, "y": 25, "w": 0, "h": 0 }
                     },
                     {
                       "element_id": 0,
                       "element_alias": "LABEL_INSTALLER_INFO",
                       "element_text": "Installer info: <unknown>",
-                      "element_pos": {
-                        "x": 10,
-                        "y": 45,
-                        "w": 0,
-                        "h": 0
-                      }
+                      "element_pos": { "x": 10, "y": 45, "w": 0, "h": 0 }
                     },
 					{
                       "element_id": 0,
                       "element_alias": "LABEL_CAPABILITIES",
                       "element_text": "Capabilities:",
-                      "element_pos": {
-                        "x": 10,
-                        "y": 75,
-                        "w": 0,
-                        "h": 0
-                      }
+                      "element_pos": { "x": 10, "y": 75, "w": 0, "h": 0 }
                     },
 					{
 					  "element_id": 5,
 					  "element_alias": "LISTBOX_CAPABILITIES",
-					  "element_pos": {
-                        "x": 10,
-                        "y": 100,
-                        "w": 300,
-                        "h": 210
-                      }
+					  "element_pos": { "x": 10, "y": 100, "w": 300, "h": 210 }
 					}
                   ]
                 }
               ]
             },
             {
-              "element_text": "YARA",
+              "element_text": "YARA (custom)",
               "element_alias": "TAB_YARA",
               "element_state": false,
               "elements": [
@@ -127,47 +82,27 @@
                   "element_id": 1,
                   "element_alias": "BUTTON_LOAD_YARA_RULE",
                   "element_text": "Load rule",
-                  "element_pos": {
-                    "x": 10,
-                    "y": 10,
-                    "w": 100,
-                    "h": 30
-                  }
+                  "element_pos": { "x": 10, "y": 10, "w": 100, "h": 30 }
                 },
                 {
                   "element_id": 1,
                   "element_alias": "BUTTON_YARA_ANALYZE",
                   "element_text": "Analyze",
-                  "element_pos": {
-                    "x": 110,
-                    "y": 10,
-                    "w": 100,
-                    "h": 30
-                  }
+                  "element_pos": { "x": 110, "y": 10, "w": 100, "h": 30 }
                 },
                 {
                   "element_id": 3,
                   "element_alias": "TEXTBOX_YARA_RULE",
                   "element_text": "Paste your YARA rule here, or press 'Load rule' button to load rule from the file..",
                   "element_readonly": false,
-                  "element_pos": {
-                    "x": 10,
-                    "y": 50,
-                    "w": 775,
-                    "h": 310
-                  }
+                  "element_pos": { "x": 10, "y": 50, "w": 775, "h": 310 }
                 },
                 {
                   "element_id": 3,
                   "element_alias": "TEXTBOX_YARA_RESULT",
                   "element_text": "",
                   "element_readonly": true,
-                  "element_pos": {
-                    "x": 10,
-                    "y": 350,
-                    "w": 775,
-                    "h": 110
-                  }
+                  "element_pos": { "x": 10, "y": 350, "w": 775, "h": 110 }
                 }
               ]
             }
