@@ -15,13 +15,13 @@ class Integrations:
         for alias in self.__main_integration.request_needed_elements():
             element = self.__window_object.get_element_by_alias(alias)
             self.__main_integration.register_element(element)
-        self.__main_integration.setup_callbacks()
+        self.__main_integration.setup()
 
     def __setup_yara_integration(self) -> None:
         for alias in self.__yara_integration.request_needed_elements():
             element = self.__window_object.get_element_by_alias(alias)
             self.__yara_integration.register_element(element)
-        self.__yara_integration.setup_callbacks()
+        self.__yara_integration.setup()
 
     def get_main_integration(self) -> MainIntegration:
         return self.__main_integration
@@ -29,6 +29,6 @@ class Integrations:
     def get_yara_integration(self) -> YaraIntegration:
         return self.__yara_integration
 
-    def setup_callbacks(self) -> None:
+    def setup(self) -> None:
         self.__setup_main_integration()
         self.__setup_yara_integration()

@@ -107,7 +107,7 @@ class MainIntegration:
     def register_element(self, element) -> None:
         self.__elements.append(element)
 
-    def setup_callbacks(self) -> None:
+    def setup(self) -> None:
         for element in self.__elements:
             tk_object = element.get().get_tk_object()
             element_alias = element.get_alias()
