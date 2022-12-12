@@ -8,15 +8,18 @@ class EYaraRuleType(IntEnum):
     RULE_UNKNOWN = -1,
     RULE_COMPILER = 0,
     RULE_PACKER = 1,
-    RULE_INSTALLER = 2
+    RULE_INSTALLER = 2,
+    RULE_CAPABILITIES = 3
 
 class MainIntegration:
     def __init__(self, integrations: list) -> None:
         self.__integrations = integrations
+        self.__elements = list()
+
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
         self.__tk_installer_info = None
-        self.__elements = list()
+        self.__tk_capabilities = None
 
     def __get_rule_type_by_filename(self, filename: str) -> EYaraRuleType:
         if 'compilers' in filename:
@@ -25,6 +28,8 @@ class MainIntegration:
             return EYaraRuleType.RULE_PACKER
         elif 'installers' in filename:
             return EYaraRuleType.RULE_INSTALLER
+        elif 'capabilities' in filename:
+            return EYaraRuleType.RULE_CAPABILITIES
 
         return EYaraRuleType.RULE_UNKNOWN
 
@@ -52,8 +57,16 @@ class MainIntegration:
 
     def __update_sample_info(self, yara_match) -> None:
         rule_type = list(yara_match.keys())[0]
-        info_string = self.__get_info_string_by_rule_type(yara_match, rule_type)
-        self.__tk_compiler_info.config(text=info_string)
+    
+        # update capabilities info
+        if rule_type == EYaraRuleType.RULE_CAPABILITIES:
+            if 'description' in yara_match[rule_type]:
+                self.__tk_capabilities.insert(
+                    0, yara_match[rule_type]['description']
+                )
+        else: # update meta info
+            info_string = self.__get_info_string_by_rule_type(yara_match, rule_type)
+            self.__tk_compiler_info.config(text=info_string)
 
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
@@ -64,6 +77,7 @@ class MainIntegration:
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
+        self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
 
         yara_matches = list()
         yara_rules_dir = os.path.join('integrations', 'main', 'signatures')
@@ -120,11 +134,14 @@ class MainIntegration:
                 self.__tk_packer_info = tk_object
             elif element_alias == 'LABEL_INSTALLER_INFO':
                 self.__tk_installer_info = tk_object
+            elif element_alias == 'LISTBOX_CAPABILITIES':
+                self.__tk_capabilities = tk_object
 
     def request_needed_elements(self) -> list:
         return [
             'BUTTON_LOAD_SAMPLE', 
             'LABEL_COMPILER_INFO',
             'LABEL_PACKER_INFO',
-            'LABEL_INSTALLER_INFO'
+            'LABEL_INSTALLER_INFO',
+            'LISTBOX_CAPABILITIES'
         ]
