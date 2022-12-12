@@ -58,17 +58,17 @@
                       "element_text": "Installer info: <unknown>",
                       "element_pos": { "x": 10, "y": 45, "w": 0, "h": 0 }
                     },
-					{
+                    {
                       "element_id": 0,
                       "element_alias": "LABEL_CAPABILITIES",
                       "element_text": "Capabilities:",
                       "element_pos": { "x": 10, "y": 75, "w": 0, "h": 0 }
                     },
-					{
-					  "element_id": 5,
-					  "element_alias": "LISTBOX_CAPABILITIES",
-					  "element_pos": { "x": 10, "y": 100, "w": 300, "h": 210 }
-					}
+                    {
+                      "element_id": 5,
+                      "element_alias": "LISTBOX_CAPABILITIES",
+                      "element_pos": { "x": 10, "y": 100, "w": 300, "h": 210 }
+                    }
                   ]
                 }
               ]
