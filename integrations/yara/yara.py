@@ -12,7 +12,7 @@ class YaraIntegration:
 
     def __load_yara_rule_pressed(self, event) -> None:
         filetypes = (
-            ('YARA rule', '*.yar'),
+            ('YARA rule', '*.yar *.yara'),
             ('All files', '*.*')
         )
 
