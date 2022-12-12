@@ -5,10 +5,12 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Retrieving basic sample information, such as `compiler info`, `packer info`, `installer info`
 - Detecting sample capabilities based on large collection of yara rules
 - Custom yara checker for testing your own yara rules
+- Cross-platform user-friendly UI powered by Tkinter!
 
 ## Credits:
 - [RetDec](https://github.com/avast/retdec) for providing yara rules
 - [Yara-Rules](https://github.com/Yara-Rules/rules) for providing yara rules
+- [rdbende](https://gitlab.com/rdbende/chlorophyll) for tkinter `chlorophyll` add-on
 
 ## Notes:
 This project was made by me, and my python knowledge kinda sucks <br>
