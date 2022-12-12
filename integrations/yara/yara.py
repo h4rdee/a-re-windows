@@ -24,13 +24,10 @@ class YaraIntegration:
             )
         
             with open(filename, 'r', encoding='utf-8') as yara_rule:
-                for element in self.__elements:
-                    tk_object = element.get().get_tk_object()
-                    element_alias = element.get_alias()
-                    if element_alias == 'TEXTBOX_YARA_RULE':
-                        tk_object.replace("1.0", tk.END, self.__yara_rule)
-                        tk_object.highlight_all()
-
+                self.__yara_rule = yara_rule.read()
+                self.__tk_yara_rule.replace("1.0", tk.END, self.__yara_rule)
+                self.__tk_yara_rule.highlight_all()
+                        
         except FileNotFoundError:
             print("[!] yara rule wasn't selected")
 
@@ -61,7 +58,7 @@ class YaraIntegration:
     def register_element(self, element) -> None:
         self.__elements.append(element)
 
-    def setup_callbacks(self) -> None:
+    def setup(self) -> None:
         for element in self.__elements:
             tk_object = element.get().get_tk_object()
             element_alias = element.get_alias()
