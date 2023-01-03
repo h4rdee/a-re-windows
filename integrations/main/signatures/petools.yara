@@ -1,9 +1,39 @@
-// Signatures for PE Tools v1.5/PE Sniffer
+// Signatures for PE Tools v1.9.0/PE Sniffer
 // Authors: NEOx <neox@pisem.net>, .Cryorb <cryorb@tut.by> 
-// Tnx: BiDark, dyn!o, Mike, DeMoNiX, FEUERRADER, Boris, seeq, Aster!x, aragon, Hellsp@wN, GPcH, ...
-// Copyright [c] 2005 uinC Team 
+// Tnx: BiDark, dyn!o, Mike, DeMoNiX, FEUERRADER, Boris, seeq, Aster!x, aragon, Hellsp@wN, GPcH, marciano depunta, Vjacheslav Patkov , ...
+// Copyright [c] 2006 uinC Team 
 
 // Converted to YARA rules for A-RE Windows by hardee
+
+rule Microsoft_Visual_Cpp
+{
+    meta:
+        description = "Microsoft Visual C++"
+
+    strings:
+        $pattern = { E8 ?? ?? 00 00 E9 ?? ?? FF FF }
+        $pattern_1 = { 8B 44 24 08 56 83 E8 ?? 74 ?? 48 75 }
+        $pattern_2 = { 8B 44 24 08 83 ?? ?? 74 }
+        $pattern_3 = { 55 8B EC 6A FF 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? 64 A1 00 00 00 00 50 64 89 25 00 00 00 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and any of them
+}
+
+rule Borland_Delphi_60___70
+{
+    meta:
+        description = "Borland Delphi 6.0 - 7.0"
+
+    strings:
+        $pattern = { 55 8B EC 83 C4 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 }
+        $pattern_1 = { 55 8B EC 83 C4 F4 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and any of them
+}
 
 rule Borland_Pascal_v70_for_Windows
 {
@@ -83,11 +113,10 @@ rule Borland_Delphi_vxx_Component
 
     strings:
         $pattern = { C3 E9 ?? ?? ?? FF 8D 40 }
-        $pattern_1 = { 55 8B EC 83 C4 F4 }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule Borland_Delphi_DLL
@@ -269,6 +298,19 @@ rule FASM_v13x
         and all of them
 }
 
+rule FASM_v15x
+{
+    meta:
+        description = "FASM v1.5x"
+
+    strings:
+        $pattern = { 6A 00 FF 15 ?? ?? 40 00 A3 ?? ?? 40 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule Free_Pascal_v09910
 {
     meta:
@@ -386,21 +428,6 @@ rule Metrowerks_CodeWarrior_DLL_v20
         and all of them
 }
 
-rule Microsoft_Visual_Cpp
-{
-    meta:
-        description = "Microsoft Visual C++"
-
-    strings:
-        $pattern = { 8B 44 24 08 56 83 E8 ?? 74 ?? 48 75 }
-        $pattern_1 = { 8B 44 24 08 83 ?? ?? 74 }
-        $pattern_2 = { 55 8B EC 6A FF 68 ?? ?? ?? ?? 68 ?? ?? ?? ?? 64 A1 00 00 00 00 50 64 89 25 00 00 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and any of them
-}
-
 rule Microsoft_Visual_C_v20
 {
     meta:
@@ -477,11 +504,10 @@ rule Microsoft_Visual_Cpp_v50
 
     strings:
         $pattern = { 55 8B EC 6A FF 68 68 64 A1 00 00 00 00 50 64 89 25 00 00 00 00 83 EC 53 56 57 }
-        $pattern_1 = { 55 8B EC 6A FF 68 ?? ?? ?? 00 68 ?? ?? ?? 00 64 A1 00 00 00 00 50 64 89 25 00 00 00 00 83 C4 ?? 53 56 57 89 65 E8 FF 15 ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? FF 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? 10 ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule Microsoft_Visual_Cpp_v50_DLL
@@ -573,6 +599,45 @@ rule Microsoft_Visual_Cpp_v60_Debug_Version
         and all of them
 }
 
+rule Microsoft_Visual_Cpp_60_DLL
+{
+    meta:
+        description = "Microsoft Visual C++ 6.0 DLL"
+
+    strings:
+        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 57 8B 7D 10 85 F6 75 09 83 3D ?? ?? ?? ?? ?? EB 26 83 FE 01 74 05 83 FE 02 75 22 A1 ?? ?? ?? ?? 85 C0 74 09 57 56 53 FF D0 85 C0 74 0C 57 56 53 E8 15 FF FF FF 85 C0 75 04 33 C0 EB 4E }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Microsoft_Visual_Cpp_60_DLL_Debug
+{
+    meta:
+        description = "Microsoft Visual C++ 6.0 DLL (Debug)"
+
+    strings:
+        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 57 8B 7D 10 85 F6 ?? ?? 83 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Microsoft_Visual_Cpp_70_DLL
+{
+    meta:
+        description = "Microsoft Visual C++ 7.0 DLL"
+
+    strings:
+        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 85 F6 57 8B 7D 10 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 01 ?? ?? ?? ?? ?? ?? ?? ?? ?? }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule Microsoft_Visual_Cpp_v70_64_Bit
 {
     meta:
@@ -609,11 +674,10 @@ rule Microsoft_Visual_CSharp_v70___Basic_NET
 
     strings:
         $pattern = { FF 25 00 20 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 }
-        $pattern_1 = { FF 25 00 20 00 11 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule Microsoft_Visual_Cpp_DLL
@@ -811,6 +875,19 @@ rule Stranik_13_Modula_C_Pascal
 
     strings:
         $pattern = { E8 ?? ?? FF FF E8 ?? ?? FF FF ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? 00 ?? ?? ?? 00 00 00 ?? ?? ?? 00 ?? ?? 00 ?? 00 ?? 00 00 ?? 00 ?? ?? ?? ?? ?? 00 ?? ?? 00 ?? ?? 00 ?? ?? ?? ?? ?? 00 ?? ?? 00 ?? ?? ?? 00 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? 00 ?? ?? ?? 00 00 00 ?? ?? 00 ?? ?? ?? ?? ?? ?? 00 ?? ?? 00 ?? ?? ?? 00 00 00 ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Watcom_C_Cpp
+{
+    meta:
+        description = "Watcom C/C++"
+
+    strings:
+        $pattern = { E9 ?? ?? 00 00 03 10 40 00 57 41 54 43 4F 4D 20 43 2F 43 2B 2B 33 32 20 52 75 6E 2D 54 69 6D 65 20 73 79 73 74 65 6D 2E 20 28 63 29 20 43 6F 70 79 72 69 67 68 74 20 62 79 20 57 41 54 43 4F 4D 20 49 6E 74 65 72 6E 61 74 69 6F 6E 61 6C 20 43 6F 72 70 2E 20 31 39 38 38 2D 31 39 39 35 2E 20 41 6C 6C 20 72 69 67 68 74 73 20 72 65 73 65 72 76 65 64 2E 00 00 00 00 00 00 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -2131,13 +2208,26 @@ rule ASProtect_v123_RC1
         and all of them
 }
 
-rule ACProtect_v132
+rule ASProtect_v132
 {
     meta:
-        description = "ACProtect v1.32"
+        description = "ASProtect v1.32"
 
     strings:
         $pattern = { ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 01 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? E9 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule ASProtect_v133___v21_Registered
+{
+    meta:
+        description = "ASProtect v1.33 - v2.1 Registered"
+
+    strings:
+        $pattern = { 68 01 ?? ?? ?? E8 01 00 00 00 C3 C3 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -2404,13 +2494,52 @@ rule Crunch_PE_v30xx
         and all of them
 }
 
-rule Crunch_v40
+rule Crunch_PE_v40
 {
     meta:
-        description = "Crunch v4.0"
+        description = "Crunch/PE v4.0"
 
     strings:
-        $pattern = { EB 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 55 E8 00 00 00 00 5D 81 ED 18 00 00 00 8B C5 55 60 9C 2B 85 E9 06 00 00 89 85 E1 06 00 00 FF 74 24 2C E8 BB 01 00 00 0F 82 92 05 00 00 E8 F1 03 00 00 49 0F 88 86 05 00 00 68 6C D9 B2 96 33 C0 50 E8 24 03 00 00 89 85 D9 41 00 00 68 EC 49 7B 79 33 C0 50 E8 11 03 00 00 89 85 D1 41 00 00 E8 67 05 00 00 E9 56 05 00 00 51 52 53 33 C9 49 8B D1 33 C0 33 DB AC 32 C1 8A CD 8A EA 8A D6 B6 08 66 D1 EB 66 D1 D8 73 09 66 35 20 83 66 81 F3 B8 ED FE CE 75 EB 33 C8 33 D3 4F 75 D5 F7 D2 F7 D1 5B 8B C2 C1 C0 10 66 8B C1 5A 59 C3 68 03 02 00 00 E8 80 04 00 00 0F 82 A8 02 00 00 96 8B 44 24 04 0F C8 8B D0 25 0F 0F 0F 0F 33 D0 C1 C0 08 0B C2 8B D0 25 33 33 33 33 33 D0 C1 C0 04 0B C2 8B D0 25 55 55 55 55 33 D0 C1 C0 02 0B C2 }
+        $pattern = { EB 10 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 55 E8 ?? ?? ?? ?? 5D 81 ED 18 ?? ?? ?? 8B C5 55 60 9C 2B 85 E9 06 ?? ?? 89 85 E1 06 ?? ?? FF 74 24 2C E8 BB 01 00 00 0F 82 92 05 00 00 E8 F1 03 00 00 49 0F 88 86 05 00 00 68 6C D9 B2 96 33 C0 50 E8 24 03 00 00 89 85 D9 41 00 00 68 EC 49 7B 79 33 C0 50 E8 11 03 00 00 89 85 D1 41 00 00 E8 67 05 00 00 E9 56 05 00 00 51 52 53 33 C9 49 8B D1 33 C0 33 DB AC 32 C1 8A CD 8A EA 8A D6 B6 08 66 D1 EB 66 D1 D8 73 09 66 35 20 83 66 81 F3 B8 ED FE CE 75 EB 33 C8 33 D3 4F 75 D5 F7 D2 F7 D1 5B 8B C2 C1 C0 10 66 8B C1 5A 59 C3 68 03 02 00 00 E8 80 04 00 00 0F 82 A8 02 00 00 96 8B 44 24 04 0F C8 8B D0 25 0F 0F 0F 0F 33 D0 C1 C0 08 0B C2 8B D0 25 33 33 33 33 33 D0 C1 C0 04 0B C2 8B D0 25 55 55 55 55 33 D0 C1 C0 02 0B C2 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Crunch_PE_v50
+{
+    meta:
+        description = "Crunch/PE v5.0"
+
+    strings:
+        $pattern = { EB 15 03 ?? ?? ?? 06 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Crunch_4
+{
+    meta:
+        description = "Crunch 4"
+
+    strings:
+        $pattern = { EB 10 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 55 E8 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Crunch_5_Fusion_4
+{
+    meta:
+        description = "Crunch 5 Fusion 4"
+
+    strings:
+        $pattern = { EB 15 03 ?? ?? ?? 06 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 68 ?? ?? ?? ?? 55 E8 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -2659,10 +2788,11 @@ rule EP_v20
 
     strings:
         $pattern = { 6A ?? 60 E9 01 01 }
+        $pattern_1 = { 6A ?? 60 E9 01 01 }
 
     condition:
         uint16(0) == 0x5A4D
-        and all of them
+        and any of them
 }
 
 rule ExeBundle_v30_standard_loader
@@ -2671,7 +2801,7 @@ rule ExeBundle_v30_standard_loader
         description = "ExeBundle v3.0 (standard loader)"
 
     strings:
-        $pattern = { 00 00 00 00 60 BE 00 B0 42 00 8D BE 00 60 FD FF C7 87 B0 E4 02 00 31 3C 4B DF 57 83 CD FF EB 0E 90 90 90 90 8A 06 46 88 07 47 01 DB 75 07 8B 1E 83 EE FC 11 DB 72 ED B8 01 00 00 00 01 DB }
+        $pattern = { 00 00 00 00 60 BE 00 B0 42 00 8D BE 00 60 FD FF C7 87 B0 E4 02 00 31 3C 4B DF 57 83 CD FF EB 0E 90 90 90 90 8A 06 46 88 07 47 01 DB 75 07 8B 1E 83 EE FC 11 DB 72 ED B8 01 00 00 00 01 DB  }
 
     condition:
         uint16(0) == 0x5A4D
@@ -3004,6 +3134,19 @@ rule ExeSmasher_vxx
         and all of them
 }
 
+rule eXPressor_v120b
+{
+    meta:
+        description = "eXPressor v1.2.0b"
+
+    strings:
+        $pattern = { 55 8B EC 81 EC D4 01 00 00 53 56 57 EB 0C 45 78 50 72 2D 76 2E 31 2E 32 2E 2E B8 ?? ?? ?? 00 2B 05 84 ?? ?? 00 A3 ?? ?? ?? 00 83 3D ?? ?? ?? 00 00 74 16 A1 ?? ?? ?? 00 03 05 80 ?? ?? 00 89 85 54 FE FF FF E9 ?? 07 00 00 C7 05 ?? ?? ?? 00 01 00 00 00 68 04 01 00 00 8D 85 F0 FE FF FF 50 6A 00 FF 15 ?? ?? ?? 00 8D 84 05 EF FE FF FF 89 85 38 FE FF FF 8B 85 38 FE FF FF 0F BE 00 83 F8 5C }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule EZIP_v10
 {
     meta:
@@ -3089,11 +3232,10 @@ rule FSG_v133
 
     strings:
         $pattern = { BE A4 01 40 00 AD 93 AD 97 AD 56 96 B2 80 A4 B6 80 FF 13 73 }
-        $pattern_1 = { BE A4 01 40 00 AD 93 AD 97 AD 56 96 B2 80 A4 B6 80 FF 13 73 F9 33 C9 FF 13 73 16 33 C0 FF }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule FSG_v20
@@ -3232,8 +3374,9 @@ rule Inno_Setup_Module
         description = "Inno Setup Module"
 
     strings:
-        $pattern = { 49 6E 6E 6F 53 65 74 75 70 4C 64 72 57 69 6E 64 6F 77 00 00 53 54 41 54 49 43 }
-        $pattern_1 = { 49 6E 6E 6F }
+        $pattern = { 55 8B EC 83 C4 ?? 53 56 57 33 C0 89 45 F0 89 45 ?? 89 45 ?? E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? E8 ?? ?? FF FF }
+        $pattern_1 = { 49 6E 6E 6F 53 65 74 75 70 4C 64 72 57 69 6E 64 6F 77 00 00 53 54 41 54 49 43 }
+        $pattern_2 = { 49 6E 6E 6F }
 
     condition:
         uint16(0) == 0x5A4D
@@ -3630,10 +3773,10 @@ rule MEW_10_by_Northfox
         and all of them
 }
 
-rule MEW_11_SE_v11_by_Northfox
+rule MEW_11_SE_v11
 {
     meta:
-        description = "MEW 11 SE v1.1 by Northfox"
+        description = "MEW 11 SE v1.1"
 
     strings:
         $pattern = { E9 ?? ?? ?? FF 0C ?? 00 00 00 00 00 00 00 00 00 00 }
@@ -3643,18 +3786,17 @@ rule MEW_11_SE_v11_by_Northfox
         and all of them
 }
 
-rule MEW_11_SE_v12_by_Northfox
+rule MEW_11_SE_v12
 {
     meta:
-        description = "MEW 11 SE v1.2 by Northfox"
+        description = "MEW 11 SE v1.2"
 
     strings:
         $pattern = { E9 ?? ?? ?? FF 0C ?? 00 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 0C ?? 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 }
-        $pattern_1 = { E9 ?? ?? ?? FF 0C ?? ?? 00 00 00 00 00 00 00 00 00 ?? ?? ?? 00 0C ?? ?? }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule Morphine_v12___v13
@@ -3684,6 +3826,19 @@ rule Morphine_v12_DLL
         and all of them
 }
 
+rule MoleBox_v20
+{
+    meta:
+        description = "MoleBox v2.0"
+
+    strings:
+        $pattern = { E8 ?? ?? ?? ?? 60 E8 4F }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule Neolite_v20
 {
     meta:
@@ -3691,11 +3846,10 @@ rule Neolite_v20
 
     strings:
         $pattern = { E9 A6 00 00 00 }
-        $pattern_1 = { E9 A6 00 00 00 ?? ?? ?? 00 ?? ?? ?? 00 ?? ?? ?? 00 00 00 00 00 ?? ?? ?? 00 ?? ?? ?? 00 4E 65 6F 4C 69 74 65 20 45 78 65 63 75 74 61 62 6C 65 20 46 69 6C 65 20 43 6F 6D 70 72 65 73 73 6F 72 0D 0A 43 6F 70 79 72 69 67 68 74 20 28 63 29 20 31 39 39 38 2C 31 39 39 39 20 4E 65 6F 57 6F 72 78 20 49 6E 63 0D 0A 50 6F 72 74 69 6F 6E 73 20 43 6F 70 79 72 69 67 68 74 20 28 63 29 20 31 39 39 }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule NeoLite_v20
@@ -3899,6 +4053,32 @@ rule Nullsoft_PIMP_Install_System_v1x
         and all of them
 }
 
+rule Nullsoft_PiMP_Install_System
+{
+    meta:
+        description = "Nullsoft PiMP Install System"
+
+    strings:
+        $pattern = { 83 EC ?? 53 55 56 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Nullsoft_PiMP_Install_System_v1x
+{
+    meta:
+        description = "Nullsoft PiMP Install System v1.x"
+
+    strings:
+        $pattern = { 83 EC 0C 53 56 57 FF 15 ?? ?? 40 00 05 E8 03 00 00 BE ?? ?? ?? 00 89 44 24 10 B3 20 FF 15 28 ?? 40 00 68 00 04 00 00 FF 15 ?? ?? 40 00 50 56 FF 15 ?? ?? 40 00 80 3D ?? ?? ?? 00 22 75 08 80 C3 02 BE ?? ?? ?? 00 8A 06 8B 3D ?? ?? 40 00 84 C0 74 ?? 3A C3 74 0B 56 FF D7 8B F0 8A 06 84 C0 75 F1 80 3E 00 74 05 56 FF D7 8B F0 89 74 24 14 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 80 3E 2F }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule NX_PE_Packer_v10
 {
     meta:
@@ -3977,13 +4157,13 @@ rule ORiEN_v211_DEMO
         and all of them
 }
 
-rule Packman_v0001
+rule PackMan_v0001
 {
     meta:
-        description = "Packman v0.0.0.1"
+        description = "PackMan v0.0.0.1"
 
     strings:
-        $pattern = { 60 E8 00 00 00 00 58 8D A8 ?? ?? FF FF 8D 98 ?? ?? ?? FF 8D B0 74 01 00 00 8D 4E F6 48 C6 40 FB E9 8D 93 ?? ?? ?? 00 2B D0 89 50 FC 8D 93 54 01 00 00 E9 9A 00 00 00 83 C2 04 03 FB 51 D1 C7 D1 EF 0F 83 84 00 00 00 53 55 52 B2 80 8B D9 A4 B6 80 FF D3 73 F9 33 C9 FF D3 73 16 33 C0 FF D3 73 23 B6 80 41 B0 10 FF D3 12 C0 73 FA 75 42 AA EB E0 E8 46 00 00 00 02 F6 83 D9 01 75 10 E8 38 00 00 00 EB 28 AC D1 E8 74 3D 13 C9 EB 1C 91 48 C1 E0 08 AC E8 22 00 00 00 3D 00 7D 00 00 73 0A 80 FC 05 73 06 83 F8 7F 77 02 41 41 95 8B C5 B6 00 56 8B F7 2B F0 F3 A4 5E EB 97 33 C9 41 FF D3 13 C9 FF D3 72 F8 C3 5A 5D 5B EB 05 AD 8B C8 F3 A4 59 8B 3A 85 FF 0F 85 5C FF FF FF 8D B3 ?? 20 ?? 00 EB 3D 8B 46 0C 03 C3 50 FF 55 00 56 8B 36 0B F6 75 02 8B F7 03 F3 03 FB EB 1B D1 C1 D1 E9 }
+        $pattern = { 60 E8 00 00 00 00 58 8D A8 ?? ?? FF FF 8D 98 ?? ?? ?? FF 8D ?? ?? 01 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -4983,6 +5163,19 @@ rule PECompact_v200_alpha_38
         and all of them
 }
 
+rule PECompact_v2xx
+{
+    meta:
+        description = "PECompact v2.xx"
+
+    strings:
+        $pattern = { B8 ?? ?? ?? 00 50 64 FF 35 00 00 00 00 64 89 25 00 00 00 00 33 C0 89 08 50 45 43 6F 6D 70 61 63 74 32 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule PE_Diminisher_v01
 {
     meta:
@@ -4991,7 +5184,6 @@ rule PE_Diminisher_v01
     strings:
         $pattern = { 53 51 52 56 57 55 E8 00 00 00 00 5D 8B D5 81 ED A2 30 40 00 2B 95 91 33 40 00 81 EA 0B 00 00 00 89 95 9A 33 40 00 80 BD 99 33 40 00 00 74 }
         $pattern_1 = { 5D 8B D5 81 ED A2 30 40 ?? 2B 95 91 33 40 ?? 81 EA 0B ?? ?? ?? 89 95 9A 33 40 ?? 80 BD 99 }
-        $pattern_2 = { 53 51 52 56 57 55 E8 00 00 00 00 5D 8B D5 81 ED A2 30 40 00 2B 95 91 33 40 00 81 EA 0B 00 00 00 89 95 9A 33 40 00 80 BD 99 33 40 00 00 74 50 E8 02 01 00 00 8B FD 8D 9D 9A 33 40 00 8B 1B 8D 87 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -5226,11 +5418,10 @@ rule PESpin_v11_by_cyberbob
 
     strings:
         $pattern = { EB 01 68 60 E8 00 00 00 00 8B 1C 24 83 C3 12 81 2B E8 B1 06 00 FE 4B FD 82 2C 24 7D DE 46 00 0B E4 74 9E 75 01 C7 81 73 04 D7 7A F7 2F 81 73 19 77 00 43 B7 F6 C3 6B B7 00 00 F9 FF E3 C9 C2 08 00 A3 68 72 01 FF 5D 33 C9 41 E2 17 EB 07 EA EB 01 EB EB 0D FF E8 01 00 00 00 EA 5A 83 EA 0B FF E2 EB 04 9A EB 04 00 EB FB FF 8B 95 C3 4B 40 00 8B 42 3C 03 C2 89 85 CD 4B 40 00 EB 02 12 77 F9 72 08 73 0E F9 83 04 24 17 C3 E8 04 00 00 00 0F F5 73 11 EB 06 9A 72 ED 1F EB 07 F5 72 0E F5 72 F8 68 EB EC 83 04 24 07 F5 FF 34 24 C3 41 C1 E1 07 8B 0C 01 03 CA E8 03 00 00 00 EB 04 9A EB FB 00 83 04 24 0C C3 3B 8B 59 10 03 DA 8B 1B 89 9D E1 4B 40 00 53 8F 85 D7 49 40 00 BB ?? 00 00 00 B9 FE 11 00 00 8D BD 71 4C 40 00 4F EB 07 FA EB 01 FF EB 04 E3 EB F8 69 30 1C 39 FE CB 49 9C }
-        $pattern_1 = { EB 01 68 60 E8 00 00 00 00 8B 1C 24 83 C3 12 81 2B E8 B1 06 00 FE 4B FD 82 2C 24 7D DE 46 00 0B E4 74 9E 75 01 C7 81 73 04 D7 7A F7 2F 81 73 19 77 00 43 B7 F6 C3 6B B7 00 00 F9 FF E3 C9 C2 08 00 A3 68 72 01 FF 5D 33 C9 41 E2 17 EB 07 EA EB 01 EB EB 0D FF E8 01 00 00 00 EA 5A 83 EA 0B FF E2 EB 04 9A EB 04 00 EB FB FF 8B 95 C3 4B 40 00 8B 42 3C 03 C2 89 85 CD 4B 40 00 EB 02 12 77 F9 }
 
     condition:
         uint16(0) == 0x5A4D
-        and any of them
+        and all of them
 }
 
 rule PEtite_v12
@@ -5339,6 +5530,19 @@ rule PEX_v099
         and any of them
 }
 
+rule PEZip_v10_by_BaGIE
+{
+    meta:
+        description = "PEZip v1.0 by BaGIE"
+
+    strings:
+        $pattern = { D9 D0 F8 74 02 23 DB F5 F5 50 51 52 53 8D 44 24 10 50 55 56 57 D9 D0 22 C9 C1 F7 A0 55 66 C1 C8 B0 5D 81 E6 FF FF FF FF F8 77 07 52 76 03 72 01 90 5A C1 E0 60 90 BD 1F 01 00 00 87 E8 E2 07 E3 05 17 5D 47 E4 42 41 7F 06 50 66 83 EE 00 58 25 FF FF FF FF 51 0F B6 C9 66 83 F6 00 3D CB 60 47 92 50 40 58 FC E2 EE 59 F8 7C 08 53 74 04 78 02 84 C9 5B 66 0B ED F8 F5 BA 9F FA FF FF 52 57 77 04 78 02 84 E4 5F 5A 50 80 EF 00 58 50 81 E0 FF FF FF FF 58 3C EF FC 7A 05 3D DF DA AC D1 05 00 00 00 00 73 05 71 03 7E 01 90 EB 02 EB 05 E8 F9 FF FF FF 83 C0 00 7B 06 53 66 BB 74 EF 5B F8 8B 3C 24 83 C4 04 51 0F B6 C9 66 C1 C7 30 0B D2 53 66 83 FD F6 5B 55 6A 97 83 C4 04 5D E2 E8 59 53 55 51 66 83 E9 00 59 5D 5B F8 01 FA 22 C9 7A 02 8D 3F 79 08 71 06 52 66 A9 6E E3 5A 51 0F B6 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule PKLITE32_v11
 {
     meta:
@@ -5420,6 +5624,19 @@ rule RatPacker_Glue_stub
         and all of them
 }
 
+rule ResCrypt_v102
+{
+    meta:
+        description = "ResCrypt v1.02"
+
+    strings:
+        $pattern = { 55 E8 ?? ?? ?? ?? 5D 81 ED 06 ?? ?? ?? BE ?? ?? ?? ?? ?3 F5 8B DE BA 01 ?? ?? ?? 33 C9 66 8B 4E 0C 66 03 4E 0E 85 C9 74 54 83 C6 10 8B 06 83 FA 01 75 1B 25 ?? ?? ?? 7F 83 F8 03 74 0C 83 F8 0E 74 07 83 F8 10 74 02 EB 05 83 C6 08 EB 2D 8B 46 04 83 C6 08 A9 ?? ?? ?? 80 74 0E 51 56 25 ?? ?? ?? 7F 03 C3 8B F0 42 EB B2 51 03 C3 8B 38 03 FD 8B 48 04 D2 0F 30 0F 47 E2 F9 59 E2 AF 4A 74 04 5E 59 EB F7 8D 85 ?? ?? ?? ?? 5D FF E? ?? }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule R1SCs_Process_Patcher_v14
 {
     meta:
@@ -5440,6 +5657,19 @@ rule R1SCs_Process_Patcher_v151
 
     strings:
         $pattern = { 68 00 20 40 00 E8 C3 01 00 00 80 38 00 74 0D 66 81 78 FE 22 20 75 02 EB 03 40 EB EE 8B F8 B8 04 60 40 00 68 C4 20 40 00 68 D4 20 40 00 6A 00 6A 00 6A 04 6A 00 6A 00 6A 00 57 50 E8 9F 01 00 00 85 C0 0F 84 39 01 00 00 BE 00 60 40 00 8B 06 A3 28 21 40 00 83 C6 40 83 7E FC 00 0F 84 8F 00 00 00 8B 3E 83 C6 04 85 FF 0F 84 E5 00 00 00 81 FF 72 21 73 63 74 7A 0F B7 1E 8B CF 8D 7E 02 C7 05 24 21 40 00 00 00 00 00 83 05 24 21 40 00 01 50 A1 28 21 40 00 39 05 24 21 40 00 58 0F 84 D8 00 00 00 60 6A 00 53 68 2C 21 40 00 51 FF 35 C4 20 40 00 E8 0A 01 00 00 61 60 FC BE 2C 21 40 00 8B CB F3 A6 61 75 C2 03 FB 60 E8 3E 00 00 00 6A 00 53 57 51 FF 35 C4 20 40 00 E8 FB 00 00 00 85 C0 0F 84 A2 00 00 00 61 03 FB 8B F7 E9 71 FF FF FF 60 FF 35 C8 20 40 00 E8 CB 00 00 00 61 C7 05 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Setup_Factory_v6003_Setup_Launcher
+{
+    meta:
+        description = "Setup Factory v6.0.0.3 Setup Launcher"
+
+    strings:
+        $pattern = { 55 8B EC 6A FF 68 90 61 40 00 68 70 3B 40 00 64 A1 00 00 00 00 50 64 89 25 00 00 00 00 83 EC 58 53 56 57 89 65 E8 FF 15 14 61 40 00 33 D2 8A D4 89 15 5C 89 40 00 8B C8 81 E1 FF 00 00 00 89 0D 58 89 40 00 C1 E1 08 03 CA 89 0D 54 89 40 00 C1 E8 10 A3 50 89 40 00 33 F6 56 E8 E0 00 00 00 59 85 C0 75 08 6A 1C E8 B0 00 00 00 59 89 75 FC E8 E6 0F 00 00 FF 15 10 61 40 00 A3 40 8E 40 00 E8 A4 0E 00 00 A3 90 89 40 00 E8 4D 0C 00 00 E8 8F 0B 00 00 E8 22 FE FF FF 89 75 D0 8D 45 A4 50 FF 15 0C 61 40 00 E8 20 0B 00 00 89 45 9C F6 45 D0 01 74 06 0F B7 45 D4 EB 03 6A 0A 58 50 FF 75 9C 56 56 FF 15 08 61 40 00 50 E8 5A E9 FF FF 89 45 A0 50 E8 10 FE FF FF 8B 45 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -6109,19 +6339,6 @@ rule UG2002_Cruncher_v03b3
         and all of them
 }
 
-rule UPack_v011
-{
-    meta:
-        description = "UPack v0.11"
-
-    strings:
-        $pattern = { BE 48 01 40 00 AD 8B F8 95 A5 33 C0 33 C9 AB 48 AB F7 D8 B1 04 F3 AB C1 E0 0A B5 1C F3 AB AD 50 97 51 AD 87 F5 58 8D 54 86 5C FF D5 72 5A 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 03 B3 00 8D 1C 5B 8D 9C 9E 0C 10 00 00 B0 01 67 E3 29 8B D7 2B 56 0C 8A 2A 33 D2 84 E9 0F 95 C6 52 FE C6 8A D0 8D 14 93 FF D5 5A 9F 12 C0 D0 E9 74 0E 9E 1A F2 74 E4 B4 00 33 C9 B5 01 FF 55 CC 33 C9 E9 DF 00 00 00 8B 5E 0C 83 C2 30 FF D5 73 50 83 C2 30 FF D5 72 1B 83 C2 30 FF D5 72 2B 3C 07 B0 09 72 02 B0 0B 50 8B C7 2B 46 0C B1 80 8A 00 EB CF 83 C2 60 FF D5 87 5E 10 73 0D 83 C2 30 FF D5 87 5E 14 73 03 87 5E 18 3C 07 B0 08 72 02 B0 0B 50 53 8D 96 7C 07 00 00 FF 55 D0 5B 91 EB 77 3C 07 B0 07 72 02 B0 0A 50 87 5E 10 87 5E 14 89 5E 18 8D 96 C4 0B 00 00 FF 55 D0 50 48 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
 rule UPX_v051
 {
     meta:
@@ -6409,6 +6626,97 @@ rule UPX_Inliner_v10_by_GPcH
         and all of them
 }
 
+rule Upack_v010___v012_beta
+{
+    meta:
+        description = "Upack v0.10 - v0.12 beta"
+
+    strings:
+        $pattern = { BE 48 01 40 00 AD 8B F8 95 A5 33 C0 33 C9 AB 48 AB F7 D8 B1 04 F3 AB C1 E0 0A B5 ?? F3 AB AD 50 97 51 AD 87 F5 58 8D 54 86 5C FF D5 72 5A 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule UPack_v011
+{
+    meta:
+        description = "UPack v0.11"
+
+    strings:
+        $pattern = { BE 48 01 40 00 AD 8B F8 95 A5 33 C0 33 C9 AB 48 AB F7 D8 B1 04 F3 AB C1 E0 0A B5 1C F3 AB AD 50 97 51 AD 87 F5 58 8D 54 86 5C FF D5 72 5A 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 03 B3 00 8D 1C 5B 8D 9C 9E 0C 10 00 00 B0 01 67 E3 29 8B D7 2B 56 0C 8A 2A 33 D2 84 E9 0F 95 C6 52 FE C6 8A D0 8D 14 93 FF D5 5A 9F 12 C0 D0 E9 74 0E 9E 1A F2 74 E4 B4 00 33 C9 B5 01 FF 55 CC 33 C9 E9 DF 00 00 00 8B 5E 0C 83 C2 30 FF D5 73 50 83 C2 30 FF D5 72 1B 83 C2 30 FF D5 72 2B 3C 07 B0 09 72 02 B0 0B 50 8B C7 2B 46 0C B1 80 8A 00 EB CF 83 C2 60 FF D5 87 5E 10 73 0D 83 C2 30 FF D5 87 5E 14 73 03 87 5E 18 3C 07 B0 08 72 02 B0 0B 50 53 8D 96 7C 07 00 00 FF 55 D0 5B 91 EB 77 3C 07 B0 07 72 02 B0 0A 50 87 5E 10 87 5E 14 89 5E 18 8D 96 C4 0B 00 00 FF 55 D0 50 48 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Upack_v020_beta
+{
+    meta:
+        description = "Upack v0.20 beta"
+
+    strings:
+        $pattern = { BE 88 01 40 00 AD 8B F8 95 A5 33 C0 33 C9 AB 48 AB F7 D8 B1 04 F3 AB C1 E0 0A B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 5A 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Upack_v021_beta
+{
+    meta:
+        description = "Upack v0.21 beta"
+
+    strings:
+        $pattern = { BE 88 01 40 00 AD 8B F8 6A 04 95 A5 33 C0 AB 48 AB F7 D8 59 F3 AB C1 E0 0A B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 5A 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Upack_v022___v023_beta
+{
+    meta:
+        description = "Upack v0.22 - v0.23 beta"
+
+    strings:
+        $pattern = { 6A 07 BE 88 01 40 00 AD 8B F8 59 95 F3 A5 AD B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 59 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 00 8D 1C 5B 8D 9C 9D 0C 10 00 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Upack_v024___v027_beta___v028_alpha
+{
+    meta:
+        description = "Upack v0.24 - v0.27 beta / v0.28 alpha"
+
+    strings:
+        $pattern = { BE 88 01 40 00 AD 8B F8 95 AD 91 F3 A5 AD B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 57 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 00 8D 1C 5B 8D 9C 9D 0C 10 00 00 B0 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
+rule Upack_v029_beta
+{
+    meta:
+        description = "Upack v0.29 beta"
+
+    strings:
+        $pattern = { BE 88 01 40 00 AD 8B F8 95 AD 91 F3 A5 AD B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 57 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 00 8D 1C 5B 8D 9C 9D 0C 10 00 00 B0 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule VBOX_v42_MTE
 {
     meta:
@@ -6433,6 +6741,21 @@ rule VBOX_v43_MTE
     condition:
         uint16(0) == 0x5A4D
         and all of them
+}
+
+rule VBOX_v43___v46
+{
+    meta:
+        description = "VBOX v4.3 - v4.6"
+
+    strings:
+        $pattern = { 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 8B C5 }
+        $pattern_1 = { 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 8B C4 }
+        $pattern_2 = { ?? ?? ?? ?? 90 03 C4 33 C4 33 C5 2B C5 33 C5 8B C5 ?? ?? 2B C5 48 ?? ?? 0B C0 86 E0 8C E0 ?? ?? 8C E0 86 E0 03 C4 40 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and any of them
 }
 
 rule VOB_ProtectCD_5
@@ -6559,9 +6882,9 @@ rule Wise_Installer_Stub
         description = "Wise Installer Stub"
 
     strings:
-        $pattern = { 55 8B EC 81 EC ?? 04 00 00 53 56 57 6A ?? ?? ?? ?? ?? ?? ?? FF 15 ?? ?? 40 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 80 ?? 20 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 74 }
-        $pattern_1 = { 55 8B EC 81 EC 78 05 00 00 53 56 BE 04 01 00 00 57 8D 85 94 FD FF FF 56 33 DB 50 53 FF 15 34 20 40 00 8D 85 94 FD FF FF 56 50 8D 85 94 FD FF FF 50 FF 15 30 20 40 00 8B 3D 2C 20 40 00 53 53 6A 03 53 6A 01 8D 85 94 FD FF FF 68 00 00 00 80 50 FF D7 83 F8 FF 89 45 FC 0F 84 7B 01 00 00 8D 85 90 FC FF FF 50 56 FF 15 28 20 40 00 8D 85 98 FE FF FF 50 53 8D 85 90 FC FF FF 68 10 30 40 00 50 FF 15 24 20 40 00 53 68 80 00 00 00 6A 02 53 53 8D 85 98 FE FF FF 68 00 00 00 40 50 FF D7 83 F8 FF 89 45 F4 0F 84 2F 01 00 00 53 53 53 6A 02 53 FF 75 FC FF 15 00 20 40 00 53 53 53 6A 04 50 89 45 F8 FF 15 1C 20 40 00 8B F8 C7 45 FC 01 00 00 00 8D 47 01 8B 08 81 F9 4D 5A 9A 00 74 08 81 F9 4D 5A 90 00 75 06 80 78 04 03 74 0D FF 45 FC 40 81 7D FC 00 80 00 00 7C DB 8D 4D F0 53 51 68 }
-        $pattern_2 = { 55 8B EC 81 EC ?? ?? 00 00 53 56 57 6A 01 5E 6A 04 89 75 E8 FF 15 ?? 40 40 00 FF 15 ?? 40 40 00 8B F8 89 7D ?? 8A 07 3C 22 0F 85 ?? 00 00 00 8A 47 01 47 89 7D ?? 33 DB 3A C3 74 0D 3C 22 74 09 8A 47 01 47 89 7D ?? EB EF 80 3F 22 75 04 47 89 7D ?? 80 3F 20 75 09 47 80 3F 20 74 FA 89 7D ?? 53 FF 15 ?? 40 40 00 80 3F 2F 89 45 ?? 75 ?? 8A 47 01 3C 53 74 04 3C 73 75 06 89 35 }
+        $pattern = { 55 8B EC 81 EC ?? ?? 00 00 53 56 57 6A 01 5E 6A 04 89 75 E8 FF 15 ?? 40 40 00 FF 15 ?? 40 40 00 8B F8 89 7D ?? 8A 07 3C 22 0F 85 ?? 00 00 00 8A 47 01 47 89 7D ?? 33 DB 3A C3 74 0D 3C 22 74 09 8A 47 01 47 89 7D ?? EB EF 80 3F 22 75 04 47 89 7D ?? 80 3F 20 75 09 47 80 3F 20 74 FA 89 7D ?? 53 FF 15 ?? 40 40 00 80 3F 2F 89 45 ?? 75 ?? 8A 47 01 3C 53 74 04 3C 73 75 06 89 35 }
+        $pattern_1 = { 55 8B EC 81 EC ?? 04 00 00 53 56 57 6A ?? ?? ?? ?? ?? ?? ?? FF 15 ?? ?? 40 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 80 ?? 20 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 74 }
+        $pattern_2 = { 55 8B EC 81 EC 78 05 00 00 53 56 BE 04 01 00 00 57 8D 85 94 FD FF FF 56 33 DB 50 53 FF 15 34 20 40 00 8D 85 94 FD FF FF 56 50 8D 85 94 FD FF FF 50 FF 15 30 20 40 00 8B 3D 2C 20 40 00 53 53 6A 03 53 6A 01 8D 85 94 FD FF FF 68 00 00 00 80 50 FF D7 83 F8 FF 89 45 FC 0F 84 7B 01 00 00 8D 85 90 FC FF FF 50 56 FF 15 28 20 40 00 8D 85 98 FE FF FF 50 53 8D 85 90 FC FF FF 68 10 30 40 00 50 FF 15 24 20 40 00 53 68 80 00 00 00 6A 02 53 53 8D 85 98 FE FF FF 68 00 00 00 40 50 FF D7 83 F8 FF 89 45 F4 0F 84 2F 01 00 00 53 53 53 6A 02 53 FF 75 FC FF 15 00 20 40 00 53 53 53 6A 04 50 89 45 F8 FF 15 1C 20 40 00 8B F8 C7 45 FC 01 00 00 00 8D 47 01 8B 08 81 F9 4D 5A 9A 00 74 08 81 F9 4D 5A 90 00 75 06 80 78 04 03 74 0D FF 45 FC 40 81 7D FC 00 80 00 00 7C DB 8D 4D F0 53 51 68 }
 
     condition:
         uint16(0) == 0x5A4D
@@ -6764,6 +7087,19 @@ rule yC_v13_by_Ashkbiz_Danehkar
         and all of them
 }
 
+rule yodas_Protector_v1032_by_Ashkbiz_Danehkar
+{
+    meta:
+        description = "yoda's Protector v1.03.2 by Ashkbiz Danehkar"
+
+    strings:
+        $pattern = { E8 03 00 00 00 EB 01 ?? BB 55 00 00 00 E8 03 00 00 00 EB 01 ?? E8 8F 00 00 00 E8 03 00 00 00 EB 01 ?? E8 82 00 00 00 E8 03 00 00 00 EB 01 ?? E8 B8 00 00 00 E8 03 00 00 00 EB 01 ?? E8 AB 00 00 00 E8 03 00 00 00 EB 01 ?? 83 FB 55 E8 03 00 00 00 EB 01 ?? 75 2E E8 03 00 00 00 EB 01 ?? C3 60 E8 00 00 00 00 5D 81 ED 94 73 42 00 8B D5 81 C2 E3 73 42 00 52 E8 01 00 00 00 C3 C3 E8 03 00 00 }
+
+    condition:
+        uint16(0) == 0x5A4D
+        and all of them
+}
+
 rule ZCode_Win32_PE_Protector_v101
 {
     meta:
@@ -6784,398 +7120,6 @@ rule _Protector_v1111_DDeM_PE_Engine_v09_DDeM_CI_v092
 
     strings:
         $pattern = { 53 51 56 E8 00 00 00 00 5B 81 EB 08 10 00 00 8D B3 34 10 00 00 B9 F3 03 00 00 BA 63 17 2A EE 31 16 83 C6 04 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule flat_assembler_v15x
-{
-    meta:
-        description = "flat assembler v1.5x"
-
-    strings:
-        $pattern = { 6A 00 FF 15 ?? ?? 40 00 A3 ?? ?? 40 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Dev_Cpp_40
-{
-    meta:
-        description = "Dev-C++ 4.0"
-
-    strings:
-        $pattern = { 55 89 E5 83 EC 08 83 C4 F4 6A ?? A1 ?? ?? ?? 00 FF D0 E8 ?? FF FF FF }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Inno_Setup_Module_Heuristic_Mode
-{
-    meta:
-        description = "Inno Setup Module Heuristic Mode"
-
-    strings:
-        $pattern = { 55 8B EC 83 C4 ?? 53 56 57 33 C0 89 45 F0 89 45 ?? 89 45 ?? E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF E8 ?? ?? FF FF ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? E8 ?? ?? FF FF }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Nullsoft_PiMP_Stub
-{
-    meta:
-        description = "Nullsoft PiMP Stub"
-
-    strings:
-        $pattern = { 83 EC ?? 53 55 56 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Nullsoft_PiMP_Stub_v1x
-{
-    meta:
-        description = "Nullsoft PiMP Stub v1.x"
-
-    strings:
-        $pattern = { 83 EC 0C 53 56 57 FF 15 ?? ?? 40 00 05 E8 03 00 00 BE ?? ?? ?? 00 89 44 24 10 B3 20 FF 15 28 ?? 40 00 68 00 04 00 00 FF 15 ?? ?? 40 00 50 56 FF 15 ?? ?? 40 00 80 3D ?? ?? ?? 00 22 75 08 80 C3 02 BE ?? ?? ?? 00 8A 06 8B 3D ?? ?? 40 00 84 C0 74 ?? 3A C3 74 0B 56 FF D7 8B F0 8A 06 84 C0 75 F1 80 3E 00 74 05 56 FF D7 8B F0 89 74 24 14 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 80 3E 2F }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule yodas_Crypter_v13
-{
-    meta:
-        description = "yoda's Crypter v1.3"
-
-    strings:
-        $pattern = { 55 8B EC 53 56 57 60 E8 00 00 00 00 5D 81 ED 8C 21 40 00 B9 51 2D 40 00 81 E9 E6 21 40 00 8B D5 81 C2 E6 21 40 00 8D 3A 8B F7 33 C0 EB 04 90 EB 01 C2 AC ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? AA E2 CC }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule yodas_Protector_v1032
-{
-    meta:
-        description = "yoda's Protector v1.03.2"
-
-    strings:
-        $pattern = { E8 03 00 00 00 EB 01 ?? BB 55 00 00 00 E8 03 00 00 00 EB 01 ?? E8 8F 00 00 00 E8 03 00 00 00 EB 01 ?? E8 82 00 00 00 E8 03 00 00 00 EB 01 ?? E8 B8 00 00 00 E8 03 00 00 00 EB 01 ?? E8 AB 00 00 00 E8 03 00 00 00 EB 01 ?? 83 FB 55 E8 03 00 00 00 EB 01 ?? 75 2E E8 03 00 00 00 EB 01 ?? C3 60 E8 00 00 00 00 5D 81 ED 94 73 42 00 8B D5 81 C2 E3 73 42 00 52 E8 01 00 00 00 C3 C3 E8 03 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule SoftDefender_v112_Unregistered
-{
-    meta:
-        description = "SoftDefender v1.12 (Unregistered)"
-
-    strings:
-        $pattern = { 74 07 75 05 19 32 67 E8 E8 74 1F 75 1D E8 68 39 44 CD 00 59 9C 50 74 0A 75 08 E8 59 C2 04 00 55 8B EC E8 F4 FF FF FF 56 57 53 78 0F 79 0D E8 34 99 47 49 34 33 EF 31 34 52 47 23 68 A2 AF 47 01 59 E8 01 00 00 00 FF 58 05 E6 01 00 00 03 C8 74 BD 75 BB E8 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule MASM32
-{
-    meta:
-        description = "MASM32"
-
-    strings:
-        $pattern = { 6A ?? 68 00 30 40 00 68 ?? 30 40 00 6A 00 E8 07 00 00 00 6A 00 E8 06 00 00 00 FF 25 08 20 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PECompact_v2xx
-{
-    meta:
-        description = "PECompact v2.xx"
-
-    strings:
-        $pattern = { B8 ?? ?? ?? 00 50 64 FF 35 00 00 00 00 64 89 25 00 00 00 00 33 C0 89 08 50 45 43 6F 6D 70 61 63 74 32 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule eXPressor_v120b
-{
-    meta:
-        description = "eXPressor v1.2.0b"
-
-    strings:
-        $pattern = { 55 8B EC 81 EC D4 01 00 00 53 56 57 EB 0C 45 78 50 72 2D 76 2E 31 2E 32 2E 2E B8 ?? ?? ?? 00 2B 05 84 ?? ?? 00 A3 ?? ?? ?? 00 83 3D ?? ?? ?? 00 00 74 16 A1 ?? ?? ?? 00 03 05 80 ?? ?? 00 89 85 54 FE FF FF E9 ?? 07 00 00 C7 05 ?? ?? ?? 00 01 00 00 00 68 04 01 00 00 8D 85 F0 FE FF FF 50 6A 00 FF 15 ?? ?? ?? 00 8D 84 05 EF FE FF FF 89 85 38 FE FF FF 8B 85 38 FE FF FF 0F BE 00 83 F8 5C }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule UPX_v125_Delphi_Stub
-{
-    meta:
-        description = "UPX v1.25 (Delphi) Stub"
-
-    strings:
-        $pattern = { 60 BE 00 ?? ?? 00 8D BE 00 ?? ?? FF }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Dev_Cpp_v499
-{
-    meta:
-        description = "Dev-C++ v4.9.9"
-
-    strings:
-        $pattern = { 55 89 E5 83 EC 08 C7 04 24 01 00 00 00 FF 15 ?? ?? ?? 00 E8 C8 FE FF FF 90 8D B4 26 00 00 00 00 55 89 E5 83 EC 08 C7 04 24 02 00 00 00 FF 15 ?? ?? ?? 00 E8 A8 FE FF FF 90 8D B4 26 00 00 00 00 55 8B 0D ?? ?? ?? 00 89 E5 5D FF E1 8D 74 26 00 55 8B 0D ?? ?? ?? 00 89 E5 5D FF E1 90 90 90 90 55 89 E5 5D E9 ?? ?? 00 00 90 90 90 90 90 90 90 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PECompact_v25_Retail
-{
-    meta:
-        description = "PECompact v2.5 Retail"
-
-    strings:
-        $pattern = { B8 ?? ?? ?? 01 50 64 FF 35 00 00 00 00 64 89 25 00 00 00 00 33 C0 89 08 50 45 43 6F 6D 70 61 63 74 32 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PECompact_v25_Retail_Slim_Loader
-{
-    meta:
-        description = "PECompact v2.5 Retail (Slim Loader)"
-
-    strings:
-        $pattern = { B8 ?? ?? ?? 01 50 64 FF 35 00 00 00 00 64 89 25 00 00 00 00 33 C0 89 08 50 45 43 32 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule yodas_Protector_10_beta
-{
-    meta:
-        description = "yoda's Protector 1.0 beta"
-
-    strings:
-        $pattern = { 55 8B EC 53 56 57 60 E8 00 00 00 00 5D 81 ED 4C 32 40 00 E8 03 00 00 00 EB 01 ?? B9 EA 47 40 00 81 E9 E9 32 40 00 8B D5 81 C2 E9 32 40 00 8D 3A 8B F7 33 C0 E8 04 00 00 00 90 EB 01 ?? E8 03 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule InstallAnywhere_61
-{
-    meta:
-        description = "InstallAnywhere 6.1"
-
-    strings:
-        $pattern = { 60 BE 00 A0 42 00 8D BE 00 70 FD FF 57 83 CD FF EB 10 90 90 90 90 90 90 8A 06 46 88 07 47 01 DB 75 07 8B 1E 83 EE FC 11 DB 72 ED B8 01 00 00 00 01 DB 75 07 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Upack_022___023_beta
-{
-    meta:
-        description = "Upack 0.22 - 0.23 beta"
-
-    strings:
-        $pattern = { ?? ?? ?? ?? ?? ?? ?? AD 8B F8 59 95 F3 A5 AD B5 ?? F3 AB AD 50 97 51 58 8D 54 85 5C FF 16 72 ?? 2C 03 73 02 B0 00 3C 07 72 02 2C 03 50 0F B6 5F FF C1 E3 ?? B3 00 8D 1C 5B 8D 9C 9D 0C 10 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule MingWin32_GCC_3x
-{
-    meta:
-        description = "MingWin32 GCC 3.x"
-
-    strings:
-        $pattern = { 55 89 E5 83 EC 08 C7 04 24 ?? 00 00 00 FF 15 ?? ?? 40 00 E8 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 55 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule REALbasic
-{
-    meta:
-        description = "REALbasic"
-
-    strings:
-        $pattern = { 55 89 E5 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 50 ?? ?? ?? ?? ?? 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PowerBASIC_CC_30x
-{
-    meta:
-        description = "PowerBASIC/CC 3.0x"
-
-    strings:
-        $pattern = { 55 8B EC 53 56 57 BB 00 ?? ?? 00 66 2E F7 05 ?? ?? ?? 00 04 00 0F 85 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PowerBASIC_Win_70x
-{
-    meta:
-        description = "PowerBASIC/Win 7.0x"
-
-    strings:
-        $pattern = { 55 8B EC 53 56 57 BB 00 ?? 40 00 66 2E F7 05 ?? ?? 40 00 04 00 0F 85 DB 00 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PE_Ninja_v10
-{
-    meta:
-        description = "PE Ninja v1.0"
-
-    strings:
-        $pattern = { BE 5B 2A 40 00 BF 35 12 00 00 E8 40 12 00 00 3D 22 83 A3 C6 0F 85 67 0F 00 00 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 90 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Microsoft_Visual_Cpp_60_DLL
-{
-    meta:
-        description = "Microsoft Visual C++ 6.0 DLL"
-
-    strings:
-        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 57 8B 7D 10 85 F6 75 09 83 3D ?? ?? ?? ?? ?? EB 26 83 FE 01 74 05 83 FE 02 75 22 A1 ?? ?? ?? ?? 85 C0 74 09 57 56 53 FF D0 85 C0 74 0C 57 56 53 E8 15 FF FF FF 85 C0 75 04 33 C0 EB 4E }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Watcom_C_Cpp
-{
-    meta:
-        description = "Watcom C/C++"
-
-    strings:
-        $pattern = { E9 ?? ?? 00 00 03 10 40 00 57 41 54 43 4F 4D 20 43 2F 43 2B 2B 33 32 20 52 75 6E 2D 54 69 6D 65 20 73 79 73 74 65 6D 2E 20 28 63 29 20 43 6F 70 79 72 69 67 68 74 20 62 79 20 57 41 54 43 4F 4D 20 49 6E 74 65 72 6E 61 74 69 6F 6E 61 6C 20 43 6F 72 70 2E 20 31 39 38 38 2D 31 39 39 35 2E 20 41 6C 6C 20 72 69 67 68 74 73 20 72 65 73 65 72 76 65 64 2E 00 00 00 00 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Microsoft_Visual_Cpp_60_DLL_Debug
-{
-    meta:
-        description = "Microsoft Visual C++ 6.0 DLL (Debug)"
-
-    strings:
-        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 57 8B 7D 10 85 F6 ?? ?? 83 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Microsoft_Visual_Cpp_70_DLL
-{
-    meta:
-        description = "Microsoft Visual C++ 7.0 DLL"
-
-    strings:
-        $pattern = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 85 F6 57 8B 7D 10 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 01 ?? ?? ?? ?? ?? ?? ?? ?? ?? }
-        $pattern_1 = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 85 F6 57 8B 7D 10 75 09 83 3D ?? ?? ?? 71 00 EB 26 83 FE 01 74 05 83 FE 02 75 22 A1 ?? }
-        $pattern_2 = { 55 8B EC 53 8B 5D 08 56 8B 75 0C 85 F6 57 8B 7D 10 0F 84 ?? ?? 00 00 83 FE 01 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and any of them
-}
-
-rule _32Lite_003a_DLL
-{
-    meta:
-        description = "32Lite 0.03a DLL"
-
-    strings:
-        $pattern = { 80 7C 24 08 01 75 F4 E9 ?? ?? FF FF 00 10 00 00 0C 00 00 00 06 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ?? ?? 00 00 ?? ?? 00 00 00 00 00 00 ?? ?? }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule PackMan_v0001
-{
-    meta:
-        description = "PackMan v0.0.0.1"
-
-    strings:
-        $pattern = { 60 E8 00 00 00 00 58 8D A8 ?? ?? FF FF 8D 98 ?? ?? ?? FF 8D ?? ?? 01 00 00 ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? ?? 00 00 }
-
-    condition:
-        uint16(0) == 0x5A4D
-        and all of them
-}
-
-rule Microsoft_Visual_Cpp_v80
-{
-    meta:
-        description = "Microsoft Visual C++ v8.0"
-
-    strings:
-        $pattern = { E8 ?? ?? ?? ?? E9 ?? ?? FF FF }
 
     condition:
         uint16(0) == 0x5A4D
