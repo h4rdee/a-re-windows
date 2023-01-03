@@ -69,7 +69,7 @@ class MainIntegration:
                 )
         elif rule_type == EYaraRuleType.RULE_PETOOLS:
             if 'description' in yara_match[rule_type]:
-                self.__tk_capabilities.insert(
+                self.__tk_signatures.insert(
                     0, f"PE Tools: {yara_match[rule_type]['description']}"
                 )
         else: # update meta info
@@ -85,7 +85,9 @@ class MainIntegration:
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
+        
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
+        self.__tk_signatures.delete(0, self.__tk_signatures.size())
 
         yara_matches = list()
         yara_rules_dir = os.path.join('integrations', 'main', 'signatures')
@@ -144,6 +146,8 @@ class MainIntegration:
                 self.__tk_installer_info = tk_object
             elif element_alias == 'LISTBOX_CAPABILITIES':
                 self.__tk_capabilities = tk_object
+            elif element_alias == 'LISTBOX_SIGNATURES':
+                self.__tk_signatures = tk_object
 
     def request_needed_elements(self) -> list:
         return [
@@ -151,5 +155,6 @@ class MainIntegration:
             'LABEL_COMPILER_INFO',
             'LABEL_PACKER_INFO',
             'LABEL_INSTALLER_INFO',
-            'LISTBOX_CAPABILITIES'
+            'LISTBOX_CAPABILITIES',
+            'LISTBOX_SIGNATURES'
         ]
