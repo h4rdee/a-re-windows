@@ -19,5 +19,5 @@ Don't expect to see quality code here (PR's are welcomed!) <br>
 I'm working on this project at spare time, which means that no regular support of this tool will be provided
 
 ## Screenshots:
-![image](https://user-images.githubusercontent.com/37783231/206998074-4a83bc55-6f26-4332-af63-d1687e845741.png)
+![image](https://user-images.githubusercontent.com/37783231/210289814-ad363600-491a-4c4e-9bec-da50fafe40e4.png)
 ![image](https://user-images.githubusercontent.com/37783231/207005415-9b23c043-3883-4e51-80f0-5664d92c5307.png)
