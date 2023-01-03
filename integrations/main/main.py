@@ -10,7 +10,8 @@ class EYaraRuleType(IntEnum):
     RULE_PACKER = 1,
     RULE_INSTALLER = 2,
     RULE_CAPABILITIES = 3,
-    RULE_PETOOLS = 4
+    RULE_PETOOLS = 4,
+    RULE_DIE = 5
 
 class MainIntegration:
     def __init__(self, integrations: list) -> None:
@@ -33,6 +34,8 @@ class MainIntegration:
             return EYaraRuleType.RULE_CAPABILITIES
         elif 'petools' in filename:
             return EYaraRuleType.RULE_PETOOLS
+        elif 'die' in filename:
+            return EYaraRuleType.RULE_DIE
 
         return EYaraRuleType.RULE_UNKNOWN
 
@@ -71,6 +74,11 @@ class MainIntegration:
             if 'description' in yara_match[rule_type]:
                 self.__tk_signatures.insert(
                     0, f"PE Tools: {yara_match[rule_type]['description']}"
+                )
+        elif rule_type == EYaraRuleType.RULE_DIE:
+            if 'description' in yara_match[rule_type]:
+                self.__tk_signatures.insert(
+                    0, f"DiE: {yara_match[rule_type]['description']}"
                 )
         else: # update meta info
             info_string = self.__get_info_string_by_rule_type(yara_match, rule_type)
