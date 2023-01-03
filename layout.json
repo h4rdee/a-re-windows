@@ -67,7 +67,18 @@
                     {
                       "element_id": 5,
                       "element_alias": "LISTBOX_CAPABILITIES",
-                      "element_pos": { "x": 10, "y": 100, "w": 300, "h": 210 }
+                      "element_pos": { "x": 10, "y": 100, "w": 250, "h": 210 }
+                    },
+					{
+                      "element_id": 0,
+                      "element_alias": "LABEL_SIGNATURES",
+                      "element_text": "Signatures:",
+                      "element_pos": { "x": 270, "y": 75, "w": 0, "h": 0 }
+                    },
+                    {
+                      "element_id": 5,
+                      "element_alias": "LISTBOX_SIGNATURES",
+                      "element_pos": { "x": 270, "y": 100, "w": 250, "h": 210 }
                     }
                   ]
                 }
