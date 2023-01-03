@@ -10,6 +10,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 ## Credits:
 - [RetDec](https://github.com/avast/retdec) for providing yara rules
 - [Yara-Rules](https://github.com/Yara-Rules/rules) for providing yara rules
+- [PETools](https://github.com/petoolse/petools) for signatures that i generated some yara rules from
 - [rdbende](https://gitlab.com/rdbende/chlorophyll) for tkinter `chlorophyll` add-on
 
 ## Notes:
