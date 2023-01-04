@@ -43,24 +43,39 @@ class Window:
         # construct elements from layout
         self.__construct_elements(window_scheme)
 
+    def __construct_tab_bar(self, element):
+        if not isinstance(element, UITabBar):
+            return
+
+        for tab in element.get_all_tabs(): # need to populate its tabs with their elements
+            for sub_element in tab.get_element_scheme()['elements']:
+
+                last_element = Element(tab.get_tk_object(), sub_element)
+                self.__elements.append(last_element)
+
+                if isinstance(last_element.get(), UIGroupBox): # is appended element a groupbox?
+                    for group_element in last_element.get().get_element_scheme()['elements']: # populate as well
+
+                        element_obj = Element(last_element.get().get_tk_object(), group_element)
+
+                        if isinstance(element_obj.get(), UITabBar):
+                            self.__elements.append(element_obj)
+                            self.__construct_tab_bar(element_obj.get())  
+                            continue
+
+                        self.__elements.append(element_obj)
+
+                elif isinstance(last_element.get(), UITabBar): # is there another tab bar?
+                    self.__construct_tab_bar(last_element.get())
+
     def __construct_elements(self, window_scheme: dict) -> None:
         for element_scheme in window_scheme['elements']:
             self.__elements.append(Element(self.__window_obj, element_scheme))
             
             current_element = self.__elements[-1].get()
-            last_element = None
 
-            # TODO: this is ugly, it has to be recursive
             if isinstance(current_element, UITabBar): # is last appended element a tab bar?
-                for tab in current_element.get_all_tabs(): # need to populate its tabs with their elements
-                    for sub_element in tab.get_element_scheme()['elements']:
-
-                        last_element = Element(tab.get_tk_object(), sub_element)
-                        self.__elements.append(last_element)
-
-                        if isinstance(last_element.get(), UIGroupBox): # is appended element a groupbox?
-                            for group_element in last_element.get().get_element_scheme()['elements']: # populate as well
-                                self.__elements.append(Element(last_element.get().get_tk_object(), group_element))
+                self.__construct_tab_bar(current_element)
 
     def get(self) -> tk.Tk:
         return self.__window_obj
