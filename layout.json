@@ -78,7 +78,7 @@
 				            {
                               "element_id": 5,
                               "element_alias": "LISTBOX_CAPABILITIES",
-                              "element_pos": { "x": 10, "y": 10, "w": 710, "h": 250 }
+                              "element_pos": { "x": 10, "y": 10, "w": 708, "h": 252 }
                             }
 				          ]
 				        },
@@ -90,7 +90,7 @@
 				            {
                               "element_id": 5,
                               "element_alias": "LISTBOX_SIGNATURES",
-                              "element_pos": { "x": 10, "y": 10, "w": 710, "h": 250 }
+                              "element_pos": { "x": 10, "y": 10, "w": 708, "h": 252 }
                             }
 				          ]
 				        },
@@ -107,7 +107,71 @@
 				          "element_alias": "TAB_HASHES",
 				          "element_state": false,
 				          "elements": [
-				           
+						    {
+				              "element_id": 0,
+                              "element_alias": "LABEL_HASH_SHA256",
+                              "element_text": "SHA256:",
+                              "element_pos": { "x": 10, "y": 10, "w": 0, "h": 0 }
+							},
+							{
+				              "element_id": 0,
+                              "element_alias": "LABEL_HASH_SHA1",
+                              "element_text": "SHA1:",
+                              "element_pos": { "x": 10, "y": 32, "w": 0, "h": 0 }
+							},
+							{
+				              "element_id": 0,
+                              "element_alias": "LABEL_HASH_MD5",
+                              "element_text": "MD5:",
+                              "element_pos": { "x": 10, "y": 54, "w": 0, "h": 0 }
+							},
+							{
+				              "element_id": 0,
+                              "element_alias": "LABEL_HASH_IMPHASH",
+                              "element_text": "IMPHASH:",
+                              "element_pos": { "x": 10, "y": 76, "w": 0, "h": 0 }
+							},
+							{
+				              "element_id": 0,
+                              "element_alias": "LABEL_HASH_SSDEEP",
+                              "element_text": "SSDEEP:",
+                              "element_pos": { "x": 10, "y": 98, "w": 0, "h": 0 }
+							},
+							{
+                              "element_id": 3,
+                              "element_alias": "TEXTBOX_HASH_SHA256",
+                              "element_text": "SHA256 HASH",
+                              "element_readonly": true,
+                              "element_pos": { "x": 80, "y": 10, "w": 500, "h": 40 }
+                            },
+							{
+                              "element_id": 3,
+                              "element_alias": "TEXTBOX_HASH_SHA1",
+                              "element_text": "SHA1 HASH",
+                              "element_readonly": true,
+                              "element_pos": { "x": 80, "y": 32, "w": 500, "h": 40 }
+                            },
+							{
+                              "element_id": 3,
+                              "element_alias": "TEXTBOX_HASH_MD5",
+                              "element_text": "MD5 HASH",
+                              "element_readonly": true,
+                              "element_pos": { "x": 80, "y": 54, "w": 500, "h": 40 }
+                            },
+							{
+                              "element_id": 3,
+                              "element_alias": "TEXTBOX_HASH_IMPHASH",
+                              "element_text": "IMPHASH",
+                              "element_readonly": true,
+                              "element_pos": { "x": 80, "y": 76, "w": 500, "h": 40 }
+                            },
+							{
+                              "element_id": 3,
+                              "element_alias": "TEXTBOX_HASH_SSDEEP",
+                              "element_text": "SSDEEP HASH",
+                              "element_readonly": true,
+                              "element_pos": { "x": 80, "y": 98, "w": 500, "h": 40 }
+                            }
 				          ]
 				        }
 				      ]
