@@ -20,5 +20,7 @@ Don't expect to see quality code here (PR's are welcomed!) <br>
 I'm working on this project at spare time, which means that no regular support of this tool will be provided
 
 ## Screenshots:
-![image](https://user-images.githubusercontent.com/37783231/210292558-01d77750-00bc-4eda-b382-52dfe627f09d.png)
+![image](https://user-images.githubusercontent.com/37783231/210627706-8db35c2b-e29a-4c9d-a73d-adb7981cde1b.png)
+![image](https://user-images.githubusercontent.com/37783231/210627188-c05b8ddc-333f-4a7d-9840-b02021420db2.png)
+![image](https://user-images.githubusercontent.com/37783231/210627546-a1af6fe4-55bf-4155-947e-47f11de632de.png)
 ![image](https://user-images.githubusercontent.com/37783231/207005415-9b23c043-3883-4e51-80f0-5664d92c5307.png)
