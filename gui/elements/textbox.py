@@ -27,5 +27,14 @@ class UITextBox:
             height = element_scheme['element_pos']['h']
         )
 
+    def set_text(self, text: str, monotone = False) -> None:
+        self.__tk_object['state'] = 'normal'
+        self.__tk_object.replace("1.0", tk.END, text)
+
+        if monotone == True:
+            self.__tk_object._set_lexer(pyg_lexers.CirruLexer)
+
+        self.__tk_object['state'] = 'disabled'
+
     def get_tk_object(self) -> CodeView:
         return self.__tk_object
