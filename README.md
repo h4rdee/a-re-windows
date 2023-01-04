@@ -4,6 +4,8 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 ## Current features:
 - Retrieving basic sample information, such as `compiler info`, `packer info`, `installer info`
 - Detecting sample capabilities based on large collection of yara rules
+- Checking sample against vendor signatures (Detect It Easy, PE Tools, etc)
+- Hashing a sample (sha256, sha1, md5, imphash, ssdeep, etc)
 - Custom yara checker for testing your own yara rules
 - Cross-platform user-friendly UI powered by Tkinter!
 
