@@ -1,4 +1,4 @@
-import yara, os
+import yara, os, hashlib, ppdeep, pefile
 import tkinter as tk
 
 from enum import IntEnum
@@ -21,7 +21,15 @@ class MainIntegration:
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
         self.__tk_installer_info = None
+
         self.__tk_capabilities = None
+        self.__tk_signatures = None
+
+        self.__hash_sha256 = None
+        self.__hash_sha1 = None
+        self.__hash_md5 = None
+        self.__hash_imphash = None
+        self.__hash_ssdeep = None
 
     def __get_rule_type_by_filename(self, filename: str) -> EYaraRuleType:
         if 'compilers' in filename:
@@ -89,11 +97,43 @@ class MainIntegration:
         for integration in self.__integrations:
             integration.sample_loaded_event(self.__sample_buffer)
 
+        pe = pefile.PE(data=self.__sample_buffer)
+
         # and try to detect what we dealing with..
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
+
+        # update hashes
+        self.__hash_sha256.set_text(
+            hashlib.sha256(
+                self.__sample_buffer
+            ).hexdigest(), True
+        )
+
+        self.__hash_sha1.set_text(
+            hashlib.sha1(
+                self.__sample_buffer
+            ).hexdigest(), True
+        )
+
+        self.__hash_md5.set_text(
+            hashlib.md5(
+                self.__sample_buffer
+            ).hexdigest(), True
+        )
+
+        self.__hash_imphash.set_text(
+            pe.get_imphash(), True
+        )
+
+        self.__hash_ssdeep.set_text(
+            ppdeep.hash(
+                self.__sample_buffer
+            ), True
+        )
         
+        # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
         self.__tk_signatures.delete(0, self.__tk_signatures.size())
 
@@ -156,6 +196,16 @@ class MainIntegration:
                 self.__tk_capabilities = tk_object
             elif element_alias == 'LISTBOX_SIGNATURES':
                 self.__tk_signatures = tk_object
+            elif element_alias == 'TEXTBOX_HASH_SHA256':
+                self.__hash_sha256 = element.get()
+            elif element_alias == 'TEXTBOX_HASH_SHA1':
+                self.__hash_sha1 = element.get()
+            elif element_alias == 'TEXTBOX_HASH_MD5':
+                self.__hash_md5 = element.get()
+            elif element_alias == 'TEXTBOX_HASH_IMPHASH':
+                self.__hash_imphash = element.get()
+            elif element_alias == 'TEXTBOX_HASH_SSDEEP':
+                self.__hash_ssdeep = element.get()
 
     def request_needed_elements(self) -> list:
         return [
@@ -164,5 +214,10 @@ class MainIntegration:
             'LABEL_PACKER_INFO',
             'LABEL_INSTALLER_INFO',
             'LISTBOX_CAPABILITIES',
-            'LISTBOX_SIGNATURES'
+            'LISTBOX_SIGNATURES',
+            'TEXTBOX_HASH_SHA256',
+            'TEXTBOX_HASH_SHA1',
+            'TEXTBOX_HASH_MD5',
+            'TEXTBOX_HASH_IMPHASH',
+            'TEXTBOX_HASH_SSDEEP'
         ]
