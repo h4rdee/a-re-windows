@@ -43,7 +43,7 @@ class Window:
         # construct elements from layout
         self.__construct_elements(window_scheme)
 
-    def __construct_tab_bar(self, element):
+    def __construct_tab_bar(self, element) -> None:
         if not isinstance(element, UITabBar):
             return
 
@@ -70,12 +70,31 @@ class Window:
 
     def __construct_elements(self, window_scheme: dict) -> None:
         for element_scheme in window_scheme['elements']:
+
             self.__elements.append(Element(self.__window_obj, element_scheme))
-            
             current_element = self.__elements[-1].get()
 
             if isinstance(current_element, UITabBar): # is last appended element a tab bar?
                 self.__construct_tab_bar(current_element)
+
+    def destroy_element_by_alias(self, alias: str) -> None:
+        for element in self.__elements:
+            if element.get_alias() == alias:
+                element.get().get_tk_object().destroy() # destroy widget
+                self.__elements.remove(element) # remove element object from elements list
+
+    def generate_element(self, root_object: tk.Tk, element_scheme: dict) -> Element:
+        self.__elements.append(Element(root_object, element_scheme))
+        current_element = self.__elements[-1].get()
+
+        if isinstance(current_element, UITabBar): # is last appended element a tab bar?
+            self.__construct_tab_bar(current_element)
+
+        if 'elements' in element_scheme:
+            for sub_element in element_scheme['elements']:
+                self.__elements.append(Element(current_element.get_tk_object(), sub_element))
+
+        return current_element
 
     def get(self) -> tk.Tk:
         return self.__window_obj

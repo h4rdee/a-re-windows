@@ -4,6 +4,7 @@ from enum import IntEnum
 
 from .elements.label import UILabel
 from .elements.button import UIButton
+from .elements.tab import UITab
 from .elements.tab_bar import UITabBar
 from .elements.textbox import UITextBox
 from .elements.groupbox import UIGroupBox
@@ -15,7 +16,8 @@ class ElementID(IntEnum):
     UI_TABBAR = 2,
     UI_TEXTBOX = 3,
     UI_GROUPBOX = 4,
-    UI_LISTBOX = 5
+    UI_LISTBOX = 5,
+    UI_TAB = 6
 
 class Element:
     def __init__(self, root_object: tk.Tk, element_scheme: dict) -> None:
@@ -35,6 +37,8 @@ class Element:
             self.__element = UIGroupBox(root_object, element_scheme)
         elif self.__element_id == ElementID.UI_LISTBOX:
             self.__element = UIListBox(root_object, element_scheme)
+        elif self.__element_id == ElementID.UI_TAB:
+            self.__element = UITab(root_object, element_scheme)
 
     def get(self):
         return self.__element

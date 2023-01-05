@@ -18,6 +18,12 @@ class UITabBar:
             height = element_scheme['element_pos']['h']
         )
 
+    def add_tab(self, tab_object: UITab):
+        self.__tabs.append(tab_object)
+
+    def clear_tabs(self):
+        self.__tabs.clear()
+
     def get_all_tabs(self) -> list:
         return self.__tabs
 
