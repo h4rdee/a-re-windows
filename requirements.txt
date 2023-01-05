@@ -3,3 +3,4 @@ yara-python
 chlorophyll
 pefile
 ppdeep
+tksheet
