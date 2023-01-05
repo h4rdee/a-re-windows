@@ -3,6 +3,7 @@ import tkinter as tk
 
 from enum import IntEnum
 from tkinter import filedialog as fd
+from functools import partial
 
 class EYaraRuleType(IntEnum):
     RULE_UNKNOWN = -1,
@@ -105,6 +106,29 @@ class MainIntegration:
         self.__hash_imphash.set_text(pe.get_imphash(), True)
         self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
 
+    def __dump_section_to_file(self, element_alias: str, pe: pefile.PE) -> None:
+        section_name = element_alias[len('BUTTON_DUMP_'):-len('_SECTION')].lower()
+        for section in pe.sections:
+            if section_name in section.Name.decode(encoding='ascii'):
+    
+                filetypes = (
+                    ('Binary dump', '*.bin'),
+                    ('All files', '*.*')
+                )
+
+                filename = fd.asksaveasfilename(
+                    title='Dump section',
+                    initialdir='/',
+                    filetypes=filetypes
+                )
+                
+                try:
+                    with open(filename, 'wb') as section_dump:
+                        section_dump.write(section.get_data())
+                except FileNotFoundError:
+                    print("[!] dump file wasn't selected")
+                    return
+
     def __update_sections_info(self, pe: pefile.PE) -> None:
         def analyze_section(section) -> list:
             result = list()
@@ -117,16 +141,50 @@ class MainIntegration:
             section_name = section.Name.decode(encoding='ascii').rstrip('\x00')
             description = "unknown section"
 
-            for section in self.__pe_sections_db["sections"]:
-                if section_name == section["name"]:
-                    description = f"Detected: {section['type']}\n{section['description']}"
+            for section_db_entry in self.__pe_sections_db["sections"]:
+                if section_name == section_db_entry["name"]:
+                    description = f"Detected: {section_db_entry['type']}\n{section_db_entry['description']}"
 
+            # add description label
             result.append({
                 "element_id": 0,
                 "element_alias": f"LABEL_SECTION_{section_name.upper()}_DESCRIPTION",
                 "element_text": f"Description:\n{description}",
                 "element_pos": { "x": 10, "y": 10, "w": 0, "h": 0 }
             })
+
+            # add "dump section to file" button
+            result.append({
+                "element_id": 1,
+                "element_alias": f"BUTTON_DUMP_{section_name.upper()}_SECTION",
+                "element_text": "Dump section to file",
+                "element_pos": { "x": 14, "y": 65, "w": 150, "h": 25 }
+            })
+
+            # add table with section info
+            result.append({
+                "element_id": 7,
+                "element_alias": f"TABLE_SECTION_{section_name.upper()}_INFO",
+                "element_pos": { "x": 14, "y": 105, "w": 655, "h": 65 },
+                "element_headers": [
+                    "VirtualSize", "VirtualAddress", "SizeOfRawData", "PointerToRawData",
+                    "PointerToRelocations", "PointerToLineNumbers", "NumberOfRelocations",
+                    "Characteristics"
+                ],
+                "element_data": [
+                    [
+                        hex(section.Misc_VirtualSize),
+                        hex(section.VirtualAddress),
+                        hex(section.SizeOfRawData),
+                        hex(section.PointerToRawData),
+                        hex(section.PointerToRelocations),
+                        hex(section.PointerToLinenumbers),
+                        hex(section.NumberOfRelocations),
+                        hex(section.Characteristics)
+                    ]
+                ]
+            })
+
             return result
 
         # clear previous sections info
@@ -152,6 +210,16 @@ class MainIntegration:
                 }
             )
             self.__tab_bar_sections_info.add_tab(element)
+
+        # setup callbacks
+        for sub_element in self.__window_object.get_all_elements():
+            sub_element_alias = sub_element.get_alias()
+            if 'BUTTON_DUMP_' in sub_element_alias and '_SECTION' in sub_element_alias:
+                sub_element.get().get_tk_object().config(
+                    command=partial(
+                        self.__dump_section_to_file, sub_element_alias, pe
+                    )
+                )
 
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
