@@ -99,7 +99,36 @@
 				          "element_alias": "TAB_PE_INFO",
 				          "element_state": false,
 				          "elements": [
-				           
+				            {
+							  "element_id": 2,
+                              "element_alias": "TAB_BAR_PE_INFO",
+                              "element_pos": { "x": 10, "y": 10, "w": 708, "h": 250 },
+                              "tabs": [
+							    {
+								  "element_text": "Sections",
+				                  "element_alias": "TAB_SECTIONS",
+				                  "element_state": false,
+				                  "elements": [
+								    {
+									  "element_id": 2,
+                                      "element_alias": "TAB_BAR_SECTIONS_INFO",
+                                      "element_pos": { "x": 10, "y": 10, "w": 686, "h": 200 },
+									  "tabs": [
+									    
+									  ]
+									}
+				                  ]
+								},
+								{
+								  "element_text": "Imports",
+				                  "element_alias": "TAB_IMPORTS",
+				                  "element_state": false,
+				                  "elements": [
+				                    
+				                  ]
+								}
+							  ]
+							}
 				          ]
 				        },
 					    {
