@@ -92,11 +92,19 @@ class MainIntegration:
             info_string = self.__get_info_string_by_rule_type(yara_match, rule_type)
             self.__tk_compiler_info.config(text=info_string)
 
+    def __update_hashes(self, pe: pefile.PE) -> None:
+        self.__hash_sha256.set_text(hashlib.sha256(self.__sample_buffer).hexdigest(), True)
+        self.__hash_sha1.set_text(hashlib.sha1(self.__sample_buffer).hexdigest(), True)
+        self.__hash_md5.set_text(hashlib.md5(self.__sample_buffer).hexdigest(), True)
+        self.__hash_imphash.set_text(pe.get_imphash(), True)
+        self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
+
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
         for integration in self.__integrations:
             integration.sample_loaded_event(self.__sample_buffer)
 
+        # PE object
         pe = pefile.PE(data=self.__sample_buffer)
 
         # and try to detect what we dealing with..
@@ -105,33 +113,7 @@ class MainIntegration:
         self.__tk_installer_info.config(text="Installer info: <unknown>")
 
         # update hashes
-        self.__hash_sha256.set_text(
-            hashlib.sha256(
-                self.__sample_buffer
-            ).hexdigest(), True
-        )
-
-        self.__hash_sha1.set_text(
-            hashlib.sha1(
-                self.__sample_buffer
-            ).hexdigest(), True
-        )
-
-        self.__hash_md5.set_text(
-            hashlib.md5(
-                self.__sample_buffer
-            ).hexdigest(), True
-        )
-
-        self.__hash_imphash.set_text(
-            pe.get_imphash(), True
-        )
-
-        self.__hash_ssdeep.set_text(
-            ppdeep.hash(
-                self.__sample_buffer
-            ), True
-        )
+        self.__update_hashes(pe)
         
         # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
@@ -140,6 +122,7 @@ class MainIntegration:
         yara_matches = list()
         yara_rules_dir = os.path.join('integrations', 'main', 'signatures')
         
+        # perform yara scan
         for filename in os.listdir(yara_rules_dir):
             yara_rule_type = self.__get_rule_type_by_filename(filename)
             filename = os.path.join(yara_rules_dir, filename)
@@ -152,6 +135,7 @@ class MainIntegration:
                     except yara.SyntaxError as ex:
                         print(f"[!] yara error, rule {filename} - {ex}")
 
+        # update sample info based on yara matches
         for yara_match in yara_matches:
             self.__update_sample_info(yara_match)
 
