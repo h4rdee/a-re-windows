@@ -1,0 +1,1659 @@
+{
+  "sections": [
+    {
+      "name": "!EPack",
+      "type": "packer",
+      "description": "!EP(EXE Pack)"
+    },
+    {
+      "name": "!eprot",
+      "type": "protector",
+      "description": "!EProt"
+    },
+    {
+      "name": "\"_!_!_!_",
+      "type": "protector",
+      "description": "Krypton"
+    },
+    {
+      "name": ".!ep",
+      "type": "packer",
+      "description": "!EP(EXE Pack)"
+    },
+    {
+      "name": ".00cfg",
+      "type": "compiler",
+      "description": "Control Flow Guard (CFG) section (added by newer versions of Visual Studio)"
+    },
+    {
+      "name": ".AAWEBS",
+      "type": "compiler",
+      "description": "Section used by Amiti Antivirus DLLs webspam.dll and webspamwow64.dll"
+    },
+    {
+      "name": ".ASPack",
+      "type": "packer",
+      "description": "Aspack"
+    },
+    {
+      "name": ".BCPack",
+      "type": "protector",
+      "description": "Backdoor PE Compress Protector"
+    },
+    {
+      "name": ".BSS",
+      "type": "compiler",
+      "description": "Uninitialized Data Section"
+    },
+    {
+      "name": ".ByDwing",
+      "type": "packer",
+      "description": "(Win)Upack"
+    },
+    {
+      "name": ".CLR_UEF",
+      "type": "compiler",
+      "description": ".CLR Unhandled Exception Handler section"
+    },
+    {
+      "name": ".CRT",
+      "type": "compiler",
+      "description": "Initialized Data Section (C RunTime)"
+    },
+    {
+      "name": ".CRT",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".DATA",
+      "type": "compiler",
+      "description": "Data Section"
+    },
+    {
+      "name": ".DalKiT",
+      "type": "protector",
+      "description": "DalKrypt"
+    },
+    {
+      "name": ".De-vir ",
+      "type": "packer",
+      "description": "NoodleCrypt"
+    },
+    {
+      "name": ".FISHPEP",
+      "type": "packer",
+      "description": "Fish PE Packer"
+    },
+    {
+      "name": ".FishPE",
+      "type": "protector",
+      "description": "FishPE Shield"
+    },
+    {
+      "name": ".HOODLUM",
+      "type": "pe tool",
+      "description": "HOODLUM"
+    },
+    {
+      "name": ".Kaos12",
+      "type": "protector",
+      "description": "KaOs PE-DLL eXecutable Undetecter"
+    },
+    {
+      "name": ".Kaos2 ",
+      "type": "protector",
+      "description": "KaOs PE-DLL eXecutable Undetecter"
+    },
+    {
+      "name": ".LARP",
+      "type": "protector",
+      "description": "lARP64"
+    },
+    {
+      "name": ".MPRESS1",
+      "type": "packer",
+      "description": "MPRESS"
+    },
+    {
+      "name": ".MPRESS2",
+      "type": "packer",
+      "description": "MPRESS"
+    },
+    {
+      "name": ".MaskPE",
+      "type": "packer",
+      "description": "MaskPE"
+    },
+    {
+      "name": ".Ncryo  ",
+      "type": "packer",
+      "description": "NoodleCrypt"
+    },
+    {
+      "name": ".Np",
+      "type": "packer",
+      "description": "TTP Pack"
+    },
+    {
+      "name": ".PEDATA",
+      "type": "packer",
+      "description": "Fish PE Packer"
+    },
+    {
+      "name": ".RLPack",
+      "type": "packer",
+      "description": "RLPack"
+    },
+    {
+      "name": ".RPCrypt",
+      "type": "protector",
+      "description": "RPCrypt"
+    },
+    {
+      "name": ".Stone",
+      "type": "protector",
+      "description": "Stone's PE Encryptor"
+    },
+    {
+      "name": ".TTP",
+      "type": "protector",
+      "description": "TTprotect"
+    },
+    {
+      "name": ".Themida",
+      "type": "protector",
+      "description": "Themida"
+    },
+    {
+      "name": ".UPX0",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": ".UPX1",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": ".UPX2",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": ".Upack",
+      "type": "packer",
+      "description": "(Win)Upack"
+    },
+    {
+      "name": ".WISE",
+      "type": "installer",
+      "description": "Wise"
+    },
+    {
+      "name": ".WWP32",
+      "type": "packer",
+      "description": "WWPack32"
+    },
+    {
+      "name": ".WWPACK",
+      "type": "packer",
+      "description": "WWPACK"
+    },
+    {
+      "name": ".aBc  ",
+      "type": "protector",
+      "description": "ABC Cryptor"
+    },
+    {
+      "name": ".adata",
+      "type": "packer",
+      "description": "Aspack"
+    },
+    {
+      "name": ".adata",
+      "type": "protector",
+      "description": "ASProtect"
+    },
+    {
+      "name": ".adata",
+      "type": "protector",
+      "description": "Armadillo"
+    },
+    {
+      "name": ".alex",
+      "type": "protector",
+      "description": "Alex Protector"
+    },
+    {
+      "name": ".alloy32",
+      "type": "protector",
+      "description": "Alloy"
+    },
+    {
+      "name": ".apiset",
+      "type": "compiler",
+      "description": "a section present inside the apisetschema.dll"
+    },
+    {
+      "name": ".arch",
+      "type": "compiler",
+      "description": "Alpha-architecture section"
+    },
+    {
+      "name": ".aspack",
+      "type": "packer",
+      "description": "Aspack"
+    },
+    {
+      "name": ".autoload_text",
+      "type": "compiler",
+      "description": "cygwin/gcc; the Cygwin DLL uses a section to avoid copying certain data on fork."
+    },
+    {
+      "name": ".avc",
+      "type": "protector",
+      "description": "AverCryptor"
+    },
+    {
+      "name": ".bedrock",
+      "type": "packer",
+      "description": "bambam"
+    },
+    {
+      "name": ".bindat",
+      "type": "compiler",
+      "description": "Binary data (also used by one of the downware installers based on LUA)"
+    },
+    {
+      "name": ".boom",
+      "type": "builder",
+      "description": "The Boomerang List Builder (config+exe xored with a single byte key 0x77)"
+    },
+    {
+      "name": ".bootdat",
+      "type": "compiler",
+      "description": "Section that can be found inside Visual Studio files; contains palette entries"
+    },
+    {
+      "name": ".boot",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": ".bss",
+      "type": "compiler",
+      "description": "Uninitialized Data Section"
+    },
+    {
+      "name": ".buildid",
+      "type": "compiler",
+      "description": "gcc/cygwin; Contains debug information (if overlaps with debug directory)"
+    },
+    {
+      "name": ".ccg",
+      "type": "protector",
+      "description": "PE-Armor"
+    },
+    {
+      "name": ".ccg",
+      "type": "packer",
+      "description": "CCG Packer (Chinese Packer)"
+    },
+    {
+      "name": ".ccp3p",
+      "type": "protector",
+      "description": "CrypToCrack Pe Protector"
+    },
+    {
+      "name": ".charmve",
+      "type": "tool",
+      "description": "Added by the PIN tool"
+    },
+    {
+      "name": ".code",
+      "type": "compiler",
+      "description": "Code Section"
+    },
+    {
+      "name": ".complua",
+      "type": "compiler",
+      "description": "Most likely compiled LUA (also used by one of the downware installers based on LUA)"
+    },
+    {
+      "name": ".cormeta",
+      "type": "compiler",
+      "description": ".CLR Metadata Section"
+    },
+    {
+      "name": ".cygheap",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".cygwin_dll_common",
+      "type": "compiler",
+      "description": "cygwin section containing flags representing Cygwin\u0432\u0402\u2122s capabilities; refer to cygwin.sc and wincap.cc inside Cygwin run-time"
+    },
+    {
+      "name": ".data1",
+      "type": "compiler",
+      "description": "Data Section"
+    },
+    {
+      "name": ".data2",
+      "type": "compiler",
+      "description": "Data Section"
+    },
+    {
+      "name": ".data3",
+      "type": "compiler",
+      "description": "Data Section"
+    },
+    {
+      "name": ".data_cygwin_nocopy",
+      "type": "compiler",
+      "description": "cygwin"
+    },
+    {
+      "name": ".data",
+      "type": "compiler",
+      "description": "Data Section"
+    },
+    {
+      "name": ".debug$F",
+      "type": "compiler",
+      "description": "Debug info Section (Visual C++ version < 7.0)"
+    },
+    {
+      "name": ".debug$F",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".debug$P",
+      "type": "compiler",
+      "description": "Debug info Section (Visual C++ debug information/compiler/precompiled information)"
+    },
+    {
+      "name": ".debug$S",
+      "type": "compiler",
+      "description": "Debug info Section (Visual C++ debug information/compiler/precompiled information)"
+    },
+    {
+      "name": ".debug$S",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".debug$T",
+      "type": "compiler",
+      "description": "Debug info Section (Visual C++ debug information/compiler/precompiled information)"
+    },
+    {
+      "name": ".debug$T",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".debug_abbrev",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_aranges",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_frame",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_info",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_line",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_loc",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_macinfo",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_pubnames",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_ranges",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug_str",
+      "type": "compiler",
+      "description": "mingw/cygwin DEBUG"
+    },
+    {
+      "name": ".debug",
+      "type": "compiler",
+      "description": "Debug info Section"
+    },
+    {
+      "name": ".decode",
+      "type": "packer",
+      "description": "MEW10"
+    },
+    {
+      "name": ".depack",
+      "type": "packer",
+      "description": "dePack"
+    },
+    {
+      "name": ".didata",
+      "type": "compiler",
+      "description": "Delay Import Section"
+    },
+    {
+      "name": ".didat",
+      "type": "compiler",
+      "description": "Delay Import Section"
+    },
+    {
+      "name": ".dotfix",
+      "type": "protector",
+      "description": "DotFix Nice Protect"
+    },
+    {
+      "name": ".drectve",
+      "type": "compiler",
+      "description": "Directive section (temporary"
+    },
+    {
+      "name": ".drectve",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".dswlab",
+      "type": "pe tool",
+      "description": "VMUnpacker"
+    },
+    {
+      "name": ".dyamarC",
+      "type": "protector",
+      "description": "DYAMAR"
+    },
+    {
+      "name": ".dyamarD",
+      "type": "protector",
+      "description": "DYAMAR"
+    },
+    {
+      "name": ".ecode",
+      "type": "compiler",
+      "description": "Built with EPL"
+    },
+    {
+      "name": ".edata",
+      "type": "compiler",
+      "description": "Built with EPL"
+    },
+    {
+      "name": ".edata",
+      "type": "compiler",
+      "description": "Export Data Section"
+    },
+    {
+      "name": ".edata",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".eh_frame",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".eh_fram",
+      "type": "compiler",
+      "description": "gcc/cygwin; Exception Handler Frame section"
+    },
+    {
+      "name": ".endjunk",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".enigma1",
+      "type": "protector",
+      "description": "Enigma Virtual Box"
+    },
+    {
+      "name": ".enigma2",
+      "type": "protector",
+      "description": "Enigma Virtual Box"
+    },
+    {
+      "name": ".ex_cod",
+      "type": "protector",
+      "description": "eXPressor"
+    },
+    {
+      "name": ".ex_rsc",
+      "type": "protector",
+      "description": "eXPressor"
+    },
+    {
+      "name": ".export",
+      "type": "compiler",
+      "description": "Alternative Export Data Section"
+    },
+    {
+      "name": ".fasm",
+      "type": "compiler",
+      "description": "FASM flat Section"
+    },
+    {
+      "name": ".ficken",
+      "type": "protector",
+      "description": "PECRYPT32"
+    },
+    {
+      "name": ".fini",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".flat",
+      "type": "compiler",
+      "description": "FASM flat Section"
+    },
+    {
+      "name": ".gcc_except_table",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".gcc_exc",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".gentee",
+      "type": "installer",
+      "description": "Gentee Installer"
+    },
+    {
+      "name": ".gfids",
+      "type": "compiler",
+      "description": "section added by new Visual Studio (14.0)"
+    },
+    {
+      "name": ".giats",
+      "type": "compiler",
+      "description": "section added by new Visual Studio (14.0)"
+    },
+    {
+      "name": ".gljmp",
+      "type": "compiler",
+      "description": "section added by new Visual Studio (14.0)"
+    },
+    {
+      "name": ".glue_7t",
+      "type": "compiler",
+      "description": "ARMv7 core glue functions (thumb mode)"
+    },
+    {
+      "name": ".glue_7t",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".glue_7",
+      "type": "compiler",
+      "description": "ARMv7 core glue functions (32-bit ARM mode)"
+    },
+    {
+      "name": ".glue_7",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".guruX",
+      "type": "protector",
+      "description": "G!X Protector"
+    },
+    {
+      "name": ".idata  ",
+      "type": "protector",
+      "description": "Xtreme-Protector"
+    },
+    {
+      "name": ".idata$2",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata$3",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata$4",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata$5",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata$6",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata$7",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idata",
+      "type": "compiler",
+      "description": "Initialized Data Section  (Borland)"
+    },
+    {
+      "name": ".idata",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".idlsym",
+      "type": "compiler",
+      "description": "IDL Attributes (registered SEH)"
+    },
+    {
+      "name": ".impdata",
+      "type": "compiler",
+      "description": "Alternative Import data section"
+    },
+    {
+      "name": ".imports",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": ".import",
+      "type": "compiler",
+      "description": "Alternative Import data section"
+    },
+    {
+      "name": ".imrsiv",
+      "type": "tool",
+      "description": "special section used for applications that can be loaded to OS desktop bands."
+    },
+    {
+      "name": ".inq",
+      "type": "protector",
+      "description": "Inquartos Obfuscator"
+    },
+    {
+      "name": ".itext",
+      "type": "compiler",
+      "description": "Code Section (Borland)"
+    },
+    {
+      "name": ".jdpack",
+      "type": "packer",
+      "description": "JDPack"
+    },
+    {
+      "name": ".jedata",
+      "type": "compiler",
+      "description": "Excelsior JET"
+    },
+    {
+      "name": ".jidata",
+      "type": "compiler",
+      "description": "Excelsior JET"
+    },
+    {
+      "name": ".loadcon",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": ".mackt",
+      "type": "tool",
+      "description": "ImpRec-created section"
+    },
+    {
+      "name": ".mnbvcx1",
+      "type": "loader",
+      "description": "Most likely associated with Firseria PUP downloaders"
+    },
+    {
+      "name": ".mnbvcx2",
+      "type": "loader",
+      "description": "Most likely associated with Firseria PUP downloaders"
+    },
+    {
+      "name": ".mslrh",
+      "type": "protector",
+      "description": "MSLRH"
+    },
+    {
+      "name": ".n-coder",
+      "type": "protector",
+      "description": "N-Code"
+    },
+    {
+      "name": ".nPack",
+      "type": "packer",
+      "description": "nPack"
+    },
+    {
+      "name": ".nah",
+      "type": "protector",
+      "description": "Morphnah"
+    },
+    {
+      "name": ".naked1",
+      "type": "packer",
+      "description": "NakedPacker"
+    },
+    {
+      "name": ".naked2",
+      "type": "packer",
+      "description": "NakedPacker"
+    },
+    {
+      "name": ".ndata",
+      "type": "installer",
+      "description": "Nullsoft Installer section"
+    },
+    {
+      "name": ".neolite",
+      "type": "packer",
+      "description": "NeoLite"
+    },
+    {
+      "name": ".neolit",
+      "type": "packer",
+      "description": "NeoLite"
+    },
+    {
+      "name": ".nos",
+      "type": "packer",
+      "description": "NOS Installer"
+    },
+    {
+      "name": ".nsp0",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": ".nsp1",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": ".nsp2",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": ".orpc",
+      "type": "compiler",
+      "description": "Code section inside rpcrt4.dll"
+    },
+    {
+      "name": ".packed",
+      "type": "packer",
+      "description": "RLPack"
+    },
+    {
+      "name": ".packed",
+      "type": "packer",
+      "description": "Unknown Packer"
+    },
+    {
+      "name": ".pdata",
+      "type": "compiler",
+      "description": "Exception Handling Functions Section (PDATA records)"
+    },
+    {
+      "name": ".perplex",
+      "type": "protector",
+      "description": "ACProtect"
+    },
+    {
+      "name": ".perplex",
+      "type": "protector",
+      "description": "Perplex"
+    },
+    {
+      "name": ".petite",
+      "type": "packer",
+      "description": "Petite"
+    },
+    {
+      "name": ".pinclie",
+      "type": "tool",
+      "description": "Added by the PIN tool"
+    },
+    {
+      "name": ".profile",
+      "type": "tool",
+      "description": "NightHawk C2 framework (by MDSec)"
+    },
+    {
+      "name": ".ps4",
+      "type": "protector",
+      "description": "StarForce"
+    },
+    {
+      "name": ".qtmetad",
+      "type": "library",
+      "description": "Qt"
+    },
+    {
+      "name": ".rdata",
+      "type": "compiler",
+      "description": "Read-only initialized Data Section  (MS and Borland)"
+    },
+    {
+      "name": ".reacto",
+      "type": "protector",
+      "description": ".NET Reactor"
+    },
+    {
+      "name": ".reloc",
+      "type": "compiler",
+      "description": "Relocations Section"
+    },
+    {
+      "name": ".rlp",
+      "type": "packer",
+      "description": "RLP"
+    },
+    {
+      "name": ".rmnet",
+      "type": "virus",
+      "description": "Ramnit virus marker"
+    },
+    {
+      "name": ".rodata",
+      "type": "compiler",
+      "description": "Read-only Data Section"
+    },
+    {
+      "name": ".rsrc",
+      "type": "compiler",
+      "description": "Resource section"
+    },
+    {
+      "name": ".sbss",
+      "type": "compiler",
+      "description": "GP-relative Uninitialized Data Section"
+    },
+    {
+      "name": ".scpack",
+      "type": "packer",
+      "description": "SC Pack"
+    },
+    {
+      "name": ".script",
+      "type": "compiler",
+      "description": "Section containing script"
+    },
+    {
+      "name": ".sdata",
+      "type": "compiler",
+      "description": "GP-relative Initialized Data Section"
+    },
+    {
+      "name": ".sdata",
+      "type": "protector",
+      "description": ".NET Reactor"
+    },
+    {
+      "name": ".seau",
+      "type": "sfx",
+      "description": "SeauSFX"
+    },
+    {
+      "name": ".sedata",
+      "type": "protector",
+      "description": "Safengine Shielden"
+    },
+    {
+      "name": ".sforce3",
+      "type": "protector",
+      "description": "StarForce"
+    },
+    {
+      "name": ".sforce3",
+      "type": "protector",
+      "description": "StarForce"
+    },
+    {
+      "name": ".shared",
+      "type": "compiler",
+      "description": "Shared section"
+    },
+    {
+      "name": ".shoooo",
+      "type": "packer",
+      "description": "KByS"
+    },
+    {
+      "name": ".shrink0",
+      "type": "protector",
+      "description": "Shrinker"
+    },
+    {
+      "name": ".shrink1",
+      "type": "protector",
+      "description": "Shrinker"
+    },
+    {
+      "name": ".shrink2",
+      "type": "protector",
+      "description": "Shrinker"
+    },
+    {
+      "name": ".shrink3",
+      "type": "protector",
+      "description": "Shrinker"
+    },
+    {
+      "name": ".spack",
+      "type": "packer",
+      "description": "Simple Pack (by bagie)"
+    },
+    {
+      "name": ".srdata",
+      "type": "compiler",
+      "description": "GP-relative Read-only Data Section"
+    },
+    {
+      "name": ".sstb",
+      "type": "protector",
+      "description": "ElecKey"
+    },
+    {
+      "name": ".stabstr",
+      "type": "compiler",
+      "description": "Created by Haskell compiler (GHC)"
+    },
+    {
+      "name": ".stabstr",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".stab",
+      "type": "compiler",
+      "description": "Created by Haskell compiler (GHC)"
+    },
+    {
+      "name": ".stab",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": ".svkp ",
+      "type": "protector",
+      "description": "SVK Protector"
+    },
+    {
+      "name": ".sxdata",
+      "type": "compiler",
+      "description": "Registered Exception Handlers Section"
+    },
+    {
+      "name": ".symtab",
+      "type": "compiler",
+      "description": "Go"
+    },
+    {
+      "name": ".taz",
+      "type": "protector",
+      "description": "Some version of PESpin"
+    },
+    {
+      "name": ".teraphy",
+      "type": "protector",
+      "description": "PE Diminisher"
+    },
+    {
+      "name": ".text0",
+      "type": "compiler",
+      "description": "Alternative Code Section"
+    },
+    {
+      "name": ".text1",
+      "type": "compiler",
+      "description": "Alternative Code Section"
+    },
+    {
+      "name": ".text2",
+      "type": "compiler",
+      "description": "Alternative Code Section"
+    },
+    {
+      "name": ".text3",
+      "type": "compiler",
+      "description": "Alternative Code Section"
+    },
+    {
+      "name": ".textbss",
+      "type": "compiler",
+      "description": "Section used by incremental linking"
+    },
+    {
+      "name": ".text",
+      "type": "compiler",
+      "description": "Code Section"
+    },
+    {
+      "name": ".themida",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": ".tls$",
+      "type": "compiler",
+      "description": "Thread Local Storage Section"
+    },
+    {
+      "name": ".tls",
+      "type": "compiler",
+      "description": "Thread Local Storage Section"
+    },
+    {
+      "name": ".tsuarch",
+      "type": "loader",
+      "description": "TSULoader"
+    },
+    {
+      "name": ".tsustub",
+      "type": "loader",
+      "description": "TSULoader"
+    },
+    {
+      "name": ".udata",
+      "type": "compiler",
+      "description": "Uninitialized Data Section"
+    },
+    {
+      "name": ".ultra",
+      "type": "protector",
+      "description": "MoleBox Ultra"
+    },
+    {
+      "name": ".vmp0",
+      "type": "protector",
+      "description": "VMProtect"
+    },
+    {
+      "name": ".vmp1",
+      "type": "protector",
+      "description": "VMProtect"
+    },
+    {
+      "name": ".vmp2",
+      "type": "protector",
+      "description": "VMProtect"
+    },
+    {
+      "name": ".vmp3",
+      "type": "protector",
+      "description": "VMProtect"
+    },
+    {
+      "name": ".vsdata",
+      "type": "compiler",
+      "description": "GP-relative Initialized Data"
+    },
+    {
+      "name": ".winapi",
+      "type": "tool",
+      "description": "Added by API Override tool"
+    },
+    {
+      "name": ".winlice",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": ".wixburn",
+      "type": "installer",
+      "description": "WiX Toolset"
+    },
+    {
+      "name": ".wkt0",
+      "type": "protector",
+      "description": "WinKript"
+    },
+    {
+      "name": ".wpp_sf ",
+      "type": "compiler",
+      "description": "section that is most likely related to WPP (Windows software trace PreProcessor)"
+    },
+    {
+      "name": ".xcpad",
+      "type": "protector",
+      "description": "Xenocode"
+    },
+    {
+      "name": ".xdata",
+      "type": "compiler",
+      "description": "Exception Information Section"
+    },
+    {
+      "name": ".xlok",
+      "type": "protector",
+      "description": "Xtreamlok"
+    },
+    {
+      "name": ".xvlk",
+      "type": "pe tool",
+      "description": "XVolkolak"
+    },
+    {
+      "name": ".y0da",
+      "type": "protector",
+      "description": "Y0da's Protector"
+    },
+    {
+      "name": ".yP",
+      "type": "protector",
+      "description": "Yoda's Protector"
+    },
+    {
+      "name": ".yzpack",
+      "type": "packer",
+      "description": "YZPack"
+    },
+    {
+      "name": "ANAKIN2K",
+      "type": "protector",
+      "description": "PE-SHiELD"
+    },
+    {
+      "name": "ANDpakk2",
+      "type": "packer",
+      "description": "ANDpakk2"
+    },
+    {
+      "name": "ASPack",
+      "type": "packer",
+      "description": "Aspack"
+    },
+    {
+      "name": "AZPR0001",
+      "type": "protector",
+      "description": "AZProtect"
+    },
+    {
+      "name": "BSS",
+      "type": "compiler",
+      "description": "Uninitialized Data Section (Borland)"
+    },
+    {
+      "name": "BitArts",
+      "type": "protector",
+      "description": "Crunch 2.0"
+    },
+    {
+      "name": "CODE    ",
+      "type": "protector",
+      "description": "Xtreme-Protector"
+    },
+    {
+      "name": "CODE",
+      "type": "compiler",
+      "description": "Code Section (Borland)"
+    },
+    {
+      "name": "COMMON",
+      "type": "compiler",
+      "description": "mingw/cygwin"
+    },
+    {
+      "name": "CONFIG~",
+      "type": "protector",
+      "description": "NativeCryptor by DosX"
+    },
+    {
+      "name": "CPADinfo",
+      "type": "library",
+      "description": "Chromium Crashpad"
+    },
+    {
+      "name": "CRYPT~",
+      "type": "protector",
+      "description": "NativeCryptor by DosX"
+    },
+    {
+      "name": "DAStub",
+      "type": "protector",
+      "description": "DragonArmor"
+    },
+    {
+      "name": "DATA",
+      "type": "compiler",
+      "description": "Data Section (Borland)"
+    },
+    {
+      "name": "DGROUP",
+      "type": "compiler",
+      "description": "Legacy data group section"
+    },
+    {
+      "name": "EPE0",
+      "type": "protector",
+      "description": "EncryptPE"
+    },
+    {
+      "name": "EPE1",
+      "type": "protector",
+      "description": "EncryptPE"
+    },
+    {
+      "name": "ExeS",
+      "type": "protector",
+      "description": "ExeStealth"
+    },
+    {
+      "name": "FCKCrypt",
+      "type": "protector",
+      "description": "Crypter"
+    },
+    {
+      "name": "INIT",
+      "type": "compiler",
+      "description": "INIT section (drivers)"
+    },
+    {
+      "name": "MEW",
+      "type": "packer",
+      "description": "MEW11 SE"
+    },
+    {
+      "name": "NATIVES~",
+      "type": "protector",
+      "description": "NativeCryptor by DosX"
+    },
+    {
+      "name": "PAGE",
+      "type": "compiler",
+      "description": "PAGE section (drivers)"
+    },
+    {
+      "name": "PEBundle",
+      "type": "protector",
+      "description": "PEBundle"
+    },
+    {
+      "name": "PEC2MO",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "PEC2TO",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "PEC2",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "PELOCKnt",
+      "type": "packer",
+      "description": "PELOCKnt"
+    },
+    {
+      "name": "PEPACK!!",
+      "type": "packer",
+      "description": "Pepack"
+    },
+    {
+      "name": "PESHiELD",
+      "type": "protector",
+      "description": "PE-SHiELD"
+    },
+    {
+      "name": "PUNiSHER",
+      "type": "packer",
+      "description": "PUNiSHER"
+    },
+    {
+      "name": "Pingvin",
+      "type": "protector",
+      "description": "PEnguinCrypt"
+    },
+    {
+      "name": "ProCrypt",
+      "type": "protector",
+      "description": "ProCrypt"
+    },
+    {
+      "name": "RCryptor",
+      "type": "protector",
+      "description": "RCryptor(Russian Cryptor)"
+    },
+    {
+      "name": "SCRYPT",
+      "type": "protector",
+      "description": "Crypter"
+    },
+    {
+      "name": "SDPC",
+      "type": "protector",
+      "description": "Soft Defender"
+    },
+    {
+      "name": "SDPD",
+      "type": "protector",
+      "description": "Soft Defender"
+    },
+    {
+      "name": "SDPI",
+      "type": "protector",
+      "description": "Soft Defender"
+    },
+    {
+      "name": "SVKP",
+      "type": "protector",
+      "description": "SVK Protector"
+    },
+    {
+      "name": "Shared",
+      "type": "compiler",
+      "description": "Shared section"
+    },
+    {
+      "name": "SoftComp",
+      "type": "protector",
+      "description": "Software Compresss"
+    },
+    {
+      "name": "Themida",
+      "type": "protector",
+      "description": "Themida"
+    },
+    {
+      "name": "UPX!",
+      "type": "protector",
+      "description": "tElock"
+    },
+    {
+      "name": "UPX0",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": "UPX1",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": "UPX2",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": "UPX3",
+      "type": "packer",
+      "description": "UPX"
+    },
+    {
+      "name": "VProtect",
+      "type": "protector",
+      "description": "VirtualizeProtect"
+    },
+    {
+      "name": "WinLicen",
+      "type": "protector",
+      "description": "Themida/Winlicense"
+    },
+    {
+      "name": "XPROT   ",
+      "type": "protector",
+      "description": "Xtreme-Protector"
+    },
+    {
+      "name": "Xiao",
+      "type": "protector",
+      "description": "12311134"
+    },
+    {
+      "name": "YADO",
+      "type": "protector",
+      "description": "Krypton"
+    },
+    {
+      "name": "_winzip_",
+      "type": "sfx",
+      "description": "WinZip Self-Extractor"
+    },
+    {
+      "name": "bero^fr ",
+      "type": "packer",
+      "description": "BeRoEXEPacker"
+    },
+    {
+      "name": "edata",
+      "type": "compiler",
+      "description": "Export Data Section"
+    },
+    {
+      "name": "hmimys",
+      "type": "protector",
+      "description": "Hmimys's Protector"
+    },
+    {
+      "name": "idata",
+      "type": "compiler",
+      "description": "Initialized Data Section (C RunTime)"
+    },
+    {
+      "name": "kkrunchy",
+      "type": "packer",
+      "description": "kkrunchy"
+    },
+    {
+      "name": "krypton",
+      "type": "protector",
+      "description": "Krypton"
+    },
+    {
+      "name": "lamecryp",
+      "type": "protector",
+      "description": "LameCrypt"
+    },
+    {
+      "name": "lz32.dll",
+      "type": "packer",
+      "description": "Crinkler"
+    },
+    {
+      "name": "minATL",
+      "type": "compiler",
+      "description": "Section that can be found inside some ARM PE files"
+    },
+    {
+      "name": "nsp0",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": "nsp1",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": "nsp2",
+      "type": "packer",
+      "description": "NsPack"
+    },
+    {
+      "name": "okpack",
+      "type": "protector",
+      "description": "pepack's Protect"
+    },
+    {
+      "name": "packerBY",
+      "type": "packer",
+      "description": "BeRoEXEPacker"
+    },
+    {
+      "name": "pcs1",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs2",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs3",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs4",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs5",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs6",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pcs7",
+      "type": "protector",
+      "description": "PCShrink"
+    },
+    {
+      "name": "pebundle",
+      "type": "protector",
+      "description": "PEBundle"
+    },
+    {
+      "name": "pebundle",
+      "type": "protector",
+      "description": "PEBundle"
+    },
+    {
+      "name": "pec1",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec2",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec3",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec4",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec5",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec6",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "pec",
+      "type": "packer",
+      "description": "PECompact"
+    },
+    {
+      "name": "petite",
+      "type": "packer",
+      "description": "Petite"
+    },
+    {
+      "name": "rdata",
+      "type": "compiler",
+      "description": "Read-only Data Section"
+    },
+    {
+      "name": "rsrr",
+      "type": "protector",
+      "description": "ExeStealth"
+    },
+    {
+      "name": "sdata",
+      "type": "compiler",
+      "description": "Initialized Data Section"
+    },
+    {
+      "name": "shared",
+      "type": "compiler",
+      "description": "Shared section"
+    },
+    {
+      "name": "testdata",
+      "type": "compiler",
+      "description": "section containing test data (can be found inside Visual Studio files)"
+    },
+    {
+      "name": "text",
+      "type": "compiler",
+      "description": "Alternative Code Section"
+    },
+    {
+      "name": "vcasm",
+      "type": "protector",
+      "description": "VCasm-Protector"
+    },
+    {
+      "name": "yC",
+      "type": "protector",
+      "description": "Yoda's Crypter"
+    },
+    {
+      "name": "yC",
+      "type": "protector",
+      "description": "Yoda's Protector"
+    }
+  ]
+}
