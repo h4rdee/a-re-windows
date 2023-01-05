@@ -18,7 +18,7 @@
           "element_pos": { "x": 10, "y": 10, "w": 780, "h": 480 },
           "tabs": [
             {
-              "element_text": "Welcome!",
+              "element_text": "General",
               "element_alias": "TAB_WELCOME",
               "element_state": true,
               "elements": [
@@ -140,35 +140,35 @@
 							{
                               "element_id": 3,
                               "element_alias": "TEXTBOX_HASH_SHA256",
-                              "element_text": "SHA256 HASH",
+                              "element_text": "",
                               "element_readonly": true,
                               "element_pos": { "x": 80, "y": 10, "w": 660, "h": 40 }
                             },
 							{
                               "element_id": 3,
                               "element_alias": "TEXTBOX_HASH_SHA1",
-                              "element_text": "SHA1 HASH",
+                              "element_text": "",
                               "element_readonly": true,
                               "element_pos": { "x": 80, "y": 32, "w": 660, "h": 40 }
                             },
 							{
                               "element_id": 3,
                               "element_alias": "TEXTBOX_HASH_MD5",
-                              "element_text": "MD5 HASH",
+                              "element_text": "",
                               "element_readonly": true,
                               "element_pos": { "x": 80, "y": 54, "w": 660, "h": 40 }
                             },
 							{
                               "element_id": 3,
                               "element_alias": "TEXTBOX_HASH_IMPHASH",
-                              "element_text": "IMPHASH",
+                              "element_text": "",
                               "element_readonly": true,
                               "element_pos": { "x": 80, "y": 76, "w": 660, "h": 40 }
                             },
 							{
                               "element_id": 3,
                               "element_alias": "TEXTBOX_HASH_SSDEEP",
-                              "element_text": "SSDEEP HASH",
+                              "element_text": "",
                               "element_readonly": true,
                               "element_pos": { "x": 80, "y": 98, "w": 660, "h": 40 }
                             }
