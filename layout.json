@@ -124,6 +124,14 @@
 				                  "element_alias": "TAB_IMPORTS",
 				                  "element_state": false,
 				                  "elements": [
+								    
+				                  ]
+								},
+								{
+								  "element_text": "Strings",
+				                  "element_alias": "TAB_STRINGS",
+				                  "element_state": false,
+				                  "elements": [
 				                    
 				                  ]
 								}
