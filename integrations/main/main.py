@@ -143,13 +143,14 @@ class MainIntegration:
 
             for section_db_entry in self.__pe_sections_db["sections"]:
                 if section_name == section_db_entry["name"]:
-                    description = f"Detected: {section_db_entry['type']}\n{section_db_entry['description']}"
+                    description = f"Detected: {section_db_entry['type']}\n{section_db_entry['description']}\n"
+                    description += f"Entropy: {section.get_entropy()}"
 
             # add description label
             result.append({
                 "element_id": 0,
                 "element_alias": f"LABEL_SECTION_{section_name.upper()}_DESCRIPTION",
-                "element_text": f"Description:\n{description}",
+                "element_text": f"{description}",
                 "element_pos": { "x": 10, "y": 10, "w": 0, "h": 0 }
             })
 
