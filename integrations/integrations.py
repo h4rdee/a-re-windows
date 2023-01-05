@@ -6,10 +6,10 @@ class Integrations:
         self.__window_object = window_object
 
         self.__yara_integration = YaraIntegration()
+        self.__main_integration = MainIntegration([self.__yara_integration])
 
-        self.__main_integration = MainIntegration(
-            [self.__yara_integration]
-        )
+        self.__yara_integration.set_window_object(window_object)
+        self.__main_integration.set_window_object(window_object)
 
     def __setup_main_integration(self) -> None:
         for alias in self.__main_integration.request_needed_elements():

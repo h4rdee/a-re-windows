@@ -9,6 +9,7 @@ class YaraIntegration:
     def __init__(self) -> None:
         self.__elements = list()
         self.__yara_rule = None
+        self.__window_object = None
 
     def __load_yara_rule_pressed(self) -> None:
         filetypes = (
@@ -54,6 +55,9 @@ class YaraIntegration:
 
     def sample_loaded_event(self, binary_buffer: bytes) -> None:
         self.__binary_buffer = binary_buffer
+
+    def set_window_object(self, window_object) -> None:
+        self.__window_object = window_object
 
     def register_element(self, element) -> None:
         self.__elements.append(element)

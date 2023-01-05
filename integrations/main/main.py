@@ -1,4 +1,4 @@
-import yara, os, hashlib, ppdeep, pefile
+import yara, os, hashlib, ppdeep, pefile, json
 import tkinter as tk
 
 from enum import IntEnum
@@ -18,6 +18,8 @@ class MainIntegration:
         self.__integrations = integrations
         self.__elements = list()
 
+        self.__window_object = None
+
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
         self.__tk_installer_info = None
@@ -25,11 +27,15 @@ class MainIntegration:
         self.__tk_capabilities = None
         self.__tk_signatures = None
 
+        self.__tab_bar_sections_info = None
+
         self.__hash_sha256 = None
         self.__hash_sha1 = None
         self.__hash_md5 = None
         self.__hash_imphash = None
         self.__hash_ssdeep = None
+
+        self.__pe_sections_db = None
 
     def __get_rule_type_by_filename(self, filename: str) -> EYaraRuleType:
         if 'compilers' in filename:
@@ -99,6 +105,54 @@ class MainIntegration:
         self.__hash_imphash.set_text(pe.get_imphash(), True)
         self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
 
+    def __update_sections_info(self, pe: pefile.PE) -> None:
+        def analyze_section(section) -> list:
+            result = list()
+
+            if self.__pe_sections_db == None:
+                signatures_path = os.path.join('integrations', 'main', 'signatures')
+                with open(os.path.join(signatures_path, 'pe_sections.json'), 'r') as pe_sections_db:
+                    self.__pe_sections_db = json.load(pe_sections_db)
+
+            section_name = section.Name.decode(encoding='ascii').rstrip('\x00')
+            description = "unknown section"
+
+            for section in self.__pe_sections_db["sections"]:
+                if section_name == section["name"]:
+                    description = f"Detected: {section['type']}\n{section['description']}"
+
+            result.append({
+                "element_id": 0,
+                "element_alias": f"LABEL_SECTION_{section_name.upper()}_DESCRIPTION",
+                "element_text": f"Description:\n{description}",
+                "element_pos": { "x": 10, "y": 10, "w": 0, "h": 0 }
+            })
+            return result
+
+        # clear previous sections info
+        for tab in self.__tab_bar_sections_info.get_all_tabs():
+            for sub_element in tab.get_element_scheme()['elements']: # destroy child elements (if any)
+                self.__window_object.destroy_element_by_alias(sub_element['element_alias'])
+            self.__window_object.destroy_element_by_alias(tab.get_alias())
+
+        self.__tab_bar_sections_info.clear_tabs()
+
+        # generate new sections tabs
+        for section in pe.sections:
+            section_name = section.Name.decode(encoding='ascii').rstrip('\x00')
+
+            element = self.__window_object.generate_element(
+                self.__tab_bar_sections_info.get_tk_object(),
+                {
+                    "element_id": 6,
+                    "element_text": section_name,
+                    "element_alias": f"TAB_{section_name.upper()}",
+                    "element_state": False,
+                    "elements": analyze_section(section)
+                }
+            )
+            self.__tab_bar_sections_info.add_tab(element)
+
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
         for integration in self.__integrations:
@@ -107,13 +161,13 @@ class MainIntegration:
         # PE object
         pe = pefile.PE(data=self.__sample_buffer)
 
-        # and try to detect what we dealing with..
+        # try to detect what we dealing with..
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
 
-        # update hashes
-        self.__update_hashes(pe)
+        self.__update_hashes(pe) # update hashes
+        self.__update_sections_info(pe) # update sections info
         
         # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
@@ -122,16 +176,21 @@ class MainIntegration:
         yara_matches = list()
         yara_rules_dir = os.path.join('integrations', 'main', 'signatures')
         
-        # perform yara scan
+        # perform yara scan (TODO: cache yara rules instead of reloading them every time)
         for filename in os.listdir(yara_rules_dir):
+
+            if 'pe_sections' in filename: continue # ignore pe_sections db
+
             yara_rule_type = self.__get_rule_type_by_filename(filename)
             filename = os.path.join(yara_rules_dir, filename)
+            
             if os.path.isfile(filename):
                 with open(filename, 'r', encoding='utf-8') as yara_rule:
                     try:
                         rule = yara.compile(source=yara_rule.read())
                         for match in rule.match(data=self.__sample_buffer):
                             yara_matches.append({yara_rule_type: match.meta} )
+
                     except yara.SyntaxError as ex:
                         print(f"[!] yara error, rule {filename} - {ex}")
 
@@ -159,6 +218,9 @@ class MainIntegration:
             return
 
         self.__sample_loaded_event()
+
+    def set_window_object(self, window_object) -> None:
+        self.__window_object = window_object
 
     def register_element(self, element) -> None:
         self.__elements.append(element)
@@ -190,6 +252,8 @@ class MainIntegration:
                 self.__hash_imphash = element.get()
             elif element_alias == 'TEXTBOX_HASH_SSDEEP':
                 self.__hash_ssdeep = element.get()
+            elif element_alias == 'TAB_BAR_SECTIONS_INFO':
+                self.__tab_bar_sections_info = element.get()
 
     def request_needed_elements(self) -> list:
         return [
@@ -203,5 +267,6 @@ class MainIntegration:
             'TEXTBOX_HASH_SHA1',
             'TEXTBOX_HASH_MD5',
             'TEXTBOX_HASH_IMPHASH',
-            'TEXTBOX_HASH_SSDEEP'
+            'TEXTBOX_HASH_SSDEEP',
+            'TAB_BAR_SECTIONS_INFO'
         ]
