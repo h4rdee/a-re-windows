@@ -15,7 +15,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - [Yara-Rules](https://github.com/Yara-Rules/rules) for providing yara rules
 - [PETools](https://github.com/petoolse/petools) for signatures that i generated some yara rules from
 - [horsicq](https://github.com/horsicq/Detect-It-Easy) for signatures from Detect It Easy based on which i generated some yara rules as well
-- [horsicq](https://github.com/horsicq/XInfoDB) for XInfoDB project from which i ripped PE sections info database
+- [Adam](https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/) for PE sections names info
 - [rdbende](https://gitlab.com/rdbende/chlorophyll) for tkinter `chlorophyll` add-on
 - [erocarrera](https://github.com/erocarrera/pefile) for `pefile` library
 - [elceef](https://github.com/elceef/ppdeep/blob/master/ppdeep.py) for pure python ssdeep hashing implementation (`ppdeep` library)
