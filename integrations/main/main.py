@@ -18,6 +18,7 @@ class MainIntegration:
     def __init__(self, integrations: list) -> None:
         self.__integrations = integrations
         self.__elements = list()
+        self.__imports_data = list()
 
         self.__window_object = None
 
@@ -29,6 +30,9 @@ class MainIntegration:
         self.__tk_signatures = None
 
         self.__tab_bar_sections_info = None
+
+        self.__imports_entries = None
+        self.__imports = None
 
         self.__hash_sha256 = None
         self.__hash_sha1 = None
@@ -222,6 +226,53 @@ class MainIntegration:
                     )
                 )
 
+    def __import_entry_changed_event(self, *args) -> None:
+        idx = args[0].widget.curselection()
+        if len(idx) != 0:
+            # update table data
+            self.__imports.update_data(self.__imports_data[idx[0]])
+            # print(idx, args[1].widget.get(idx))
+
+    def __update_imports_info(self, pe: pefile.PE) -> None:
+        # clear previous results
+        self.__imports_entries.clear()
+        self.__imports_data.clear()
+        self.__imports.clear()
+        
+        # fill import entries
+        for i, import_entry in enumerate(pe.DIRECTORY_ENTRY_IMPORT):
+
+            self.__imports_entries.add_entry(
+                import_entry.dll.decode(encoding='ascii')
+            )
+
+            self.__imports_data.append([[]]) # hack
+
+            # fill imports
+            for _import in import_entry.imports:
+
+                import_name = ""
+                if _import.name != None:
+                    import_name = _import.name.decode(encoding='ascii')
+
+                import_thunk = ""
+                if _import.hint_name_table_rva != None:
+                    import_thunk = hex(_import.hint_name_table_rva)
+
+                import_hint = ""
+                if _import.hint != None:
+                    import_hint = hex(_import.hint)
+
+                self.__imports_data[i].append([
+                    import_name, import_thunk,
+                    _import.ordinal, import_hint
+                ])
+
+            self.__imports_data[-1].pop(0) # TODO: get rid of this
+        
+        # set data for first found imports entry
+        self.__imports.update_data(self.__imports_data[0])
+
     def __sample_loaded_event(self) -> None:
         # send sample loaded event to all integrations
         for integration in self.__integrations:
@@ -237,6 +288,7 @@ class MainIntegration:
 
         self.__update_hashes(pe) # update hashes
         self.__update_sections_info(pe) # update sections info
+        self.__update_imports_info(pe) # update imports
         
         # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
@@ -296,6 +348,8 @@ class MainIntegration:
 
     def setup(self) -> None:
         for element in self.__elements:
+            if element == None: continue
+
             tk_object = element.get().get_tk_object()
             element_alias = element.get_alias()
 
@@ -323,6 +377,15 @@ class MainIntegration:
                 self.__hash_ssdeep = element.get()
             elif element_alias == 'TAB_BAR_SECTIONS_INFO':
                 self.__tab_bar_sections_info = element.get()
+            elif element_alias == 'LISTBOX_IMPORTS_ENTRIES':
+                self.__imports_entries = element.get()
+                self.__imports_entries.get_tk_object().bind(
+                    '<<ListboxSelect>>', 
+                    self.__import_entry_changed_event
+                )
+            elif element_alias == 'TABLE_IMPORTS':
+                self.__imports = element.get()
+                element.get().get_sheet_object().show(canvas="y_scrollbar")
 
     def request_needed_elements(self) -> list:
         return [
@@ -337,5 +400,7 @@ class MainIntegration:
             'TEXTBOX_HASH_MD5',
             'TEXTBOX_HASH_IMPHASH',
             'TEXTBOX_HASH_SSDEEP',
-            'TAB_BAR_SECTIONS_INFO'
+            'TAB_BAR_SECTIONS_INFO',
+            'LISTBOX_IMPORTS_ENTRIES',
+            'TABLE_IMPORTS'
         ]
