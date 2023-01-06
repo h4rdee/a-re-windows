@@ -12,5 +12,11 @@ class UIListBox:
             height = element_scheme['element_pos']['h']
         )
 
+    def add_entry(self, entry: str) -> None:
+        self.__tk_object.insert(self.__tk_object.size(), entry)
+
+    def clear(self):
+        self.__tk_object.delete(0, tk.END)
+
     def get_tk_object(self) -> tk.Listbox:
         return self.__tk_object
