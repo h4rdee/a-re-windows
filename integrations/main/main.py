@@ -25,6 +25,7 @@ class MainIntegration:
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
         self.__tk_installer_info = None
+        self.__rich_header_info = None
 
         self.__tk_capabilities = None
         self.__tk_signatures = None
@@ -38,9 +39,11 @@ class MainIntegration:
         self.__hash_sha1 = None
         self.__hash_md5 = None
         self.__hash_imphash = None
+        self.__hash_rich = None
         self.__hash_ssdeep = None
 
         self.__pe_sections_db = None
+        self.__comp_id_db = None
 
     def __get_rule_type_by_filename(self, filename: str) -> EYaraRuleType:
         if 'compilers' in filename:
@@ -108,6 +111,7 @@ class MainIntegration:
         self.__hash_sha1.set_text(hashlib.sha1(self.__sample_buffer).hexdigest(), True)
         self.__hash_md5.set_text(hashlib.md5(self.__sample_buffer).hexdigest(), True)
         self.__hash_imphash.set_text(pe.get_imphash(), True)
+        self.__hash_rich.set_text(pe.get_rich_header_hash(), True)
         self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
 
     def __dump_section_to_file(self, element_alias: str, pe: pefile.PE) -> None:
@@ -132,6 +136,42 @@ class MainIntegration:
                 except FileNotFoundError:
                     print("[!] dump file wasn't selected")
                     return
+
+    def __update_rich_header_info(self, pe: pefile.PE) -> None:
+        def analyze_rich_comp_id(rich_field: int) -> str:
+            if self.__comp_id_db == None:
+                signatures_path = os.path.join('integrations', 'main', 'signatures')
+                with open(os.path.join(signatures_path, 'comp_id.json'), 'r') as comp_id_db:
+                    self.__comp_id_db = json.load(comp_id_db)
+
+            for comp_id in self.__comp_id_db["data"]:
+                if int(comp_id['comp_id'], 16) == rich_field:
+                    return comp_id['description']
+
+        # clear previous results
+        self.__rich_header_info.clear()
+
+        rich_header = pe.parse_rich_header()
+        if rich_header is None:
+            return
+        
+        rich_fields = rich_header.get("values", None)
+        if len(rich_fields) % 2 != 0:
+            return
+
+        rich_infos = list()
+        compid = None
+
+        for rich_field in rich_fields:
+            if rich_fields.index(rich_field) % 2 == 0:
+                compid = analyze_rich_comp_id(rich_field)
+            else:
+                if compid:
+                    rich_infos.append(f"{compid}; count = {rich_field}")
+                    compid = None
+
+        for rich_info in rich_infos:
+            self.__rich_header_info.add_entry(rich_info)
 
     def __update_sections_info(self, pe: pefile.PE) -> None:
         def analyze_section(section) -> list:
@@ -176,18 +216,12 @@ class MainIntegration:
                     "PointerToRelocations", "PointerToLineNumbers", "NumberOfRelocations",
                     "Characteristics"
                 ],
-                "element_data": [
-                    [
-                        hex(section.Misc_VirtualSize),
-                        hex(section.VirtualAddress),
-                        hex(section.SizeOfRawData),
-                        hex(section.PointerToRawData),
-                        hex(section.PointerToRelocations),
-                        hex(section.PointerToLinenumbers),
-                        hex(section.NumberOfRelocations),
-                        hex(section.Characteristics)
-                    ]
-                ]
+                "element_data": [[
+                    hex(section.Misc_VirtualSize), hex(section.VirtualAddress),
+                    hex(section.SizeOfRawData), hex(section.PointerToRawData),
+                    hex(section.PointerToRelocations), hex(section.PointerToLinenumbers),
+                    hex(section.NumberOfRelocations), hex(section.Characteristics)
+                ]]
             })
 
             return result
@@ -228,7 +262,7 @@ class MainIntegration:
 
     def __import_entry_changed_event(self, *args) -> None:
         idx = args[0].widget.curselection()
-        
+
         if len(idx) != 0:
             self.__imports.update_data(self.__imports_data[idx[0]]) # update table data
 
@@ -270,15 +304,19 @@ class MainIntegration:
             self.__imports_data[-1].pop(0) # TODO: get rid of this
         
         # set data for first found imports entry
-        self.__imports.update_data(self.__imports_data[0])
+        self.__imports_entries.get_tk_object().select_set(0)
+        self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
 
     def __sample_loaded_event(self) -> None:
+        try: # try to parse PE object
+            pe = pefile.PE(data=self.__sample_buffer)
+        except pefile.PEFormatError as ex:
+            print(f"[!] exception: {ex}")
+            return
+
         # send sample loaded event to all integrations
         for integration in self.__integrations:
             integration.sample_loaded_event(self.__sample_buffer)
-
-        # PE object
-        pe = pefile.PE(data=self.__sample_buffer)
 
         # try to detect what we dealing with..
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
@@ -286,6 +324,7 @@ class MainIntegration:
         self.__tk_installer_info.config(text="Installer info: <unknown>")
 
         self.__update_hashes(pe) # update hashes
+        self.__update_rich_header_info(pe) # update RICH header info
         self.__update_sections_info(pe) # update sections info
         self.__update_imports_info(pe) # update imports
         
@@ -300,6 +339,7 @@ class MainIntegration:
         for filename in os.listdir(yara_rules_dir):
 
             if 'pe_sections' in filename: continue # ignore pe_sections db
+            if 'comp_id' in filename: continue # ignore comp_id db
 
             yara_rule_type = self.__get_rule_type_by_filename(filename)
             filename = os.path.join(yara_rules_dir, filename)
@@ -360,6 +400,8 @@ class MainIntegration:
                 self.__tk_packer_info = tk_object
             elif element_alias == 'LABEL_INSTALLER_INFO':
                 self.__tk_installer_info = tk_object
+            elif element_alias == 'LISTBOX_RICH_HEADER_INFO':
+                self.__rich_header_info = element.get()
             elif element_alias == 'LISTBOX_CAPABILITIES':
                 self.__tk_capabilities = tk_object
             elif element_alias == 'LISTBOX_SIGNATURES':
@@ -372,6 +414,8 @@ class MainIntegration:
                 self.__hash_md5 = element.get()
             elif element_alias == 'TEXTBOX_HASH_IMPHASH':
                 self.__hash_imphash = element.get()
+            elif element_alias == 'TEXTBOX_HASH_RICH':
+                self.__hash_rich = element.get()
             elif element_alias == 'TEXTBOX_HASH_SSDEEP':
                 self.__hash_ssdeep = element.get()
             elif element_alias == 'TAB_BAR_SECTIONS_INFO':
@@ -392,12 +436,14 @@ class MainIntegration:
             'LABEL_COMPILER_INFO',
             'LABEL_PACKER_INFO',
             'LABEL_INSTALLER_INFO',
+            'LISTBOX_RICH_HEADER_INFO',
             'LISTBOX_CAPABILITIES',
             'LISTBOX_SIGNATURES',
             'TEXTBOX_HASH_SHA256',
             'TEXTBOX_HASH_SHA1',
             'TEXTBOX_HASH_MD5',
             'TEXTBOX_HASH_IMPHASH',
+            'TEXTBOX_HASH_RICH',
             'TEXTBOX_HASH_SSDEEP',
             'TAB_BAR_SECTIONS_INFO',
             'LISTBOX_IMPORTS_ENTRIES',
