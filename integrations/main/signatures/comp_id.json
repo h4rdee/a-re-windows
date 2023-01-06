@@ -1,0 +1,3876 @@
+{
+  "data": [
+    {
+      "comp_id": "01047cc1",
+      "description": "[ C ] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01037cc1",
+      "description": "[ASM] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01057cc1",
+      "description": "[C++] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "00ff7cc1",
+      "description": "[RES] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01027cc1",
+      "description": "[LNK] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01007cc1",
+      "description": "[EXP] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01017cc1",
+      "description": "[IMP] VS2022 v17.4.3 build 31937"
+    },
+    {
+      "comp_id": "01047cbf",
+      "description": "[ C ] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01037cbf",
+      "description": "[ASM] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01057cbf",
+      "description": "[C++] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "00ff7cbf",
+      "description": "[RES] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01027cbf",
+      "description": "[LNK] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01007cbf",
+      "description": "[EXP] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01017cbf",
+      "description": "[IMP] VS2022 v17.4.2 build 31935"
+    },
+    {
+      "comp_id": "01047b8e",
+      "description": "[ C ] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01037b8e",
+      "description": "[ASM] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01057b8e",
+      "description": "[C++] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "00ff7b8e",
+      "description": "[RES] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01027b8e",
+      "description": "[LNK] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01007b8e",
+      "description": "[EXP] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01017b8e",
+      "description": "[IMP] VS2022 v17.3.4 build 31630"
+    },
+    {
+      "comp_id": "01047a64",
+      "description": "[ C ] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01037a64",
+      "description": "[ASM] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01057a64",
+      "description": "[C++] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "00ff7a64",
+      "description": "[RES] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01027a64",
+      "description": "[LNK] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01007a64",
+      "description": "[EXP] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01017a64",
+      "description": "[IMP] VS2022 v17.2.5 build 31332"
+    },
+    {
+      "comp_id": "01047a61",
+      "description": "[ C ] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01037a61",
+      "description": "[ASM] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01057a61",
+      "description": "[C++] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "00ff7a61",
+      "description": "[RES] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01027a61",
+      "description": "[LNK] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01007a61",
+      "description": "[EXP] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01017a61",
+      "description": "[IMP] VS2022 v17.2.1 build 31329"
+    },
+    {
+      "comp_id": "01047d7c",
+      "description": "[ C ] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01037d7c",
+      "description": "[ASM] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01057d7c",
+      "description": "[C++] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "00ff7d7c",
+      "description": "[RES] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01027d7c",
+      "description": "[LNK] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01007d7c",
+      "description": "[EXP] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01017d7c",
+      "description": "[IMP] VS2022 v17.5.0 pre 2.0 build 32124"
+    },
+    {
+      "comp_id": "01047d13",
+      "description": "[ C ] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01037d13",
+      "description": "[ASM] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01057d13",
+      "description": "[C++] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "00ff7d13",
+      "description": "[RES] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01027d13",
+      "description": "[LNK] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01007d13",
+      "description": "[EXP] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01017d13",
+      "description": "[IMP] VS2022 v17.5.0 pre 1.0 build 32019"
+    },
+    {
+      "comp_id": "01047cbd",
+      "description": "[ C ] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01037cbd",
+      "description": "[ASM] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01057cbd",
+      "description": "[C++] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "00ff7cbd",
+      "description": "[RES] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01027cbd",
+      "description": "[LNK] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01007cbd",
+      "description": "[EXP] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01017cbd",
+      "description": "[IMP] VS2022 v17.4.0 pre 6.0 build 31933"
+    },
+    {
+      "comp_id": "01047cbc",
+      "description": "[ C ] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01037cbc",
+      "description": "[ASM] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01057cbc",
+      "description": "[C++] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "00ff7cbc",
+      "description": "[RES] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01027cbc",
+      "description": "[LNK] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01007cbc",
+      "description": "[EXP] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01017cbc",
+      "description": "[IMP] VS2022 v17.4.0 pre 5.0 build 31932"
+    },
+    {
+      "comp_id": "01047cbb",
+      "description": "[ C ] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01037cbb",
+      "description": "[ASM] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01057cbb",
+      "description": "[C++] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "00ff7cbb",
+      "description": "[RES] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01027cbb",
+      "description": "[LNK] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01007cbb",
+      "description": "[EXP] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01017cbb",
+      "description": "[IMP] VS2022 v17.4.0 pre 4.0 build 31931"
+    },
+    {
+      "comp_id": "01047cb1",
+      "description": "[ C ] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01037cb1",
+      "description": "[ASM] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01057cb1",
+      "description": "[C++] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "00ff7cb1",
+      "description": "[RES] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01027cb1",
+      "description": "[LNK] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01007cb1",
+      "description": "[EXP] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01017cb1",
+      "description": "[IMP] VS2022 v17.4.0 pre 3.0 build 31921"
+    },
+    {
+      "comp_id": "01047c4f",
+      "description": "[ C ] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01037c4f",
+      "description": "[ASM] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01057c4f",
+      "description": "[C++] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "00ff7c4f",
+      "description": "[RES] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01027c4f",
+      "description": "[LNK] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01007c4f",
+      "description": "[EXP] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01017c4f",
+      "description": "[IMP] VS2022 v17.4.0 pre 2.0 build 31823"
+    },
+    {
+      "comp_id": "01047be9",
+      "description": "[ C ] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01037be9",
+      "description": "[ASM] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01057be9",
+      "description": "[C++] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "00ff7be9",
+      "description": "[RES] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01027be9",
+      "description": "[LNK] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01007be9",
+      "description": "[EXP] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01017be9",
+      "description": "[IMP] VS2022 v17.4.0 pre 1.0 build 31721"
+    },
+    {
+      "comp_id": "01047b8d",
+      "description": "[ C ] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01037b8d",
+      "description": "[ASM] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01057b8d",
+      "description": "[C++] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "00ff7b8d",
+      "description": "[RES] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01027b8d",
+      "description": "[LNK] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01007b8d",
+      "description": "[EXP] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01017b8d",
+      "description": "[IMP] VS2022 v17.3.0 build 31629"
+    },
+    {
+      "comp_id": "01047b8c",
+      "description": "[ C ] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01037b8c",
+      "description": "[ASM] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01057b8c",
+      "description": "[C++] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "00ff7b8c",
+      "description": "[RES] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01027b8c",
+      "description": "[LNK] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01007b8c",
+      "description": "[EXP] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01017b8c",
+      "description": "[IMP] VS2022 v17.3.0 pre 4.0 build 31628 (*)"
+    },
+    {
+      "comp_id": "01047b8b",
+      "description": "[ C ] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01037b8b",
+      "description": "[ASM] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01057b8b",
+      "description": "[C++] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "00ff7b8b",
+      "description": "[RES] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01027b8b",
+      "description": "[LNK] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01007b8b",
+      "description": "[EXP] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01017b8b",
+      "description": "[IMP] VS2022 v17.3.0 pre 3.0 build 31627"
+    },
+    {
+      "comp_id": "01047b1d",
+      "description": "[ C ] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01037b1d",
+      "description": "[ASM] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01057b1d",
+      "description": "[C++] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "00ff7b1d",
+      "description": "[RES] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01027b1d",
+      "description": "[LNK] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01007b1d",
+      "description": "[EXP] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01017b1d",
+      "description": "[IMP] VS2022 v17.3.0 pre 2.0 build 31517"
+    },
+    {
+      "comp_id": "01047ac0",
+      "description": "[ C ] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01037ac0",
+      "description": "[ASM] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01057ac0",
+      "description": "[C++] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "00ff7ac0",
+      "description": "[RES] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01027ac0",
+      "description": "[LNK] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01007ac0",
+      "description": "[EXP] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01017ac0",
+      "description": "[IMP] VS2022 v17.3.0 pre 1.0 build 31424"
+    },
+    {
+      "comp_id": "01047a60",
+      "description": "[ C ] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01037a60",
+      "description": "[ASM] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01057a60",
+      "description": "[C++] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "00ff7a60",
+      "description": "[RES] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01027a60",
+      "description": "[LNK] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01007a60",
+      "description": "[EXP] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01017a60",
+      "description": "[IMP] VS2022 v17.2.0 build 31328"
+    },
+    {
+      "comp_id": "01047a5e",
+      "description": "[ C ] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01037a5e",
+      "description": "[ASM] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01057a5e",
+      "description": "[C++] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "00ff7a5e",
+      "description": "[RES] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01027a5e",
+      "description": "[LNK] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01007a5e",
+      "description": "[EXP] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01017a5e",
+      "description": "[IMP] VS2022 v17.2.0 pre 3.0 build 31326"
+    },
+    {
+      "comp_id": "01047a46",
+      "description": "[ C ] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "01037a46",
+      "description": "[ASM] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "01057a46",
+      "description": "[C++] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "00ff7a46",
+      "description": "[RES] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "01027a46",
+      "description": "[LNK] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "01007a46",
+      "description": "[EXP] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "01017a46",
+      "description": "[IMP] VS2022 v17.2.0 pre 2.1 build 31302"
+    },
+    {
+      "comp_id": "0104798a",
+      "description": "[ C ] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "0103798a",
+      "description": "[ASM] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "0105798a",
+      "description": "[C++] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "00ff798a",
+      "description": "[RES] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "0102798a",
+      "description": "[LNK] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "0100798a",
+      "description": "[EXP] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "0101798a",
+      "description": "[IMP] VS2022 v17.2.0 pre 1.0 build 31114"
+    },
+    {
+      "comp_id": "01047980",
+      "description": "[ C ] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "01037980",
+      "description": "[ASM] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "01057980",
+      "description": "[C++] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "00ff7980",
+      "description": "[RES] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "01027980",
+      "description": "[LNK] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "01007980",
+      "description": "[EXP] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "01017980",
+      "description": "[IMP] VS2022 v17.1.0 pre 5.0 build 31104"
+    },
+    {
+      "comp_id": "0104797f",
+      "description": "[ C ] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "0103797f",
+      "description": "[ASM] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "0105797f",
+      "description": "[C++] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "00ff797f",
+      "description": "[RES] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "0102797f",
+      "description": "[LNK] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "0100797f",
+      "description": "[EXP] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "0101797f",
+      "description": "[IMP] VS2022 v17.1.0 pre 3.0 build 31103"
+    },
+    {
+      "comp_id": "010478c7",
+      "description": "[ C ] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "010378c7",
+      "description": "[ASM] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "010578c7",
+      "description": "[C++] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "00ff78c7",
+      "description": "[RES] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "010278c7",
+      "description": "[LNK] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "010078c7",
+      "description": "[EXP] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "010178c7",
+      "description": "[IMP] VS2022 v17.1.0 pre 2.0 build 30919"
+    },
+    {
+      "comp_id": "01047862",
+      "description": "[ C ] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "01037862",
+      "description": "[ASM] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "01057862",
+      "description": "[C++] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "00ff7862",
+      "description": "[RES] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "01027862",
+      "description": "[LNK] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "01007862",
+      "description": "[EXP] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "01017862",
+      "description": "[IMP] VS2022 v17.1.0 pre 1.0 build 30818"
+    },
+    {
+      "comp_id": "010477f1",
+      "description": "[ C ] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010377f1",
+      "description": "[ASM] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010577f1",
+      "description": "[C++] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "00ff77f1",
+      "description": "[RES] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010277f1",
+      "description": "[LNK] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010077f1",
+      "description": "[EXP] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010177f1",
+      "description": "[IMP] VS2022 v17.0.0 pre 7.0 build 30705"
+    },
+    {
+      "comp_id": "010477f0",
+      "description": "[ C ] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "010377f0",
+      "description": "[ASM] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "010577f0",
+      "description": "[C++] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "00ff77f0",
+      "description": "[RES] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "010277f0",
+      "description": "[LNK] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "010077f0",
+      "description": "[EXP] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "010177f0",
+      "description": "[IMP] VS2022 v17.0.0 pre 5.0 build 30704"
+    },
+    {
+      "comp_id": "01047740",
+      "description": "[ C ] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "01037740",
+      "description": "[ASM] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "01057740",
+      "description": "[C++] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "00ff7740",
+      "description": "[RES] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "01027740",
+      "description": "[LNK] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "01007740",
+      "description": "[EXP] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "01017740",
+      "description": "[IMP] VS2022 v17.0.0 pre 4.0 build 30528"
+    },
+    {
+      "comp_id": "010476d7",
+      "description": "[ C ] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010376d7",
+      "description": "[ASM] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010576d7",
+      "description": "[C++] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "00ff76d7",
+      "description": "[RES] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010276d7",
+      "description": "[LNK] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010076d7",
+      "description": "[EXP] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010176d7",
+      "description": "[IMP] VS2022 v17.0.0 pre 3.1 build 30423"
+    },
+    {
+      "comp_id": "010476c1",
+      "description": "[ C ] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010376c1",
+      "description": "[ASM] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010576c1",
+      "description": "[C++] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "00ff76c1",
+      "description": "[RES] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010276c1",
+      "description": "[LNK] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010076c1",
+      "description": "[EXP] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010176c1",
+      "description": "[IMP] VS2022 v17.0.0 preview2 build 30401"
+    },
+    {
+      "comp_id": "010475c3",
+      "description": "[ C ] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010375c3",
+      "description": "[ASM] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010575c3",
+      "description": "[C++] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "00ff75c3",
+      "description": "[RES] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010275c3",
+      "description": "[LNK] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010075c3",
+      "description": "[EXP] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010175c3",
+      "description": "[IMP] VS2019 v16.11.21 build 30147"
+    },
+    {
+      "comp_id": "010475c2",
+      "description": "[ C ] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010375c2",
+      "description": "[ASM] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010575c2",
+      "description": "[C++] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "00ff75c2",
+      "description": "[RES] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010275c2",
+      "description": "[LNK] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010075c2",
+      "description": "[EXP] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010175c2",
+      "description": "[IMP] VS2019 v16.11.17 build 30146"
+    },
+    {
+      "comp_id": "010475c1",
+      "description": "[ C ] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010375c1",
+      "description": "[ASM] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010575c1",
+      "description": "[C++] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "00ff75c1",
+      "description": "[RES] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010275c1",
+      "description": "[LNK] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010075c1",
+      "description": "[EXP] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010175c1",
+      "description": "[IMP] VS2019 v16.11.15 build 30145"
+    },
+    {
+      "comp_id": "010475c0",
+      "description": "[ C ] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010375c0",
+      "description": "[ASM] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010575c0",
+      "description": "[C++] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "00ff75c0",
+      "description": "[RES] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010275c0",
+      "description": "[LNK] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010075c0",
+      "description": "[EXP] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010175c0",
+      "description": "[IMP] VS2019 v16.11.14 build 30144 (*)"
+    },
+    {
+      "comp_id": "010475bf",
+      "description": "[ C ] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010375bf",
+      "description": "[ASM] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010575bf",
+      "description": "[C++] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "00ff75bf",
+      "description": "[RES] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010275bf",
+      "description": "[LNK] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010075bf",
+      "description": "[EXP] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010175bf",
+      "description": "[IMP] VS2019 v16.11.13 build 30143"
+    },
+    {
+      "comp_id": "010475be",
+      "description": "[ C ] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010375be",
+      "description": "[ASM] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010575be",
+      "description": "[C++] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "00ff75be",
+      "description": "[RES] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010275be",
+      "description": "[LNK] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010075be",
+      "description": "[EXP] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010175be",
+      "description": "[IMP] VS2019 v16.11.12 build 30142 (*)"
+    },
+    {
+      "comp_id": "010475bd",
+      "description": "[ C ] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010375bd",
+      "description": "[ASM] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010575bd",
+      "description": "[C++] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "00ff75bd",
+      "description": "[RES] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010275bd",
+      "description": "[LNK] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010075bd",
+      "description": "[EXP] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010175bd",
+      "description": "[IMP] VS2019 v16.11.11 build 30141 (*)"
+    },
+    {
+      "comp_id": "010475bc",
+      "description": "[ C ] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010375bc",
+      "description": "[ASM] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010575bc",
+      "description": "[C++] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "00ff75bc",
+      "description": "[RES] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010275bc",
+      "description": "[LNK] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010075bc",
+      "description": "[EXP] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010175bc",
+      "description": "[IMP] VS2019 v16.11.10 build 30140"
+    },
+    {
+      "comp_id": "010475bb",
+      "description": "[ C ] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010375bb",
+      "description": "[ASM] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010575bb",
+      "description": "[C++] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "00ff75bb",
+      "description": "[RES] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010275bb",
+      "description": "[LNK] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010075bb",
+      "description": "[EXP] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010175bb",
+      "description": "[IMP] VS2019 v16.11.9 build 30139"
+    },
+    {
+      "comp_id": "010475ba",
+      "description": "[ C ] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010375ba",
+      "description": "[ASM] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010575ba",
+      "description": "[C++] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "00ff75ba",
+      "description": "[RES] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010275ba",
+      "description": "[LNK] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010075ba",
+      "description": "[EXP] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010175ba",
+      "description": "[IMP] VS2019 v16.11.8 build 30138"
+    },
+    {
+      "comp_id": "010475b9",
+      "description": "[ C ] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010375b9",
+      "description": "[ASM] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010575b9",
+      "description": "[C++] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "00ff75b9",
+      "description": "[RES] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010275b9",
+      "description": "[LNK] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010075b9",
+      "description": "[EXP] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010175b9",
+      "description": "[IMP] VS2019 v16.11.6 build 30137"
+    },
+    {
+      "comp_id": "010475b8",
+      "description": "[ C ] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010375b8",
+      "description": "[ASM] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010575b8",
+      "description": "[C++] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "00ff75b8",
+      "description": "[RES] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010275b8",
+      "description": "[LNK] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010075b8",
+      "description": "[EXP] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010175b8",
+      "description": "[IMP] VS2019 v16.11.5 build 30136"
+    },
+    {
+      "comp_id": "010475b5",
+      "description": "[ C ] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "010375b5",
+      "description": "[ASM] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "010575b5",
+      "description": "[C++] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "00ff75b5",
+      "description": "[RES] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "010275b5",
+      "description": "[LNK] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "010075b5",
+      "description": "[EXP] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "010175b5",
+      "description": "[IMP] VS2019 v16.11.1 build 30133"
+    },
+    {
+      "comp_id": "01047558",
+      "description": "[ C ] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01037558",
+      "description": "[ASM] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01057558",
+      "description": "[C++] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "00ff7558",
+      "description": "[RES] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01027558",
+      "description": "[LNK] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01007558",
+      "description": "[EXP] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01017558",
+      "description": "[IMP] VS2019 v16.10.4 build 30040"
+    },
+    {
+      "comp_id": "01047556",
+      "description": "[ C ] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01037556",
+      "description": "[ASM] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01057556",
+      "description": "[C++] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "00ff7556",
+      "description": "[RES] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01027556",
+      "description": "[LNK] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01007556",
+      "description": "[EXP] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01017556",
+      "description": "[IMP] VS2019 v16.10.3 build 30038"
+    },
+    {
+      "comp_id": "01047555",
+      "description": "[ C ] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "01037555",
+      "description": "[ASM] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "01057555",
+      "description": "[C++] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "00ff7555",
+      "description": "[RES] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "01027555",
+      "description": "[LNK] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "01007555",
+      "description": "[EXP] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "01017555",
+      "description": "[IMP] VS2019 v16.10.0 build 30037"
+    },
+    {
+      "comp_id": "010474db",
+      "description": "[ C ] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010374db",
+      "description": "[ASM] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010574db",
+      "description": "[C++] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "00ff74db",
+      "description": "[RES] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010274db",
+      "description": "[LNK] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010074db",
+      "description": "[EXP] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010174db",
+      "description": "[IMP] VS2019 v16.9.5 build 29915"
+    },
+    {
+      "comp_id": "010474da",
+      "description": "[ C ] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010374da",
+      "description": "[ASM] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010574da",
+      "description": "[C++] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "00ff74da",
+      "description": "[RES] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010274da",
+      "description": "[LNK] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010074da",
+      "description": "[EXP] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010174da",
+      "description": "[IMP] VS2019 v16.9.4 build 29914"
+    },
+    {
+      "comp_id": "010474d9",
+      "description": "[ C ] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010374d9",
+      "description": "[ASM] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010574d9",
+      "description": "[C++] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "00ff74d9",
+      "description": "[RES] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010274d9",
+      "description": "[LNK] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010074d9",
+      "description": "[EXP] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010174d9",
+      "description": "[IMP] VS2019 v16.9.2 build 29913"
+    },
+    {
+      "comp_id": "010474d6",
+      "description": "[ C ] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "010374d6",
+      "description": "[ASM] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "010574d6",
+      "description": "[C++] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "00ff74d6",
+      "description": "[RES] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "010274d6",
+      "description": "[LNK] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "010074d6",
+      "description": "[EXP] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "010174d6",
+      "description": "[IMP] VS2019 v16.9.0 build 29910 (*)"
+    },
+    {
+      "comp_id": "01047299",
+      "description": "[ C ] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01037299",
+      "description": "[ASM] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01057299",
+      "description": "[C++] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "00ff7299",
+      "description": "[RES] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01027299",
+      "description": "[LNK] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01007299",
+      "description": "[EXP] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01017299",
+      "description": "[IMP] VS2019 v16.8.5 build 29337"
+    },
+    {
+      "comp_id": "01047298",
+      "description": "[ C ] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01037298",
+      "description": "[ASM] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01057298",
+      "description": "[C++] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "00ff7298",
+      "description": "[RES] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01027298",
+      "description": "[LNK] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01007298",
+      "description": "[EXP] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01017298",
+      "description": "[IMP] VS2019 v16.8.4 build 29336"
+    },
+    {
+      "comp_id": "01047297",
+      "description": "[ C ] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01037297",
+      "description": "[ASM] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01057297",
+      "description": "[C++] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "00ff7297",
+      "description": "[RES] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01027297",
+      "description": "[LNK] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01007297",
+      "description": "[EXP] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01017297",
+      "description": "[IMP] VS2019 v16.8.3 build 29335"
+    },
+    {
+      "comp_id": "01047296",
+      "description": "[ C ] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01037296",
+      "description": "[ASM] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01057296",
+      "description": "[C++] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "00ff7296",
+      "description": "[RES] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01027296",
+      "description": "[LNK] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01007296",
+      "description": "[EXP] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01017296",
+      "description": "[IMP] VS2019 v16.8.2 build 29334"
+    },
+    {
+      "comp_id": "01047295",
+      "description": "[ C ] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "01037295",
+      "description": "[ASM] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "01057295",
+      "description": "[C++] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "00ff7295",
+      "description": "[RES] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "01027295",
+      "description": "[LNK] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "01007295",
+      "description": "[EXP] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "01017295",
+      "description": "[IMP] VS2019 v16.8.0 build 29333 (*)"
+    },
+    {
+      "comp_id": "010471b8",
+      "description": "[ C ] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010371b8",
+      "description": "[ASM] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010571b8",
+      "description": "[C++] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "00ff71b8",
+      "description": "[RES] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010271b8",
+      "description": "[LNK] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010071b8",
+      "description": "[EXP] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010171b8",
+      "description": "[IMP] VS2019 v16.7.5 build 29112"
+    },
+    {
+      "comp_id": "010471b7",
+      "description": "[ C ] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010371b7",
+      "description": "[ASM] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010571b7",
+      "description": "[C++] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "00ff71b7",
+      "description": "[RES] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010271b7",
+      "description": "[LNK] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010071b7",
+      "description": "[EXP] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010171b7",
+      "description": "[IMP] VS2019 v16.7.1 build 29111"
+    },
+    {
+      "comp_id": "010471b6",
+      "description": "[ C ] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "010371b6",
+      "description": "[ASM] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "010571b6",
+      "description": "[C++] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "00ff71b6",
+      "description": "[RES] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "010271b6",
+      "description": "[LNK] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "010071b6",
+      "description": "[EXP] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "010171b6",
+      "description": "[IMP] VS2019 v16.7.0 build 29110"
+    },
+    {
+      "comp_id": "01047086",
+      "description": "[ C ] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01037086",
+      "description": "[ASM] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01057086",
+      "description": "[C++] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "00ff7086",
+      "description": "[RES] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01027086",
+      "description": "[LNK] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01007086",
+      "description": "[EXP] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01017086",
+      "description": "[IMP] VS2019 v16.6.2 build 28806"
+    },
+    {
+      "comp_id": "01047085",
+      "description": "[ C ] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01037085",
+      "description": "[ASM] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01057085",
+      "description": "[C++] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "00ff7085",
+      "description": "[RES] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01027085",
+      "description": "[LNK] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01007085",
+      "description": "[EXP] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01017085",
+      "description": "[IMP] VS2019 v16.6.0 build 28805"
+    },
+    {
+      "comp_id": "01046fc6",
+      "description": "[ C ] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01036fc6",
+      "description": "[ASM] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01056fc6",
+      "description": "[C++] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "00ff6fc6",
+      "description": "[RES] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01026fc6",
+      "description": "[LNK] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01006fc6",
+      "description": "[EXP] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01016fc6",
+      "description": "[IMP] VS2019 v16.5.5 build 28614"
+    },
+    {
+      "comp_id": "01046fc4",
+      "description": "[ C ] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01036fc4",
+      "description": "[ASM] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01056fc4",
+      "description": "[C++] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "00ff6fc4",
+      "description": "[RES] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01026fc4",
+      "description": "[LNK] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01016fc4",
+      "description": "[IMP] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01006fc4",
+      "description": "[EXP] VS2019 v16.5.2 build 28612 (*)"
+    },
+    {
+      "comp_id": "01046fc3",
+      "description": "[ C ] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01036fc3",
+      "description": "[ASM] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01056fc3",
+      "description": "[C++] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "00ff6fc3",
+      "description": "[RES] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01026fc3",
+      "description": "[LNK] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01016fc3",
+      "description": "[IMP] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01006fc3",
+      "description": "[EXP] VS2019 v16.5.1 build 28611 (*)"
+    },
+    {
+      "comp_id": "01046fc2",
+      "description": "[ C ] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01036fc2",
+      "description": "[ASM] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01056fc2",
+      "description": "[C++] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "00ff6fc2",
+      "description": "[RES] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01026fc2",
+      "description": "[LNK] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01016fc2",
+      "description": "[IMP] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01006fc2",
+      "description": "[EXP] VS2019 v16.5.0 build 28610 (*)"
+    },
+    {
+      "comp_id": "01046e9f",
+      "description": "[ C ] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01036e9f",
+      "description": "[ASM] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01056e9f",
+      "description": "[C++] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "00ff6e9f",
+      "description": "[RES] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01026e9f",
+      "description": "[LNK] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01006e9f",
+      "description": "[EXP] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01016e9f",
+      "description": "[IMP] VS2019 v16.4.6 build 28319 (*)"
+    },
+    {
+      "comp_id": "01046e9c",
+      "description": "[ C ] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01036e9c",
+      "description": "[ASM] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01056e9c",
+      "description": "[C++] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "00ff6e9c",
+      "description": "[RES] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01026e9c",
+      "description": "[LNK] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01006e9c",
+      "description": "[EXP] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01016e9c",
+      "description": "[IMP] VS2019 v16.4.4 build 28316 (*)"
+    },
+    {
+      "comp_id": "01046e9b",
+      "description": "[ C ] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01036e9b",
+      "description": "[ASM] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01056e9b",
+      "description": "[C++] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "00ff6e9b",
+      "description": "[RES] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01026e9b",
+      "description": "[LNK] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01006e9b",
+      "description": "[EXP] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01016e9b",
+      "description": "[IMP] VS2019 v16.4.3 build 28315"
+    },
+    {
+      "comp_id": "01046e9a",
+      "description": "[ C ] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01036e9a",
+      "description": "[ASM] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01056e9a",
+      "description": "[C++] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "00ff6e9a",
+      "description": "[RES] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01026e9a",
+      "description": "[LNK] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01016e9a",
+      "description": "[IMP] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01006e9a",
+      "description": "[EXP] VS2019 v16.4.0 build 28314 (*)"
+    },
+    {
+      "comp_id": "01046dc9",
+      "description": "[ C ] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01036dc9",
+      "description": "[ASM] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01056dc9",
+      "description": "[C++] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "00ff6dc9",
+      "description": "[RES] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01026dc9",
+      "description": "[LNK] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01016dc9",
+      "description": "[IMP] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01006dc9",
+      "description": "[EXP] VS2019 v16.3.2 build 28105 (*)"
+    },
+    {
+      "comp_id": "01046d01",
+      "description": "[ C ] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01036d01",
+      "description": "[ASM] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01056d01",
+      "description": "[C++] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "00ff6d01",
+      "description": "[RES] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01026d01",
+      "description": "[LNK] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01016d01",
+      "description": "[IMP] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01006d01",
+      "description": "[EXP] VS2019 v16.2.3 build 27905 (*)"
+    },
+    {
+      "comp_id": "01046c36",
+      "description": "[ C ] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01036c36",
+      "description": "[ASM] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01056c36",
+      "description": "[C++] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "00ff6c36",
+      "description": "[RES] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01026c36",
+      "description": "[LNK] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01016c36",
+      "description": "[IMP] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01006c36",
+      "description": "[EXP] VS2019 v16.1.2 build 27702 (*)"
+    },
+    {
+      "comp_id": "01046b74",
+      "description": "[ C ] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01036b74",
+      "description": "[ASM] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01056b74",
+      "description": "[C++] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "00ff6b74",
+      "description": "[RES] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01026b74",
+      "description": "[LNK] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01006b74",
+      "description": "[EXP] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01016b74",
+      "description": "[IMP] VS2019 v16.0.0 build 27508"
+    },
+    {
+      "comp_id": "01046996",
+      "description": "[ C ] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01036996",
+      "description": "[ASM] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01056996",
+      "description": "[C++] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "00ff6996",
+      "description": "[RES] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01026996",
+      "description": "[LNK] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01016996",
+      "description": "[IMP] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01006996",
+      "description": "[EXP] VS2017 v15.9.11 build 27030 (*)"
+    },
+    {
+      "comp_id": "01046993",
+      "description": "[ C ] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01036993",
+      "description": "[ASM] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01056993",
+      "description": "[C++] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "00ff6993",
+      "description": "[RES] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01026993",
+      "description": "[LNK] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01016993",
+      "description": "[IMP] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01006993",
+      "description": "[EXP] VS2017 v15.9.7 build 27027 (*)"
+    },
+    {
+      "comp_id": "01046992",
+      "description": "[ C ] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01036992",
+      "description": "[ASM] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01056992",
+      "description": "[C++] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "00ff6992",
+      "description": "[RES] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01026992",
+      "description": "[LNK] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01016992",
+      "description": "[IMP] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01006992",
+      "description": "[EXP] VS2017 v15.9.5 build 27026 (*)"
+    },
+    {
+      "comp_id": "01046991",
+      "description": "[ C ] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "01036991",
+      "description": "[ASM] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "01056991",
+      "description": "[C++] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "00ff6991",
+      "description": "[RES] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "01026991",
+      "description": "[LNK] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "01016991",
+      "description": "[IMP] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "01006991",
+      "description": "[EXP] VS2017 v15.9.4 build 27025 (*)"
+    },
+    {
+      "comp_id": "0104698f",
+      "description": "[ C ] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0103698f",
+      "description": "[ASM] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0105698f",
+      "description": "[C++] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "00ff698f",
+      "description": "[RES] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0102698f",
+      "description": "[LNK] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0101698f",
+      "description": "[IMP] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0100698f",
+      "description": "[EXP] VS2017 v15.9.1 build 27023 (*)"
+    },
+    {
+      "comp_id": "0104686c",
+      "description": "[ C ] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0103686c",
+      "description": "[ASM] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0105686c",
+      "description": "[C++] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "00ff686c",
+      "description": "[RES] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0102686c",
+      "description": "[LNK] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0101686c",
+      "description": "[IMP] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0100686c",
+      "description": "[EXP] VS2017 v15.8.5 build 26732 (*)"
+    },
+    {
+      "comp_id": "0104686a",
+      "description": "[ C ] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "0103686a",
+      "description": "[ASM] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "0105686a",
+      "description": "[C++] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "00ff686a",
+      "description": "[RES] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "0102686a",
+      "description": "[LNK] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "0101686a",
+      "description": "[IMP] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "0100686a",
+      "description": "[EXP] VS2017 v15.8.9? build 26730 (*)"
+    },
+    {
+      "comp_id": "01046869",
+      "description": "[ C ] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01036869",
+      "description": "[ASM] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01056869",
+      "description": "[C++] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "00ff6869",
+      "description": "[RES] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01026869",
+      "description": "[LNK] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01016869",
+      "description": "[IMP] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01006869",
+      "description": "[EXP] VS2017 v15.8.4 build 26729 (*)"
+    },
+    {
+      "comp_id": "01046866",
+      "description": "[ C ] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01036866",
+      "description": "[ASM] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01056866",
+      "description": "[C++] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "00ff6866",
+      "description": "[RES] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01026866",
+      "description": "[LNK] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01016866",
+      "description": "[IMP] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01006866",
+      "description": "[EXP] VS2017 v15.8.0 build 26726 (*)"
+    },
+    {
+      "comp_id": "01046741",
+      "description": "[ C ] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "01036741",
+      "description": "[ASM] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "01056741",
+      "description": "[C++] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "00ff6741",
+      "description": "[RES] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "01026741",
+      "description": "[LNK] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "01016741",
+      "description": "[IMP] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "01006741",
+      "description": "[EXP] VS2017 v15.7.5 build 26433 (*)"
+    },
+    {
+      "comp_id": "0104673f",
+      "description": "[ C ] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0103673f",
+      "description": "[ASM] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0105673f",
+      "description": "[C++] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "00ff673f",
+      "description": "[RES] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0102673f",
+      "description": "[LNK] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0101673f",
+      "description": "[IMP] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0100673f",
+      "description": "[EXP] VS2017 v15.7.4 build 26431 (*)"
+    },
+    {
+      "comp_id": "0104673e",
+      "description": "[ C ] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0103673e",
+      "description": "[ASM] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0105673e",
+      "description": "[C++] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "00ff673e",
+      "description": "[RES] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0102673e",
+      "description": "[LNK] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0101673e",
+      "description": "[IMP] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0100673e",
+      "description": "[EXP] VS2017 v15.7.3 build 26430 (*)"
+    },
+    {
+      "comp_id": "0104673d",
+      "description": "[ C ] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0103673d",
+      "description": "[ASM] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0105673d",
+      "description": "[C++] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "00ff673d",
+      "description": "[RES] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0102673d",
+      "description": "[LNK] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0101673d",
+      "description": "[IMP] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0100673d",
+      "description": "[EXP] VS2017 v15.7.2 build 26429 (*)"
+    },
+    {
+      "comp_id": "0104673c",
+      "description": "[ C ] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "0103673c",
+      "description": "[ASM] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "0105673c",
+      "description": "[C++] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "00ff673c",
+      "description": "[RES] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "0102673c",
+      "description": "[LNK] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "0101673c",
+      "description": "[IMP] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "0100673c",
+      "description": "[EXP] VS2017 v15.7.1 build 26428 (*)"
+    },
+    {
+      "comp_id": "01046614",
+      "description": "[ C ] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01036614",
+      "description": "[ASM] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01056614",
+      "description": "[C++] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "00ff6614",
+      "description": "[RES] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01026614",
+      "description": "[LNK] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01016614",
+      "description": "[IMP] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01006614",
+      "description": "[EXP] VS2017 v15.6.7 build 26132 (*)"
+    },
+    {
+      "comp_id": "01046613",
+      "description": "[ C ] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01036613",
+      "description": "[ASM] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01056613",
+      "description": "[C++] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "00ff6613",
+      "description": "[RES] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01026613",
+      "description": "[LNK] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01016613",
+      "description": "[IMP] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01006613",
+      "description": "[EXP] VS2017 v15.6.6 build 26131 (*)"
+    },
+    {
+      "comp_id": "01046611",
+      "description": "[ C ] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01036611",
+      "description": "[ASM] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01056611",
+      "description": "[C++] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "00ff6611",
+      "description": "[RES] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01026611",
+      "description": "[LNK] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01016611",
+      "description": "[IMP] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01006611",
+      "description": "[EXP] VS2017 v15.6.3 build 26129 (*)"
+    },
+    {
+      "comp_id": "01046610",
+      "description": "[ C ] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "01036610",
+      "description": "[ASM] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "01056610",
+      "description": "[C++] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "00ff6610",
+      "description": "[RES] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "01026610",
+      "description": "[LNK] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "01016610",
+      "description": "[IMP] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "01006610",
+      "description": "[EXP] VS2017 v15.6.0 build 26128 (*)"
+    },
+    {
+      "comp_id": "010464eb",
+      "description": "[ C ] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010364eb",
+      "description": "[ASM] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010564eb",
+      "description": "[C++] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "00ff64eb",
+      "description": "[RES] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010264eb",
+      "description": "[LNK] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010164eb",
+      "description": "[IMP] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010064eb",
+      "description": "[EXP] VS2017 v15.5.6 build 25835 (*)"
+    },
+    {
+      "comp_id": "010464ea",
+      "description": "[ C ] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010364ea",
+      "description": "[ASM] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010564ea",
+      "description": "[C++] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "00ff64ea",
+      "description": "[RES] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010264ea",
+      "description": "[LNK] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010064ea",
+      "description": "[EXP] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010164ea",
+      "description": "[IMP] VS2017 v15.5.4 build 25834"
+    },
+    {
+      "comp_id": "010464e7",
+      "description": "[ C ] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010364e7",
+      "description": "[ASM] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010564e7",
+      "description": "[C++] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "00ff64e7",
+      "description": "[RES] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010264e7",
+      "description": "[LNK] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010164e7",
+      "description": "[IMP] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010064e7",
+      "description": "[EXP] VS2017 v15.5.2 build 25831 (*)"
+    },
+    {
+      "comp_id": "010463cb",
+      "description": "[ C ] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010363cb",
+      "description": "[ASM] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010563cb",
+      "description": "[C++] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "00ff63cb",
+      "description": "[RES] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010263cb",
+      "description": "[LNK] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010163cb",
+      "description": "[IMP] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010063cb",
+      "description": "[EXP] VS2017 v15.4.5 build 25547 (*)"
+    },
+    {
+      "comp_id": "010463c6",
+      "description": "[ C ] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010363c6",
+      "description": "[ASM] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010563c6",
+      "description": "[C++] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "00ff63c6",
+      "description": "[RES] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010263c6",
+      "description": "[LNK] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010163c6",
+      "description": "[IMP] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010063c6",
+      "description": "[EXP] VS2017 v15.4.4 build 25542 (*)"
+    },
+    {
+      "comp_id": "010463a3",
+      "description": "[ C ] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010363a3",
+      "description": "[ASM] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010563a3",
+      "description": "[C++] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "00ff63a3",
+      "description": "[RES] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010263a3",
+      "description": "[LNK] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010163a3",
+      "description": "[IMP] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010063a3",
+      "description": "[EXP] VS2017 v15.3.3 build 25507 (*)"
+    },
+    {
+      "comp_id": "010463a2",
+      "description": "[ C ] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010363a2",
+      "description": "[ASM] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010563a2",
+      "description": "[C++] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "00ff63a2",
+      "description": "[RES] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010263a2",
+      "description": "[LNK] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010163a2",
+      "description": "[IMP] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010063a2",
+      "description": "[EXP] VS2017 v15.3 build 25506 (*)"
+    },
+    {
+      "comp_id": "010461b9",
+      "description": "[ C ] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "010361b9",
+      "description": "[ASM] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "010561b9",
+      "description": "[C++] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "00ff61b9",
+      "description": "[RES] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "010261b9",
+      "description": "[LNK] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "010161b9",
+      "description": "[IMP] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "010061b9",
+      "description": "[EXP] VS2017 v15.0 build 25017 (*)"
+    },
+    {
+      "comp_id": "01045e97",
+      "description": "[ C ] VS2015 UPD3.1 build 24215"
+    },
+    {
+      "comp_id": "01055e97",
+      "description": "[C++] VS2015 UPD3.1 build 24215"
+    },
+    {
+      "comp_id": "01025e97",
+      "description": "[LNK] VS2015 UPD3.1 build 24215"
+    },
+    {
+      "comp_id": "01005e97",
+      "description": "[EXP] VS2015 UPD3.1 build 24215"
+    },
+    {
+      "comp_id": "01015e97",
+      "description": "[IMP] VS2015 UPD3.1 build 24215"
+    },
+    {
+      "comp_id": "01045e95",
+      "description": "[ C ] VS2015 UPD3 build 24213"
+    },
+    {
+      "comp_id": "01035e92",
+      "description": "[ASM] VS2015 UPD3 build 24210"
+    },
+    {
+      "comp_id": "01055e95",
+      "description": "[C++] VS2015 UPD3 build 24213"
+    },
+    {
+      "comp_id": "00ff5e92",
+      "description": "[RES] VS2015 UPD3 build 24210"
+    },
+    {
+      "comp_id": "01025e95",
+      "description": "[LNK] VS2015 UPD3 build 24213"
+    },
+    {
+      "comp_id": "01005e95",
+      "description": "[EXP] VS2015 UPD3 build 24213"
+    },
+    {
+      "comp_id": "01015e95",
+      "description": "[IMP] VS2015 UPD3 build 24213"
+    },
+    {
+      "comp_id": "01045e92",
+      "description": "[ C ] VS2015 Update 3 [14.0] build 24210 (*)"
+    },
+    {
+      "comp_id": "01055e92",
+      "description": "[C++] VS2015 Update 3 [14.0] build 24210 (*)"
+    },
+    {
+      "comp_id": "01025e92",
+      "description": "[LNK] VS2015 Update 3 [14.0] build 24210 (*)"
+    },
+    {
+      "comp_id": "01015e92",
+      "description": "[IMP] VS2015 Update 3 [14.0] build 24210 (*)"
+    },
+    {
+      "comp_id": "01005e92",
+      "description": "[EXP] VS2015 Update 3 [14.0] build 24210 (*)"
+    },
+    {
+      "comp_id": "01045d6e",
+      "description": "[ C ] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01035d6e",
+      "description": "[ASM] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01055d6e",
+      "description": "[C++] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "00ff5d6e",
+      "description": "[RES] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01025d6e",
+      "description": "[LNK] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01005d6e",
+      "description": "[EXP] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01015d6e",
+      "description": "[IMP] VS2015 UPD2 build 23918"
+    },
+    {
+      "comp_id": "01045bd2",
+      "description": "[ C ] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "01035bd2",
+      "description": "[ASM] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "01055bd2",
+      "description": "[C++] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "00ff5bd2",
+      "description": "[RES] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "01025bd2",
+      "description": "[LNK] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "01005bd2",
+      "description": "[EXP] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "01015bd2",
+      "description": "[IMP] VS2015 UPD1 build 23506"
+    },
+    {
+      "comp_id": "010459f2",
+      "description": "[ C ] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "010359f2",
+      "description": "[ASM] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "010559f2",
+      "description": "[C++] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "00ff59f2",
+      "description": "[RES] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "010259f2",
+      "description": "[LNK] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "010059f2",
+      "description": "[EXP] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "010159f2",
+      "description": "[IMP] VS2015 [14.0] build 23026"
+    },
+    {
+      "comp_id": "00e0527a",
+      "description": "[ C ] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00df527a",
+      "description": "[ASM] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00e1527a",
+      "description": "[C++] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00db527a",
+      "description": "[RES] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00de527a",
+      "description": "[LNK] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00dd527a",
+      "description": "[IMP] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00dc527a",
+      "description": "[EXP] VS2013 Nobemver CTP [12.0] build 21114 (*)"
+    },
+    {
+      "comp_id": "00e09eb5",
+      "description": "[ C ] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00e19eb5",
+      "description": "[C++] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00db9eb5",
+      "description": "[RES] VS2013 Update 5 [12.0] build 40629 (*)"
+    },
+    {
+      "comp_id": "00de9eb5",
+      "description": "[LNK] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00dc9eb5",
+      "description": "[EXP] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00dd9eb5",
+      "description": "[IMP] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00df9eb5",
+      "description": "[ASM] VS2013 UPD5 build 40629"
+    },
+    {
+      "comp_id": "00e0797d",
+      "description": "[ C ] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00e1797d",
+      "description": "[C++] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00db797d",
+      "description": "[RES] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00de797d",
+      "description": "[LNK] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00dc797d",
+      "description": "[EXP] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00dd797d",
+      "description": "[IMP] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00df797d",
+      "description": "[ASM] VS2013 UPD4 build 31101 (*)"
+    },
+    {
+      "comp_id": "00e07803",
+      "description": "[ C ] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00e17803",
+      "description": "[C++] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00db7803",
+      "description": "[RES] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00de7803",
+      "description": "[LNK] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00dc7803",
+      "description": "[EXP] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00dd7803",
+      "description": "[IMP] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00df7803",
+      "description": "[ASM] VS2013 UPD3 build 30723 (*)"
+    },
+    {
+      "comp_id": "00e07725",
+      "description": "[ C ] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00e17725",
+      "description": "[C++] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00db7725",
+      "description": "[RES] VS2013 Update 2 [12.0] build 30501 (*)"
+    },
+    {
+      "comp_id": "00de7725",
+      "description": "[LNK] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00dc7725",
+      "description": "[EXP] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00dd7725",
+      "description": "[IMP] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00df7725",
+      "description": "[ASM] VS2013 UPD2 build 30501"
+    },
+    {
+      "comp_id": "00e07674",
+      "description": "[ C ] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00df7674",
+      "description": "[ASM] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00e17674",
+      "description": "[C++] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00db7674",
+      "description": "[RES] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00de7674",
+      "description": "[LNK] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00dd7674",
+      "description": "[IMP] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00dc7674",
+      "description": "[EXP] VS2013 Update2 RC [12.0] build 30324 (*)"
+    },
+    {
+      "comp_id": "00e0520d",
+      "description": "[ C ] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00e1520d",
+      "description": "[C++] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00db520d",
+      "description": "[RES] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00de520d",
+      "description": "[LNK] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00dc520d",
+      "description": "[EXP] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00dd520d",
+      "description": "[IMP] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00df520d",
+      "description": "[ASM] VS2013 build 21005"
+    },
+    {
+      "comp_id": "00e0515b",
+      "description": "[ C ] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00df515b",
+      "description": "[ASM] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00e1515b",
+      "description": "[C++] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00db515b",
+      "description": "[RES] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00de515b",
+      "description": "[LNK] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00dd515b",
+      "description": "[IMP] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00dc515b",
+      "description": "[EXP] VS2013 RC [12.0] build 20827 (*)"
+    },
+    {
+      "comp_id": "00e05089",
+      "description": "[ C ] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00df5089",
+      "description": "[ASM] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00e15089",
+      "description": "[C++] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00db5089",
+      "description": "[RES] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00de5089",
+      "description": "[LNK] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00dd5089",
+      "description": "[IMP] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00dc5089",
+      "description": "[EXP] VS2013 Preview [12.0] build 20617 (*)"
+    },
+    {
+      "comp_id": "00ceee66",
+      "description": "[ C ] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00cfee66",
+      "description": "[C++] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00cdee66",
+      "description": "[ASM] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00c9ee66",
+      "description": "[RES] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00ccee66",
+      "description": "[LNK] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00caee66",
+      "description": "[EXP] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00cbee66",
+      "description": "[IMP] VS2012 UPD4 build 61030"
+    },
+    {
+      "comp_id": "00ceecc2",
+      "description": "[ C ] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00cfecc2",
+      "description": "[C++] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00cdecc2",
+      "description": "[ASM] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00c9ecc2",
+      "description": "[RES] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00ccecc2",
+      "description": "[LNK] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00caecc2",
+      "description": "[EXP] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00cbecc2",
+      "description": "[IMP] VS2012 UPD3 build 60610 (*)"
+    },
+    {
+      "comp_id": "00ceeb9b",
+      "description": "[ C ] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00cfeb9b",
+      "description": "[C++] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00cdeb9b",
+      "description": "[ASM] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00c9eb9b",
+      "description": "[RES] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00cceb9b",
+      "description": "[LNK] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00caeb9b",
+      "description": "[EXP] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00cbeb9b",
+      "description": "[IMP] VS2012 UPD2 build 60315 (*)"
+    },
+    {
+      "comp_id": "00cec7a2",
+      "description": "[ C ] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00cfc7a2",
+      "description": "[C++] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00cdc7a2",
+      "description": "[ASM] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00c9c7a2",
+      "description": "[RES] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00ccc7a2",
+      "description": "[LNK] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00cac7a2",
+      "description": "[EXP] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00cbc7a2",
+      "description": "[IMP] VS2012 UPD1 build 51106 (*)"
+    },
+    {
+      "comp_id": "00cec751",
+      "description": "[ C ] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00cdc751",
+      "description": "[ASM] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00cfc751",
+      "description": "[C++] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00c9c751",
+      "description": "[RES] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00ccc751",
+      "description": "[LNK] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00cbc751",
+      "description": "[IMP] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00cac751",
+      "description": "[EXP] VS2012 November CTP [11.0] build 51025 (*)"
+    },
+    {
+      "comp_id": "00cec627",
+      "description": "[ C ] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00cfc627",
+      "description": "[C++] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00c9c627",
+      "description": "[RES] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00cdc627",
+      "description": "[ASM] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00cac627",
+      "description": "[EXP] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00cbc627",
+      "description": "[IMP] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00ccc627",
+      "description": "[LNK] VS2012 build 50727"
+    },
+    {
+      "comp_id": "00aa9d1b",
+      "description": "[ C ] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "00ab9d1b",
+      "description": "[C++] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "009d9d1b",
+      "description": "[LNK] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "009a9d1b",
+      "description": "[RES] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "009b9d1b",
+      "description": "[EXP] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "009c9d1b",
+      "description": "[IMP] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "009e9d1b",
+      "description": "[ASM] VS2010 SP1 build 40219"
+    },
+    {
+      "comp_id": "00aa766f",
+      "description": "[ C ] VS2010 build 30319"
+    },
+    {
+      "comp_id": "00ab766f",
+      "description": "[C++] VS2010 build 30319"
+    },
+    {
+      "comp_id": "009d766f",
+      "description": "[LNK] VS2010 build 30319"
+    },
+    {
+      "comp_id": "009a766f",
+      "description": "[RES] VS2010 build 30319"
+    },
+    {
+      "comp_id": "009b766f",
+      "description": "[EXP] VS2010 build 30319"
+    },
+    {
+      "comp_id": "009c766f",
+      "description": "[IMP] VS2010 build 30319"
+    },
+    {
+      "comp_id": "009e766f",
+      "description": "[ASM] VS2010 build 30319"
+    },
+    {
+      "comp_id": "00aa520b",
+      "description": "[ C ] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "009e520b",
+      "description": "[ASM] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "00ab520b",
+      "description": "[C++] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "009a520b",
+      "description": "[RES] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "009d520b",
+      "description": "[LNK] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "009c520b",
+      "description": "[IMP] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "009b520b",
+      "description": "[EXP] VS2010 Beta 2 [10.0] build 21003 (*)"
+    },
+    {
+      "comp_id": "00aa501a",
+      "description": "[ C ] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "009e501a",
+      "description": "[ASM] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "00ab501a",
+      "description": "[C++] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "009a501a",
+      "description": "[RES] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "009d501a",
+      "description": "[LNK] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "009c501a",
+      "description": "[IMP] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "009b501a",
+      "description": "[EXP] VS2010 Beta 1 [10.0] build 20506 (*)"
+    },
+    {
+      "comp_id": "00837809",
+      "description": "[ C ] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "00847809",
+      "description": "[C++] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "00947809",
+      "description": "[RES] VS2008 SP1 [9.0] build 30729 (*)"
+    },
+    {
+      "comp_id": "00957809",
+      "description": "[ASM] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "00927809",
+      "description": "[EXP] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "00937809",
+      "description": "[IMP] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "00917809",
+      "description": "[LNK] VS2008 SP1 build 30729"
+    },
+    {
+      "comp_id": "0083521e",
+      "description": "[ C ] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0084521e",
+      "description": "[C++] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0091521e",
+      "description": "[LNK] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0094521e",
+      "description": "[RES] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0092521e",
+      "description": "[EXP] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0093521e",
+      "description": "[IMP] VS2008 build 21022"
+    },
+    {
+      "comp_id": "0095521e",
+      "description": "[ASM] VS2008 build 21022"
+    },
+    {
+      "comp_id": "008350e2",
+      "description": "[ C ] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "009550e2",
+      "description": "[ASM] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "008450e2",
+      "description": "[C++] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "009450e2",
+      "description": "[RES] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "009150e2",
+      "description": "[LNK] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "009350e2",
+      "description": "[IMP] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "009250e2",
+      "description": "[EXP] VS2008 Beta 2 [9.0] build 20706 (*)"
+    },
+    {
+      "comp_id": "006dc627",
+      "description": "[ C ] VS2005 build 50727"
+    },
+    {
+      "comp_id": "006ec627",
+      "description": "[C++] VS2005 build 50727"
+    },
+    {
+      "comp_id": "0078c627",
+      "description": "[LNK] VS2005 build 50727"
+    },
+    {
+      "comp_id": "007cc627",
+      "description": "[RES] VS2005 build 50727"
+    },
+    {
+      "comp_id": "007ac627",
+      "description": "[EXP] VS2005 build 50727"
+    },
+    {
+      "comp_id": "007bc627",
+      "description": "[IMP] VS2005 build 50727"
+    },
+    {
+      "comp_id": "007dc627",
+      "description": "[ASM] VS2005 build 50727"
+    },
+    {
+      "comp_id": "006dc490",
+      "description": "[ C ] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "007dc490",
+      "description": "[ASM] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "006ec490",
+      "description": "[C++] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "007cc490",
+      "description": "[RES] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "0078c490",
+      "description": "[LNK] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "007bc490",
+      "description": "[IMP] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "007ac490",
+      "description": "[EXP] VS2005 [8.0] build 50320 (*)"
+    },
+    {
+      "comp_id": "006dc427",
+      "description": "[ C ] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "007dc427",
+      "description": "[ASM] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "006ec427",
+      "description": "[C++] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "007cc427",
+      "description": "[RES] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "0078c427",
+      "description": "[LNK] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "007bc427",
+      "description": "[IMP] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "007ac427",
+      "description": "[EXP] VS2005 Beta 2 [8.0] build 50215 (*)"
+    },
+    {
+      "comp_id": "006d9e9f",
+      "description": "[ C ] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "007d9e9f",
+      "description": "[ASM] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "006e9e9f",
+      "description": "[C++] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "007c9e9f",
+      "description": "[RES] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "00789e9f",
+      "description": "[LNK] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "007b9e9f",
+      "description": "[IMP] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "007a9e9f",
+      "description": "[EXP] VS2005 Beta 1 [8.0] build 40607 (*)"
+    },
+    {
+      "comp_id": "006d9d76",
+      "description": "[ C ] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "007d9d76",
+      "description": "[ASM] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "006e9d76",
+      "description": "[C++] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "007c9d76",
+      "description": "[RES] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "00789d76",
+      "description": "[LNK] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "007b9d76",
+      "description": "[IMP] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "007a9d76",
+      "description": "[EXP] Windows Server 2003 SP1 DDK (for AMD64) build 40310 (*)"
+    },
+    {
+      "comp_id": "005f178e",
+      "description": "[ C ] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "0060178e",
+      "description": "[C++] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "005a178e",
+      "description": "[LNK] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "000f178e",
+      "description": "[ASM] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "005e178e",
+      "description": "[RES] VS.NET 2003 SP1 [7.1] build 6030 (*)"
+    },
+    {
+      "comp_id": "005c178e",
+      "description": "[EXP] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "005d178e",
+      "description": "[IMP] VS2003 (.NET) SP1 build 6030"
+    },
+    {
+      "comp_id": "005f0fc3",
+      "description": "[ C ] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "000f0fc3",
+      "description": "[ASM] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "00600fc3",
+      "description": "[C++] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "005e0fc3",
+      "description": "[RES] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "005a0fc3",
+      "description": "[LNK] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "005d0fc3",
+      "description": "[IMP] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "005c0fc3",
+      "description": "[EXP] Windows Server 2003 SP1 DDK build 4035 (*)"
+    },
+    {
+      "comp_id": "005f0c05",
+      "description": "[ C ] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "00600c05",
+      "description": "[C++] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "000f0c05",
+      "description": "[ASM] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "005e0bec",
+      "description": "[RES] VS2003 (.NET) build 3052"
+    },
+    {
+      "comp_id": "005c0c05",
+      "description": "[EXP] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "005d0c05",
+      "description": "[IMP] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "005a0c05",
+      "description": "[LNK] VS2003 (.NET) build 3077"
+    },
+    {
+      "comp_id": "005e0c05",
+      "description": "[RES] VS.NET 2003 [7.1] build 3077 (*)"
+    },
+    {
+      "comp_id": "001c24fa",
+      "description": "[ C ] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "001d24fa",
+      "description": "[C++] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "004024fa",
+      "description": "[ASM] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "003d24fa",
+      "description": "[LNK] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "004524fa",
+      "description": "[RES] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "003f24fa",
+      "description": "[EXP] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "001924fa",
+      "description": "[IMP] VS2002 (.NET) build 9466"
+    },
+    {
+      "comp_id": "001c23d8",
+      "description": "[ C ] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "004023d8",
+      "description": "[ASM] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "001d23d8",
+      "description": "[C++] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "004523d8",
+      "description": "[RES] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "003d23d8",
+      "description": "[LNK] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "001923d8",
+      "description": "[IMP] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "003f23d8",
+      "description": "[EXP] Windows XP SP1 DDK build 9176 (*)"
+    },
+    {
+      "comp_id": "000a2636",
+      "description": "[ C ] VS98 (6.0) SP6 build 8804"
+    },
+    {
+      "comp_id": "000b2636",
+      "description": "[C++] VS98 (6.0) SP6 build 8804"
+    },
+    {
+      "comp_id": "00152306",
+      "description": "[ C ] VC++ 6.0 SP5 build 8804"
+    },
+    {
+      "comp_id": "00162306",
+      "description": "[C++] VC++ 6.0 SP5 build 8804"
+    },
+    {
+      "comp_id": "000420ff",
+      "description": "[LNK] VC++ 6.0 SP5 imp/exp build 8447"
+    },
+    {
+      "comp_id": "000606c7",
+      "description": "[RES] VS98 (6.0) SP6 cvtres build 1736"
+    },
+    {
+      "comp_id": "000a1fe8",
+      "description": "[ C ] VS98 (6.0) build 8168"
+    },
+    {
+      "comp_id": "000b1fe8",
+      "description": "[C++] VS98 (6.0) build 8168"
+    },
+    {
+      "comp_id": "000606b8",
+      "description": "[RES] VS98 (6.0) cvtres build 1720"
+    },
+    {
+      "comp_id": "00041fe8",
+      "description": "[LNK] VS98 (6.0) imp/exp build 8168"
+    },
+    {
+      "comp_id": "00060684",
+      "description": "[RES] VS97 (5.0) SP3 cvtres 5.00.1668"
+    },
+    {
+      "comp_id": "00021c87",
+      "description": "[IMP] VS97 (5.0) SP3 link 5.10.7303"
+    }
+  ]
+}
