@@ -228,10 +228,9 @@ class MainIntegration:
 
     def __import_entry_changed_event(self, *args) -> None:
         idx = args[0].widget.curselection()
+        
         if len(idx) != 0:
-            # update table data
-            self.__imports.update_data(self.__imports_data[idx[0]])
-            # print(idx, args[1].widget.get(idx))
+            self.__imports.update_data(self.__imports_data[idx[0]]) # update table data
 
     def __update_imports_info(self, pe: pefile.PE) -> None:
         # clear previous results
