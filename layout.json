@@ -267,7 +267,7 @@
               ]
             },
             {
-              "element_text": "YARA (custom)",
+              "element_text": "YARA Checker",
               "element_alias": "TAB_YARA",
               "element_state": false,
               "elements": [
