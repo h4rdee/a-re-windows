@@ -21,8 +21,16 @@ class UITabBar:
     def add_tab(self, tab_object: UITab) -> None:
         self.__tabs.append(tab_object)
 
+    def remove_tab(self, tab_object: UITab) -> None:
+        for tab in self.__tabs:
+            if tab == tab_object:
+                self.__tabs.remove(tab_object)
+                tab_object.get_tk_object().destroy()
+
     def clear_tabs(self) -> None:
         self.__tabs.clear()
+        for tab in self.__tabs:
+            tab.get_tk_object().destroy()
 
     def get_all_tabs(self) -> list:
         return self.__tabs
