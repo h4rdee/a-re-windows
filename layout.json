@@ -239,7 +239,13 @@
 				                  "element_alias": "TAB_EXPORTS",
 				                  "element_state": false,
 				                  "elements": [
-								    
+								    {
+									  "element_id": 7,
+									  "element_alias": "TABLE_EXPORTS",
+									  "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+									  "element_headers": [ "Name", "Name Offset", "Ordinal", "RVA" ],
+									  "element_data": []
+									}
 								  ]
 								},
 								{
