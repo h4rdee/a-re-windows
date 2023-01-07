@@ -33,13 +33,23 @@ class UITable:
             height = element_scheme['element_pos']['h']
         )
 
-    def clear(self) -> None:
+    def clear(self, fit_to_text_size = True) -> None:
         self.__sheet_object.set_sheet_data([[]])
-        self.__sheet_object.set_all_cell_sizes_to_text()
 
-    def update_data(self, data) -> None:
+        if fit_to_text_size:
+            self.__sheet_object.set_all_cell_sizes_to_text()
+            self.__sheet_object.redraw()
+
+    def update_data(self, data, fit_to_text_size = True) -> None:
         self.__sheet_object.set_sheet_data(data)
-        self.__sheet_object.set_all_cell_sizes_to_text()
+
+        if fit_to_text_size:
+            self.__sheet_object.set_all_cell_sizes_to_text()
+            self.__sheet_object.redraw()
+
+    def set_column_widths(self, sizes: list) -> None:
+        self.__sheet_object.set_column_widths(sizes)
+        self.__sheet_object.redraw()
 
     def get_sheet_object(self) -> Sheet:
         return self.__sheet_object
