@@ -1,4 +1,4 @@
-import yara, os, hashlib, ppdeep, pefile, json, re
+import yara, os, hashlib, ppdeep, pefile, dnfile, json, re
 import tkinter as tk
 
 from enum import IntEnum
@@ -21,6 +21,7 @@ class MainIntegration:
         self.__imports_data = list()
 
         self.__window_object = None
+        self.__dot_net_tab_element = None
 
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
@@ -30,6 +31,7 @@ class MainIntegration:
         self.__tk_capabilities = None
         self.__tk_signatures = None
 
+        self.__tab_bar_sample_info = None
         self.__tab_bar_sections_info = None
 
         self.__imports_entries = None
@@ -290,6 +292,7 @@ class MainIntegration:
                 import_name = ""
                 if _import.name != None:
                     import_name = _import.name.decode(encoding='ascii')
+                    # TODO: add demangling
 
                 import_thunk = ""
                 if _import.hint_name_table_rva != None:
@@ -316,12 +319,14 @@ class MainIntegration:
 
         strings_data = list()
 
-        for offset, string in enumerate(re.findall(
-                b'[\x20-\x7e]{4,}', self.__sample_buffer
-            )):
+        strings_matches = re.finditer(
+            b'[\x20-\x7e]{4,}', 
+            self.__sample_buffer
+        )
 
-            string_file_offset = offset
-            decoded_string = string.decode('ascii')
+        for match in strings_matches:
+            string_file_offset = match.regs[0][0]
+            decoded_string = match.group().decode('ascii')
             string_size = len(decoded_string)
             string_type = 'ascii'
 
@@ -333,9 +338,35 @@ class MainIntegration:
         self.__strings.update_data(strings_data, False)
         self.__strings.set_column_widths([485, 80, 40, 60])
 
+    def __update_dotnet_info(self, dn: dnfile.dnPE) -> None:
+
+        def analyze_dot_net(dn: dnfile.dnPE) -> list:
+            result = list()
+
+            return result
+
+        # create separate .net tab
+        self.__dot_net_tab_element = self.__window_object.generate_element(
+            self.__tab_bar_sample_info.get_tk_object(),
+            {
+                "element_id": 6,
+                "element_text": ".NET",
+                "element_alias": "TAB_DOTNET_INFO",
+                "element_state": False,
+                "elements": analyze_dot_net(dn)
+            }
+        )
+        self.__tab_bar_sample_info.add_tab(self.__dot_net_tab_element)
+
     def __sample_loaded_event(self) -> None:
-        try: # try to parse PE object
+        is_dotnet_sample = False
+
+        try: # try to parse pe/dn object
             pe = pefile.PE(data=self.__sample_buffer)
+            dn = dnfile.dnPE(data=self.__sample_buffer)
+
+            if dn.net != None:
+                is_dotnet_sample = True
         except pefile.PEFormatError as ex:
             print(f"[!] exception: {ex}")
             return
@@ -348,6 +379,13 @@ class MainIntegration:
         self.__tk_compiler_info.config(text="Compiler info: <unknown>")
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
+
+        if is_dotnet_sample:
+            self.__update_dotnet_info(dn)
+        else:
+            self.__tab_bar_sample_info.remove_tab(
+                self.__dot_net_tab_element
+            )
 
         self.__update_hashes(pe) # update hashes
         self.__update_rich_header_info(pe) # update RICH header info
@@ -445,6 +483,8 @@ class MainIntegration:
                 self.__hash_rich = element.get()
             elif element_alias == 'TEXTBOX_HASH_SSDEEP':
                 self.__hash_ssdeep = element.get()
+            elif element_alias == 'TAB_BAR_SAMPLE_INFO':
+                self.__tab_bar_sample_info = element.get()
             elif element_alias == 'TAB_BAR_SECTIONS_INFO':
                 self.__tab_bar_sections_info = element.get()
             elif element_alias == 'LISTBOX_IMPORTS_ENTRIES':
@@ -478,6 +518,7 @@ class MainIntegration:
             'TEXTBOX_HASH_IMPHASH',
             'TEXTBOX_HASH_RICH',
             'TEXTBOX_HASH_SSDEEP',
+            'TAB_BAR_SAMPLE_INFO',
             'TAB_BAR_SECTIONS_INFO',
             'LISTBOX_IMPORTS_ENTRIES',
             'TABLE_IMPORTS',
