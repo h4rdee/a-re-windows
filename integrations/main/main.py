@@ -36,6 +36,7 @@ class MainIntegration:
 
         self.__imports_entries = None
         self.__imports = None
+        self.__exports = None
         self.__strings = None
 
         self.__hash_sha256 = None
@@ -313,6 +314,30 @@ class MainIntegration:
         self.__imports_entries.get_tk_object().select_set(0)
         self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
 
+    def __update_exports_info(self, pe: pefile.PE) -> None:
+        # clear previous results
+        self.__exports.clear()
+
+        exports = list()
+
+        if not hasattr(pe, 'DIRECTORY_ENTRY_EXPORT'):
+            self.__exports.set_column_widths([470, 80, 50, 70])
+            return # there are no exports..
+        
+        for export_symbol in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+            export_name = ""
+            if export_symbol.name != None:
+                export_name = export_symbol.name.decode(encoding='ascii')
+                # TODO: add demangling
+
+            exports.append([
+                export_name, hex(export_symbol.name_offset),
+                export_symbol.ordinal, hex(export_symbol.address)
+            ])
+
+        self.__exports.update_data(exports, False) # update table data
+        self.__exports.set_column_widths([470, 80, 50, 70])
+
     def __update_strings_info(self, pe: pefile.PE) -> None:
         # clear previous results
         self.__strings.clear()
@@ -391,6 +416,7 @@ class MainIntegration:
         self.__update_rich_header_info(pe) # update RICH header info
         self.__update_sections_info(pe) # update sections info
         self.__update_imports_info(pe) # update imports
+        self.__update_exports_info(pe) # update exports
         self.__update_strings_info(pe) # update strings info
         
         # clear previous results
@@ -495,8 +521,16 @@ class MainIntegration:
                 )
             elif element_alias == 'TABLE_IMPORTS':
                 self.__imports = element.get()
+                element.get().get_sheet_object().hide(canvas="x_scrollbar")
                 element.get().get_sheet_object().show(canvas="y_scrollbar")
                 element.get().set_column_widths([370, 50, 50, 70])
+
+            elif element_alias == 'TABLE_EXPORTS':
+                self.__exports = element.get()
+                element.get().get_sheet_object().hide(canvas="x_scrollbar")
+                element.get().get_sheet_object().show(canvas="y_scrollbar")
+                element.get().set_column_widths([470, 80, 50, 70])
+
             elif element_alias == 'TABLE_STRINGS':
                 self.__strings = element.get()
                 element.get().get_sheet_object().hide(canvas="x_scrollbar")
@@ -522,5 +556,6 @@ class MainIntegration:
             'TAB_BAR_SECTIONS_INFO',
             'LISTBOX_IMPORTS_ENTRIES',
             'TABLE_IMPORTS',
+            'TABLE_EXPORTS',
             'TABLE_STRINGS'
         ]
