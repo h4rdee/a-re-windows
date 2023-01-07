@@ -7,7 +7,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Detecting sample **capabilities** based on large collection of yara rules
 - Checking sample against vendor **signatures** (Detect It Easy, PE Tools, etc)
 - Inspecting PE **sections**, dumping them, checking their entropy
-- Gathering various info about PE **imports**
+- Gathering various info about PE **imports** and **exports**
 - **Hashing** a sample (sha256, sha1, md5, imphash, ssdeep, rich header hash, etc)
 - Custom **yara checker** for testing your own yara rules
 - Cross-platform **user-friendly** UI powered by Tkinter!
