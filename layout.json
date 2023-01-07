@@ -150,11 +150,25 @@
 				                  ]
 								},
 								{
+								  "element_text": "Exports",
+				                  "element_alias": "TAB_EXPORTS",
+				                  "element_state": false,
+				                  "elements": [
+								    
+								  ]
+								},
+								{
 								  "element_text": "Strings",
 				                  "element_alias": "TAB_STRINGS",
 				                  "element_state": false,
 				                  "elements": [
-				                    
+				                    {
+									  "element_id": 7,
+									  "element_alias": "TABLE_STRINGS",
+									  "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+									  "element_headers": [ "String", "File Offset", "Size", "Type" ],
+									  "element_data": []
+									}
 				                  ]
 								}
 							  ]
