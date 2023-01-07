@@ -2,5 +2,6 @@ python3-tk
 yara-python
 chlorophyll
 pefile
+dnfile
 ppdeep
 tksheet
