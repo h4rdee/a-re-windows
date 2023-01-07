@@ -1,4 +1,4 @@
-import yara, os, hashlib, ppdeep, pefile, json
+import yara, os, hashlib, ppdeep, pefile, json, re
 import tkinter as tk
 
 from enum import IntEnum
@@ -34,6 +34,7 @@ class MainIntegration:
 
         self.__imports_entries = None
         self.__imports = None
+        self.__strings = None
 
         self.__hash_sha256 = None
         self.__hash_sha1 = None
@@ -264,7 +265,9 @@ class MainIntegration:
         idx = args[0].widget.curselection()
 
         if len(idx) != 0:
-            self.__imports.update_data(self.__imports_data[idx[0]]) # update table data
+            self.__imports.update_data(self.__imports_data[idx[0]], False) # update table data
+        
+        self.__imports.set_column_widths([370, 50, 50, 70])
 
     def __update_imports_info(self, pe: pefile.PE) -> None:
         # clear previous results
@@ -307,6 +310,29 @@ class MainIntegration:
         self.__imports_entries.get_tk_object().select_set(0)
         self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
 
+    def __update_strings_info(self, pe: pefile.PE) -> None:
+        # clear previous results
+        self.__strings.clear()
+
+        strings_data = list()
+
+        for offset, string in enumerate(re.findall(
+                b'[\x20-\x7e]{4,}', self.__sample_buffer
+            )):
+
+            string_file_offset = offset
+            decoded_string = string.decode('ascii')
+            string_size = len(decoded_string)
+            string_type = 'ascii'
+
+            strings_data.append([
+                decoded_string, string_file_offset,
+                string_size, string_type
+            ])
+
+        self.__strings.update_data(strings_data, False)
+        self.__strings.set_column_widths([485, 80, 40, 60])
+
     def __sample_loaded_event(self) -> None:
         try: # try to parse PE object
             pe = pefile.PE(data=self.__sample_buffer)
@@ -327,6 +353,7 @@ class MainIntegration:
         self.__update_rich_header_info(pe) # update RICH header info
         self.__update_sections_info(pe) # update sections info
         self.__update_imports_info(pe) # update imports
+        self.__update_strings_info(pe) # update strings info
         
         # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
@@ -429,7 +456,13 @@ class MainIntegration:
             elif element_alias == 'TABLE_IMPORTS':
                 self.__imports = element.get()
                 element.get().get_sheet_object().show(canvas="y_scrollbar")
-
+                element.get().set_column_widths([370, 50, 50, 70])
+            elif element_alias == 'TABLE_STRINGS':
+                self.__strings = element.get()
+                element.get().get_sheet_object().hide(canvas="x_scrollbar")
+                element.get().get_sheet_object().show(canvas="y_scrollbar")
+                element.get().set_column_widths([485, 80, 40, 60])
+                
     def request_needed_elements(self) -> list:
         return [
             'BUTTON_LOAD_SAMPLE', 
@@ -447,5 +480,6 @@ class MainIntegration:
             'TEXTBOX_HASH_SSDEEP',
             'TAB_BAR_SECTIONS_INFO',
             'LISTBOX_IMPORTS_ENTRIES',
-            'TABLE_IMPORTS'
+            'TABLE_IMPORTS',
+            'TABLE_STRINGS'
         ]
