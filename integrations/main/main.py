@@ -589,6 +589,15 @@ class MainIntegration:
             result.append(self.__tab_bar_dotnet_info)
             return result
 
+        def format_table(table_field, alias: str, column_widths: list) -> None:
+            table_element = self.__window_object.get_element_by_alias(alias)
+
+            if table_element:
+                table_field = table_element.get()
+                table_field.get_sheet_object().hide(canvas="x_scrollbar")
+                table_field.get_sheet_object().show(canvas="y_scrollbar")
+                table_field.set_column_widths(column_widths)
+        
         # clear previous results
         self.__tab_bar_sample_info.remove_tab(self.__tab_dotnet)
         self.__window_object.destroy_element_by_alias('TABLE_DOTNET_STRINGS')
@@ -616,20 +625,9 @@ class MainIntegration:
         self.__tab_bar_sample_info.add_tab(self.__tab_dotnet)
 
         # format tables
-        self.__table_user_strings = self.__window_object.get_element_by_alias('TABLE_DOTNET_USERSTRINGS').get()
-        self.__table_user_strings.get_sheet_object().hide(canvas="x_scrollbar")
-        self.__table_user_strings.get_sheet_object().show(canvas="y_scrollbar")
-        self.__table_user_strings.set_column_widths([535, 80, 40])
-
-        self.__table_strings = self.__window_object.get_element_by_alias('TABLE_DOTNET_STRINGS').get()
-        self.__table_strings.get_sheet_object().hide(canvas="x_scrollbar")
-        self.__table_strings.get_sheet_object().show(canvas="y_scrollbar")
-        self.__table_strings.set_column_widths([535, 120])
-
-        self.__table_strings = self.__window_object.get_element_by_alias('TABLE_DOTNET_GUIDS').get()
-        self.__table_strings.get_sheet_object().hide(canvas="x_scrollbar")
-        self.__table_strings.get_sheet_object().show(canvas="y_scrollbar")
-        self.__table_strings.set_column_widths([545, 80, 40])
+        format_table(self.__table_user_strings, 'TABLE_DOTNET_USERSTRINGS', [535, 80, 40])
+        format_table(self.__table_strings, 'TABLE_DOTNET_STRINGS', [535, 120])
+        format_table(self.__table_guids, 'TABLE_DOTNET_GUIDS', [545, 80, 40])
 
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
