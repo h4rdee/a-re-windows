@@ -1,4 +1,4 @@
-import yara, os, hashlib, ppdeep, pefile, dnfile, json, re, threading
+import yara, os, hashlib, ppdeep, pefile, dnfile, json, re, threading, binascii
 import tkinter as tk
 
 from enum import IntEnum
@@ -45,6 +45,7 @@ class MainIntegration:
         self.__imports = None
         self.__exports = None
         self.__strings = None
+        self.__overlay = None
 
         self.__hash_sha256 = None
         self.__hash_sha1 = None
@@ -634,6 +635,36 @@ class MainIntegration:
         format_table(self.__table_strings, 'TABLE_DOTNET_STRINGS', [535, 120])
         format_table(self.__table_guids, 'TABLE_DOTNET_GUIDS', [545, 80, 40])
 
+    def __update_overlay_info(self, pe: pefile.PE) -> None:
+        self.__loading_layer.set_action('Parsing Overlay Data')
+
+        # clear previous results
+        self.__overlay.clear()
+
+        overlay_data = pe.get_overlay()
+        result = list()
+
+        if overlay_data:
+            # found some overlay data, process it
+            offset = 0
+            for _ in range(0, len(overlay_data), 16):
+                overlay_chunk = bytearray(overlay_data[offset : offset + 16])
+
+                if len(overlay_chunk) != 16:
+                    overlay_chunk.extend(b'.' * (16 - len(overlay_chunk)))
+
+                hexed_chunk = binascii.hexlify(overlay_chunk, ' ').decode('ascii', 'ignore').split(' ')
+                hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore'))
+
+                result.append(hexed_chunk)
+                offset += 16
+
+        self.__overlay.update_data(result)
+        self.__overlay.set_column_widths(
+            [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 180]
+        )
+        self.__overlay.get_sheet_object().enable_bindings("drag_select")
+
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
 
@@ -666,6 +697,7 @@ class MainIntegration:
         self.__update_imports_info(pe) # update imports
         self.__update_exports_info(pe) # update exports
         self.__update_strings_info(pe) # update strings info
+        self.__update_overlay_info(pe) # update overlay info
         
         # clear previous results
         self.__tk_capabilities.delete(0, self.__tk_capabilities.size())
@@ -799,6 +831,14 @@ class MainIntegration:
                 element.get().get_sheet_object().hide(canvas="x_scrollbar")
                 element.get().get_sheet_object().show(canvas="y_scrollbar")
                 element.get().set_column_widths([485, 80, 40, 60])
+
+            elif element_alias == 'TABLE_OVERLAY_HEX':
+                self.__overlay = element.get()
+                element.get().get_sheet_object().hide(canvas="x_scrollbar")
+                element.get().get_sheet_object().show(canvas="y_scrollbar")
+                element.get().set_column_widths(
+                    [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 180]
+                )
                 
     def request_needed_elements(self) -> list:
         return [
@@ -821,5 +861,6 @@ class MainIntegration:
             'LISTBOX_IMPORTS_ENTRIES',
             'TABLE_IMPORTS',
             'TABLE_EXPORTS',
-            'TABLE_STRINGS'
+            'TABLE_STRINGS',
+            'TABLE_OVERLAY_HEX'
         ]
