@@ -313,42 +313,47 @@ class MainIntegration:
         self.__imports_data.clear()
         self.__imports.clear()
         
-        # fill import entries
-        for i, import_entry in enumerate(pe.DIRECTORY_ENTRY_IMPORT):
+        try:
+            # fill import entries
+            for i, import_entry in enumerate(pe.DIRECTORY_ENTRY_IMPORT):
 
-            self.__imports_entries.add_entry(
-                import_entry.dll.decode(encoding='ascii')
-            )
+                self.__imports_entries.add_entry(
+                    import_entry.dll.decode(encoding='ascii')
+                )
 
-            self.__imports_data.append([[]]) # hack
+                self.__imports_data.append([[]]) # hack
 
-            # fill imports
-            for _import in import_entry.imports:
+                # fill imports
+                for _import in import_entry.imports:
 
-                import_name = ""
-                if _import.name != None:
-                    import_name = _import.name.decode(encoding='ascii')
-                    self.__loading_layer.set_sub_action(import_name)
-                    # TODO: add demangling
+                    import_name = ""
+                    if _import.name != None:
+                        import_name = _import.name.decode(encoding='ascii')
+                        self.__loading_layer.set_sub_action(import_name)
+                        # TODO: add demangling
 
-                import_thunk = ""
-                if _import.hint_name_table_rva != None:
-                    import_thunk = hex(_import.hint_name_table_rva)
+                    import_thunk = ""
+                    if _import.hint_name_table_rva != None:
+                        import_thunk = hex(_import.hint_name_table_rva)
 
-                import_hint = ""
-                if _import.hint != None:
-                    import_hint = hex(_import.hint)
+                    import_hint = ""
+                    if _import.hint != None:
+                        import_hint = hex(_import.hint)
 
-                self.__imports_data[i].append([
-                    import_name, import_thunk,
-                    _import.ordinal, import_hint
-                ])
+                    self.__imports_data[i].append([
+                        import_name, import_thunk,
+                        _import.ordinal, import_hint
+                    ])
 
-            self.__imports_data[-1].pop(0) # TODO: get rid of this
-        
-        # set data for first found imports entry
-        self.__imports_entries.get_tk_object().select_set(0)
-        self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
+                self.__imports_data[-1].pop(0) # TODO: get rid of this
+            
+            # set data for first found imports entry
+            self.__imports_entries.get_tk_object().select_set(0)
+            self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
+
+        except AttributeError:
+            # section-less or malformed PE file - ignore it
+            self.__imports.set_column_widths([370, 50, 50, 70])
 
     def __update_exports_info(self, pe: pefile.PE) -> None:
         self.__loading_layer.set_action('Collecting Exports Info')
