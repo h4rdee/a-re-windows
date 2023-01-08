@@ -34,6 +34,8 @@ class MainIntegration:
         self.__tab_bar_sections_info = None
         self.__tab_bar_dotnet_info = None
 
+        self.__table_user_strings = None
+
         self.__tab_dotnet = None
 
         self.__imports_entries = None
@@ -383,7 +385,7 @@ class MainIntegration:
             stream_name = stream.struct.Name.decode(encoding='ascii')
             user_strings = list()
 
-            user_strings_table = {
+            self.__table_user_strings = {
                 "element_id": 7,
                 "element_alias": "TABLE_DOTNET_USERSTRINGS",
                 "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
@@ -422,7 +424,7 @@ class MainIntegration:
 
                 offset += readlen  # continue to the next entry
 
-            user_strings_table["element_data"] = user_strings
+            self.__table_user_strings["element_data"] = user_strings
 
             self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
                 {
@@ -430,7 +432,7 @@ class MainIntegration:
                     "element_text": stream_name,
                     "element_alias": f"TAB_{stream_name.upper()}",
                     "element_state": False,
-                    "elements": [ user_strings_table ]
+                    "elements": [ self.__table_user_strings ]
                 }
             )
 
@@ -470,7 +472,7 @@ class MainIntegration:
                             "element_text": stream_name,
                             "element_alias": f"TAB_{stream_name.upper()}",
                             "element_state": False,
-                            "elements": [ ]
+                            "elements": []
                         }
                     )
 
@@ -479,17 +481,10 @@ class MainIntegration:
 
         # clear previous results
         self.__tab_bar_sample_info.remove_tab(self.__tab_dotnet)
+        self.__window_object.destroy_element_by_alias('TABLE_DOTNET_USERSTRINGS')
 
         if not is_dotnet_sample:
             return
-
-        if self.__tab_bar_dotnet_info:
-            for tab in self.__tab_bar_dotnet_info.get_all_tabs():
-                for sub_element in tab.get_element_scheme()['elements']: # destroy child elements (if any)
-                    self.__window_object.destroy_element_by_alias(sub_element['element_alias'])
-                self.__window_object.destroy_element_by_alias(tab.get_alias())
-
-            self.__tab_bar_dotnet_info.clear_tabs()
 
         # create separate .net tab
         self.__tab_dotnet = self.__window_object.generate_element(
@@ -507,10 +502,12 @@ class MainIntegration:
         self.__tab_bar_sample_info.add_tab(self.__tab_dotnet)
 
         # format tables
-        userstrings_table = self.__window_object.get_element_by_alias('TABLE_DOTNET_USERSTRINGS')
-        userstrings_table.get().get_sheet_object().hide(canvas="x_scrollbar")
-        userstrings_table.get().get_sheet_object().show(canvas="y_scrollbar")
-        userstrings_table.get().set_column_widths([535, 80, 40])
+        self.__table_user_strings = self.__window_object.get_element_by_alias('TABLE_DOTNET_USERSTRINGS').get()
+
+        self.__table_user_strings.get_sheet_object().hide(canvas="x_scrollbar")
+        self.__table_user_strings.get_sheet_object().show(canvas="y_scrollbar")
+
+        self.__table_user_strings.set_column_widths([535, 80, 40])
 
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
