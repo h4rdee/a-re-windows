@@ -359,7 +359,7 @@ class MainIntegration:
         exports = list()
 
         if not hasattr(pe, 'DIRECTORY_ENTRY_EXPORT'):
-            self.__exports.set_column_widths([470, 80, 50, 70])
+            self.__exports.set_column_widths([450, 100, 50, 70])
             return # there are no exports..
         
         for export_symbol in pe.DIRECTORY_ENTRY_EXPORT.symbols:
@@ -375,7 +375,7 @@ class MainIntegration:
             ])
 
         self.__exports.update_data(exports, False) # update table data
-        self.__exports.set_column_widths([470, 80, 50, 70])
+        self.__exports.set_column_widths([450, 100, 50, 70])
 
     def __update_strings_info(self, pe: pefile.PE) -> None:
         self.__loading_layer.set_action('Collecting Strings')
@@ -789,7 +789,7 @@ class MainIntegration:
                 self.__exports = element.get()
                 element.get().get_sheet_object().hide(canvas="x_scrollbar")
                 element.get().get_sheet_object().show(canvas="y_scrollbar")
-                element.get().set_column_widths([470, 80, 50, 70])
+                element.get().set_column_widths([450, 100, 50, 70])
 
             elif element_alias == 'TABLE_STRINGS':
                 self.__strings = element.get()
