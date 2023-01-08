@@ -9,6 +9,8 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Inspecting PE **sections**, dumping them, checking their entropy
 - Gathering various info about PE **imports** and **exports**
 - **Hashing** a sample (sha256, sha1, md5, imphash, ssdeep, rich header hash, etc)
+* .NET samples support
+  - Parsing strings from `UserStrings` heap
 - Custom **yara checker** for testing your own yara rules
 - Cross-platform **user-friendly** UI powered by Tkinter!
 
@@ -31,10 +33,10 @@ Don't expect to see quality code here (PR's are welcomed!) <br>
 I'm working on this project at spare time, which means that no regular support of this tool will be provided
 
 ## Screenshots:
-![image](https://user-images.githubusercontent.com/37783231/211074437-d4baa9c6-9003-4a74-914c-8415b768f588.png)
-![image](https://user-images.githubusercontent.com/37783231/210627706-8db35c2b-e29a-4c9d-a73d-adb7981cde1b.png)
-![image](https://user-images.githubusercontent.com/37783231/210627188-c05b8ddc-333f-4a7d-9840-b02021420db2.png)
-![image](https://user-images.githubusercontent.com/37783231/210823785-386faf5f-b3b7-404d-885b-f47cef4d6f25.png)
-![image](https://user-images.githubusercontent.com/37783231/210627546-a1af6fe4-55bf-4155-947e-47f11de632de.png)
-![image](https://user-images.githubusercontent.com/37783231/211060840-0a2b1aa5-fedc-457e-8639-d4e95c7d72c8.png)
-![image](https://user-images.githubusercontent.com/37783231/207005415-9b23c043-3883-4e51-80f0-5664d92c5307.png)
+<img src="https://user-images.githubusercontent.com/37783231/211074437-d4baa9c6-9003-4a74-914c-8415b768f588.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195836-5fc88387-363c-4ea3-8487-5c553d569d33.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195815-86977e12-abfb-4240-898f-87c6710ef239.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195736-314effed-c437-4d42-92dc-cf9916c93232.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195698-30870937-0d21-4b9f-be1d-5850107abff5.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195513-6ccc6b27-bce0-4344-b215-8cb19ba41ea7.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211195955-f6a13216-5143-4d97-ad12-2d9c0246ab14.png" width="700" height="450">
