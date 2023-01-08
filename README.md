@@ -8,6 +8,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Checking sample against vendor **signatures** (Detect It Easy, PE Tools, etc)
 - Inspecting PE **sections**, dumping them, checking their entropy
 - Gathering various info about PE **imports** and **exports**
+- Parsing **overlay** info
 - **Hashing** a sample (sha256, sha1, md5, imphash, ~~ssdeep~~, rich header hash, etc)
 * .NET samples support
   - Parsing strings from `Strings` heap
@@ -41,5 +42,6 @@ I'm working on this project at spare time, which means that no regular support o
 <img src="https://user-images.githubusercontent.com/37783231/211195815-86977e12-abfb-4240-898f-87c6710ef239.png" width="700" height="450">
 <img src="https://user-images.githubusercontent.com/37783231/211195736-314effed-c437-4d42-92dc-cf9916c93232.png" width="700" height="450">
 <img src="https://user-images.githubusercontent.com/37783231/211195698-30870937-0d21-4b9f-be1d-5850107abff5.png" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/211217295-65e0fdf2-4f06-449b-b302-719ae842c528.png" width="700" height="450">
 <img src="https://user-images.githubusercontent.com/37783231/211195513-6ccc6b27-bce0-4344-b215-8cb19ba41ea7.png" width="700" height="450">
 <img src="https://user-images.githubusercontent.com/37783231/211195955-f6a13216-5143-4d97-ad12-2d9c0246ab14.png" width="700" height="450">
