@@ -19,8 +19,8 @@ def main() -> None:
 
 if __name__ == '__main__':
     python_version = sys.version_info
-    if python_version < (3,9,7):
-        print(f"[!] unsupported python version: {python_version} (required >=3.9.7)")
+    if python_version < (3, 8, 10):
+        print(f"[!] unsupported python version: {python_version} (required >=3.8.10)")
         exit(-3)
     else:
         main()
