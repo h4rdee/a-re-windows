@@ -10,6 +10,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Gathering various info about PE **imports** and **exports**
 - **Hashing** a sample (sha256, sha1, md5, imphash, ssdeep, rich header hash, etc)
 * .NET samples support
+  - Parsing strings from `Strings` heap
   - Parsing strings from `UserStrings` heap
 - Custom **yara checker** for testing your own yara rules
 - Cross-platform **user-friendly** UI powered by Tkinter!
