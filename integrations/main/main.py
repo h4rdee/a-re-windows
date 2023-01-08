@@ -462,6 +462,17 @@ class MainIntegration:
                     analyze_us_heap(stream)
                 elif isinstance(stream, dnfile.stream.MetaDataTables):
                     analyze_md_tables(stream)
+                else:
+                    stream_name = stream.struct.Name.decode(encoding='ascii')
+                    self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
+                        {
+                            "element_id": 6,
+                            "element_text": stream_name,
+                            "element_alias": f"TAB_{stream_name.upper()}",
+                            "element_state": False,
+                            "elements": [ ]
+                        }
+                    )
 
             result.append(self.__tab_bar_dotnet_info)
             return result
