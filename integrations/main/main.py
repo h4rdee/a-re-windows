@@ -651,10 +651,10 @@ class MainIntegration:
                 overlay_chunk = bytearray(overlay_data[offset : offset + 16])
 
                 if len(overlay_chunk) != 16:
-                    overlay_chunk.extend(b'.' * (16 - len(overlay_chunk)))
+                    overlay_chunk.extend(b'\x00' * (16 - len(overlay_chunk)))
 
                 hexed_chunk = binascii.hexlify(overlay_chunk, ' ').decode('ascii', 'ignore').split(' ')
-                hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore'))
+                hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore').replace('\x00', '.'))
 
                 result.append(hexed_chunk)
                 offset += 16
