@@ -21,7 +21,6 @@ class MainIntegration:
         self.__imports_data = list()
 
         self.__window_object = None
-        self.__dot_net_tab_element = None
 
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
@@ -33,6 +32,9 @@ class MainIntegration:
 
         self.__tab_bar_sample_info = None
         self.__tab_bar_sections_info = None
+        self.__tab_bar_dotnet_info = None
+
+        self.__tab_dotnet = None
 
         self.__imports_entries = None
         self.__imports = None
@@ -363,15 +365,123 @@ class MainIntegration:
         self.__strings.update_data(strings_data, False)
         self.__strings.set_column_widths([485, 80, 40, 60])
 
-    def __update_dotnet_info(self, dn: dnfile.dnPE) -> None:
+    def __update_dotnet_info(self, dn: dnfile.dnPE, is_dotnet_sample: bool) -> None:
+
+        def analyze_md_tables(stream: dnfile.stream.MetaDataTables) -> None:
+            stream_name = stream.struct.Name.decode(encoding='ascii')
+            self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
+                {
+                    "element_id": 6,
+                    "element_text": stream_name,
+                    "element_alias": f"TAB_{stream_name.upper()}",
+                    "element_state": False,
+                    "elements": []
+                }
+            )
+
+        def analyze_us_heap(stream: dnfile.stream.UserStringHeap) -> None:
+            stream_name = stream.struct.Name.decode(encoding='ascii')
+            user_strings = list()
+
+            user_strings_table = {
+                "element_id": 7,
+                "element_alias": "TABLE_DOTNET_USERSTRINGS",
+                "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+                "element_headers": [ "String", "Heap Offset", "Size" ],
+                "element_data": []
+            }
+
+            # collect userstrings
+            size = stream.sizeof()  # get the size of the stream
+            offset = 1 # the first entry (the first byte in the stream) is an empty string, so skip it
+           
+            while offset < size: # while there is still data in the stream
+                # read the raw string bytes, and provide the number of bytes to read (includes the encoded length)
+                ret = stream.get_with_size(offset)
+
+                if ret is None:
+                    offset += readlen
+                    continue
+
+                buf, readlen = ret
+
+                try:
+                    user_string = buf.decode(
+                        encoding='utf-16', 
+                        errors='ignore'
+                    )
+
+                    user_strings.append([
+                        user_string, hex(offset), 
+                        len(user_string) # readlen
+                    ])
+
+                except UnicodeDecodeError:
+                    offset += readlen
+                    continue
+
+                offset += readlen  # continue to the next entry
+
+            user_strings_table["element_data"] = user_strings
+
+            self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
+                {
+                    "element_id": 6,
+                    "element_text": stream_name,
+                    "element_alias": f"TAB_{stream_name.upper()}",
+                    "element_state": False,
+                    "elements": [ user_strings_table ]
+                }
+            )
 
         def analyze_dot_net(dn: dnfile.dnPE) -> list:
             result = list()
 
+            self.__tab_bar_dotnet_info = {
+                "element_id": 2,
+                "element_alias": "TAB_BAR_DOTNET_INFO",
+                "element_pos": { "x": 10, "y": 10, "w": 708, "h": 253 },
+                "tabs": [ 
+                    {
+                        "element_id": 6,
+                        "element_text": "Streams",
+                        "element_alias": "TAB_DOTNET_METADATA_INFO",
+                        "element_state": False,
+                        "elements": [{
+                            "element_id": 2,
+                            "element_alias": "TAB_BAR_STREAMS_INFO",
+                            "element_pos": { "x": 10, "y": 10, "w": 730, "h": 300 },
+                            "tabs": []
+                        }]
+                    }
+                ]
+            }
+
+            for stream in dn.net.metadata.streams_list:
+                if isinstance(stream, dnfile.stream.UserStringHeap):
+                    analyze_us_heap(stream)
+                elif isinstance(stream, dnfile.stream.MetaDataTables):
+                    analyze_md_tables(stream)
+
+            result.append(self.__tab_bar_dotnet_info)
             return result
 
+        # clear previous results
+        self.__tab_bar_sample_info.remove_tab(self.__tab_dotnet)
+
+        if not is_dotnet_sample:
+            return
+
+        if self.__tab_bar_dotnet_info:
+            for tab in self.__tab_bar_dotnet_info.get_all_tabs():
+                for sub_element in tab.get_element_scheme()['elements']: # destroy child elements (if any)
+                    self.__window_object.destroy_element_by_alias(sub_element['element_alias'])
+                self.__window_object.destroy_element_by_alias(tab.get_alias())
+
+            self.__tab_bar_dotnet_info.clear_tabs()
+
         # create separate .net tab
-        self.__dot_net_tab_element = self.__window_object.generate_element(
+        self.__tab_dotnet = self.__window_object.generate_element(
             self.__tab_bar_sample_info.get_tk_object(),
             {
                 "element_id": 6,
@@ -381,7 +491,15 @@ class MainIntegration:
                 "elements": analyze_dot_net(dn)
             }
         )
-        self.__tab_bar_sample_info.add_tab(self.__dot_net_tab_element)
+
+        self.__tab_bar_dotnet_info = self.__window_object.get_element_by_alias('TAB_BAR_DOTNET_INFO').get()
+        self.__tab_bar_sample_info.add_tab(self.__tab_dotnet)
+
+        # format tables
+        userstrings_table = self.__window_object.get_element_by_alias('TABLE_DOTNET_USERSTRINGS')
+        userstrings_table.get().get_sheet_object().hide(canvas="x_scrollbar")
+        userstrings_table.get().get_sheet_object().show(canvas="y_scrollbar")
+        userstrings_table.get().set_column_widths([535, 80, 40])
 
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
@@ -392,6 +510,7 @@ class MainIntegration:
 
             if dn.net != None:
                 is_dotnet_sample = True
+
         except pefile.PEFormatError as ex:
             print(f"[!] exception: {ex}")
             return
@@ -405,13 +524,7 @@ class MainIntegration:
         self.__tk_packer_info.config(text="Packer info: <unknown>")
         self.__tk_installer_info.config(text="Installer info: <unknown>")
 
-        if is_dotnet_sample:
-            self.__update_dotnet_info(dn)
-        else:
-            self.__tab_bar_sample_info.remove_tab(
-                self.__dot_net_tab_element
-            )
-
+        self.__update_dotnet_info(dn, is_dotnet_sample) # update dotnet info
         self.__update_hashes(pe) # update hashes
         self.__update_rich_header_info(pe) # update RICH header info
         self.__update_sections_info(pe) # update sections info
@@ -523,7 +636,7 @@ class MainIntegration:
                 self.__imports = element.get()
                 element.get().get_sheet_object().hide(canvas="x_scrollbar")
                 element.get().get_sheet_object().show(canvas="y_scrollbar")
-                element.get().set_column_widths([370, 50, 50, 70])
+                element.get().set_column_widths([370, 50, 50, 70]) # TODO: treat column widths as element property
 
             elif element_alias == 'TABLE_EXPORTS':
                 self.__exports = element.get()
