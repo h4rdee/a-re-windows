@@ -93,6 +93,10 @@ class Window:
         if 'elements' in element_scheme:
             for sub_element in element_scheme['elements']:
                 self.__elements.append(Element(current_element.get_tk_object(), sub_element))
+                last_element = self.__elements[-1].get()
+
+                if isinstance(last_element, UITabBar): # is last appended element a tab bar?
+                    self.__construct_tab_bar(last_element)
 
         return current_element
 
