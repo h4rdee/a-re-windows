@@ -2,6 +2,7 @@ import tkinter as tk
 
 from enum import IntEnum
 
+from .elements.loading_layer import UILoadingLayer
 from .elements.label import UILabel
 from .elements.button import UIButton
 from .elements.tab import UITab
@@ -12,6 +13,7 @@ from .elements.listbox import UIListBox
 from .elements.table import UITable
 
 class ElementID(IntEnum):
+    UI_LOADING_LAYER = -1,
     UI_LABEL = 0,
     UI_BUTTON = 1,
     UI_TABBAR = 2,
@@ -27,7 +29,9 @@ class Element:
         self.__alias = element_scheme['element_alias']
         self.__element_id = element_scheme['element_id']
 
-        if self.__element_id == ElementID.UI_LABEL:
+        if self.__element_id == ElementID.UI_LOADING_LAYER:
+            self.__element = UILoadingLayer(root_object, element_scheme)
+        elif self.__element_id == ElementID.UI_LABEL:
             self.__element = UILabel(root_object, element_scheme)
         elif self.__element_id == ElementID.UI_BUTTON:
             self.__element = UIButton(root_object, element_scheme)

@@ -1,7 +1,8 @@
-import os
+import os, time
 import tkinter as tk
 import tkinter.font as tkFont
 
+from threading import Thread
 from tkinter import ttk
 
 from .elements.tab_bar import UITabBar
@@ -42,6 +43,69 @@ class Window:
 
         # construct elements from layout
         self.__construct_elements(window_scheme)
+
+        # create loading layer
+        self.__construct_loading_layer()
+
+    def __animate_loading_layer(self) -> None:
+        loading_animation = [
+            "[□□□□□□□□□□□]", "[■□□□□□□□□□□]", "[■■□□□□□□□□□]", 
+            "[■■■□□□□□□□□]", "[■■■■□□□□□□□]", "[■■■■■□□□□□□]", 
+            "[■■■■■■□□□□□]", "[■■■■■■■□□□□]", "[■■■■■■■■□□□]", 
+            "[■■■■■■■■■□□]", "[■■■■■■■■■■□]", "[■■■■■■■■■■■]"
+        ]
+
+        loading_layer = self.get_element_by_alias('LOADING_LAYER').get()
+        animation_label = self.get_element_by_alias('LABEL_LOADING').get().get_tk_object()
+
+        while True:
+            action = loading_layer.get_action()
+            sub_action = loading_layer.get_sub_action()
+            for index, animation in enumerate(loading_animation):
+                animation_label.config(text=f"{action}\n{sub_action}\n{animation}")
+                time.sleep(0.06)
+            for index in range(len(loading_animation) - 1, 0, -1):
+                animation_label.config(text=f"{action}\n{sub_action}\n{loading_animation[index]}")
+                time.sleep(0.06)
+
+    def __construct_loading_layer(self) -> None:
+        win_width = self.__window_obj.winfo_width()
+        win_height = self.__window_obj.winfo_height()
+
+        self.__elements.append(
+            Element(
+                self.__window_obj, 
+                {
+                    "element_id": -1,
+                    "element_alias": "LOADING_LAYER",
+                    "element_pos": {
+                        "x": 0, "y": 0, 
+                        "w": win_width,
+                        "h": win_height
+                    }
+                }
+            )
+        )
+
+        tk_loading_layer = self.get_element_by_alias('LOADING_LAYER').get().get_tk_object()
+
+        self.generate_element(
+            tk_loading_layer,
+            {
+                "element_id": 0,
+                "element_alias": "LABEL_LOADING",
+                "element_text": "ACTION",
+                "relative": True,
+                "element_pos": { 
+                    "rel_x": 0.5, "rel_y": 0.5, 
+                    "anchor": "center", "justify": "center" 
+                }
+            }
+        )
+
+        animation_thread = Thread(target=self.__animate_loading_layer, daemon=True)
+        animation_thread.start()
+        tk_loading_layer.place_forget()
 
     def __construct_tab_bar(self, element) -> None:
         if not isinstance(element, UITabBar):
