@@ -1,7 +1,6 @@
-import os
+import os, sys
 
 from ui import GUI
-
 from integrations.integrations import Integrations
 
 def main() -> None:
@@ -19,4 +18,9 @@ def main() -> None:
     main_window.get().mainloop()
 
 if __name__ == '__main__':
-    main()
+    python_version = sys.version_info
+    if python_version < (3,9,7):
+        print(f"[!] unsupported python version: {python_version} (required >=3.9.7)")
+        exit(-3)
+    else:
+        main()
