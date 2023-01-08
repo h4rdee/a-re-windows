@@ -1,4 +1,4 @@
-import yara, os, hashlib, ppdeep, pefile, dnfile, json, re
+import yara, os, hashlib, ppdeep, pefile, dnfile, json, re, threading
 import tkinter as tk
 
 from enum import IntEnum
@@ -21,6 +21,7 @@ class MainIntegration:
         self.__imports_data = list()
 
         self.__window_object = None
+        self.__loading_layer = None
 
         self.__tk_compiler_info = None
         self.__tk_packer_info = None
@@ -94,6 +95,8 @@ class MainIntegration:
         return info
 
     def __update_sample_info(self, yara_match) -> None:
+        self.__loading_layer.set_action('Updating General Info')
+
         rule_type = list(yara_match.keys())[0]
     
         # update capabilities info
@@ -117,11 +120,24 @@ class MainIntegration:
             self.__tk_compiler_info.config(text=info_string)
 
     def __update_hashes(self, pe: pefile.PE) -> None:
+        self.__loading_layer.set_action('Updating Hashes')
+
+        self.__loading_layer.set_sub_action('Calculating SHA256')
         self.__hash_sha256.set_text(hashlib.sha256(self.__sample_buffer).hexdigest(), True)
+
+        self.__loading_layer.set_sub_action('Calculating SHA1')
         self.__hash_sha1.set_text(hashlib.sha1(self.__sample_buffer).hexdigest(), True)
+
+        self.__loading_layer.set_sub_action('Calculating MD5')
         self.__hash_md5.set_text(hashlib.md5(self.__sample_buffer).hexdigest(), True)
+
+        self.__loading_layer.set_sub_action('Calculating IMPHASH')
         self.__hash_imphash.set_text(pe.get_imphash(), True)
+        
+        self.__loading_layer.set_sub_action('Calculating RICH Header Hash')
         self.__hash_rich.set_text(pe.get_rich_header_hash(), True)
+        
+        self.__loading_layer.set_sub_action('Calculating SSDEEP')
         self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
 
     def __dump_section_to_file(self, element_alias: str, pe: pefile.PE) -> None:
@@ -158,6 +174,8 @@ class MainIntegration:
                 if int(comp_id['comp_id'], 16) == rich_field:
                     return comp_id['description']
 
+        self.__loading_layer.set_action('Parsing PE RICH Header')
+
         # clear previous results
         self.__rich_header_info.clear()
 
@@ -177,6 +195,7 @@ class MainIntegration:
                 compid = analyze_rich_comp_id(rich_field)
             else:
                 if compid:
+                    self.__loading_layer.set_sub_action(compid)
                     rich_infos.append(f"{compid}; count = {rich_field}")
                     compid = None
 
@@ -185,6 +204,9 @@ class MainIntegration:
 
     def __update_sections_info(self, pe: pefile.PE) -> None:
         def analyze_section(section) -> list:
+            section_name = section.Name.decode(encoding='ascii').rstrip('\x00')
+            self.__loading_layer.set_sub_action(section_name)
+
             result = list()
 
             if self.__pe_sections_db == None:
@@ -192,7 +214,6 @@ class MainIntegration:
                 with open(os.path.join(signatures_path, 'pe_sections.json'), 'r') as pe_sections_db:
                     self.__pe_sections_db = json.load(pe_sections_db)
 
-            section_name = section.Name.decode(encoding='ascii').rstrip('\x00')
             description = "unknown section"
 
             for section_db_entry in self.__pe_sections_db["sections"]:
@@ -236,13 +257,19 @@ class MainIntegration:
 
             return result
 
-        # clear previous sections info
-        for tab in self.__tab_bar_sections_info.get_all_tabs():
-            for sub_element in tab.get_element_scheme()['elements']: # destroy child elements (if any)
-                self.__window_object.destroy_element_by_alias(sub_element['element_alias'])
-            self.__window_object.destroy_element_by_alias(tab.get_alias())
+        self.__loading_layer.set_action('Analyzing PE Sections')
 
-        self.__tab_bar_sections_info.clear_tabs()
+        # clear previous sections info
+        try:
+            for tab in self.__tab_bar_sections_info.get_all_tabs():
+                for sub_element in tab.get_element_scheme()['elements']: # destroy child elements (if any)
+                    self.__window_object.destroy_element_by_alias(sub_element['element_alias'])
+                self.__window_object.destroy_element_by_alias(tab.get_alias())
+
+            self.__tab_bar_sections_info.clear_tabs()
+
+        except tk.TclError:
+            pass
 
         # generate new sections tabs
         for section in pe.sections:
@@ -279,6 +306,8 @@ class MainIntegration:
         self.__imports.set_column_widths([370, 50, 50, 70])
 
     def __update_imports_info(self, pe: pefile.PE) -> None:
+        self.__loading_layer.set_action('Collecting Imports Info')
+
         # clear previous results
         self.__imports_entries.clear()
         self.__imports_data.clear()
@@ -299,6 +328,7 @@ class MainIntegration:
                 import_name = ""
                 if _import.name != None:
                     import_name = _import.name.decode(encoding='ascii')
+                    self.__loading_layer.set_sub_action(import_name)
                     # TODO: add demangling
 
                 import_thunk = ""
@@ -321,6 +351,8 @@ class MainIntegration:
         self.__imports_entries.get_tk_object().event_generate("<<ListboxSelect>>")
 
     def __update_exports_info(self, pe: pefile.PE) -> None:
+        self.__loading_layer.set_action('Collecting Exports Info')
+
         # clear previous results
         self.__exports.clear()
 
@@ -334,6 +366,7 @@ class MainIntegration:
             export_name = ""
             if export_symbol.name != None:
                 export_name = export_symbol.name.decode(encoding='ascii')
+                self.__loading_layer.set_sub_action(export_name)
                 # TODO: add demangling
 
             exports.append([
@@ -345,6 +378,9 @@ class MainIntegration:
         self.__exports.set_column_widths([470, 80, 50, 70])
 
     def __update_strings_info(self, pe: pefile.PE) -> None:
+        self.__loading_layer.set_action('Collecting Strings')
+        self.__loading_layer.set_sub_action("")
+
         # clear previous results
         self.__strings.clear()
 
@@ -372,6 +408,8 @@ class MainIntegration:
     def __update_dotnet_info(self, dn: dnfile.dnPE, is_dotnet_sample: bool) -> None:
 
         def analyze_md_tables(stream: dnfile.stream.MetaDataTables) -> None:
+            self.__loading_layer.set_sub_action('Analyzing Metadata Tables')
+
             stream_name = stream.struct.Name.decode(encoding='ascii')
             self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
                 {
@@ -384,6 +422,7 @@ class MainIntegration:
             )
 
         def analyze_strings_heap(stream: dnfile.stream.StringsHeap) -> None:
+            self.__loading_layer.set_sub_action('Analyzing Strings Heap')
             stream_name = stream.struct.Name.decode(encoding='ascii')
 
             result = list()
@@ -413,6 +452,8 @@ class MainIntegration:
 
 
         def analyze_us_heap(stream: dnfile.stream.UserStringHeap) -> None:
+            self.__loading_layer.set_sub_action('Analyzing UserStrings Heap')
+
             stream_name = stream.struct.Name.decode(encoding='ascii')
             user_strings = list()
 
@@ -468,6 +509,8 @@ class MainIntegration:
             )
 
         def analyze_guid_heap(stream: dnfile.stream.GuidHeap) -> None:
+            self.__loading_layer.set_sub_action('Analyzing GUID Heap')
+
             stream_name = stream.struct.Name.decode(encoding='ascii')
             guids = list()
             guid_index = 1
@@ -499,6 +542,7 @@ class MainIntegration:
             )
 
         def analyze_dot_net(dn: dnfile.dnPE) -> list:
+            self.__loading_layer.set_action('Analyzing .NET structure')
             result = list()
 
             self.__tab_bar_dotnet_info = {
@@ -566,6 +610,8 @@ class MainIntegration:
             }
         )
 
+        self.__loading_layer.set_sub_action('')
+        
         self.__tab_bar_dotnet_info = self.__window_object.get_element_by_alias('TAB_BAR_DOTNET_INFO').get()
         self.__tab_bar_sample_info.add_tab(self.__tab_dotnet)
 
@@ -588,6 +634,7 @@ class MainIntegration:
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
 
+        self.__loading_layer.set_action('Parsing PE/.NET Structure')
         try: # try to parse pe/dn object
             pe = pefile.PE(data=self.__sample_buffer)
             dn = dnfile.dnPE(data=self.__sample_buffer)
@@ -597,6 +644,7 @@ class MainIntegration:
 
         except pefile.PEFormatError as ex:
             print(f"[!] exception: {ex}")
+            self.__loading_layer.get_tk_object().place_forget()
             return
 
         # send sample loaded event to all integrations
@@ -646,10 +694,22 @@ class MainIntegration:
         for yara_match in yara_matches:
             self.__update_sample_info(yara_match)
 
+        self.__loading_layer.get_tk_object().place_forget()
+
     def __load_sample_pressed(self) -> None:
         filetypes = (
             ('Sample', '*.bin *.exe *.dll'),
             ('All files', '*.*')
+        )
+
+        # show loading indicator
+        self.__loading_layer.set_action('Loading Sample')
+        dimensions = self.__loading_layer.get_dimensions()
+        self.__loading_layer.get_tk_object().place(
+            x = dimensions[0], 
+            y = dimensions[1],
+            width = dimensions[2],
+            height = dimensions[3]
         )
 
         filename = fd.askopenfilename(
@@ -663,9 +723,10 @@ class MainIntegration:
                 self.__sample_buffer = sample_buffer.read()
         except FileNotFoundError:
             print("[!] sample wasn't selected")
+            self.__loading_layer.get_tk_object().place_forget()
             return
 
-        self.__sample_loaded_event()
+        threading.Thread(target=self.__sample_loaded_event).start()
 
     def set_window_object(self, window_object) -> None:
         self.__window_object = window_object
@@ -680,7 +741,9 @@ class MainIntegration:
             tk_object = element.get().get_tk_object()
             element_alias = element.get_alias()
 
-            if element_alias == 'BUTTON_LOAD_SAMPLE':
+            if element_alias == 'LOADING_LAYER':
+                self.__loading_layer = element.get()
+            elif element_alias == 'BUTTON_LOAD_SAMPLE':
                 tk_object.config(command=self.__load_sample_pressed)
             elif element_alias == 'LABEL_COMPILER_INFO':
                 self.__tk_compiler_info = tk_object
@@ -736,6 +799,7 @@ class MainIntegration:
                 
     def request_needed_elements(self) -> list:
         return [
+            'LOADING_LAYER',
             'BUTTON_LOAD_SAMPLE', 
             'LABEL_COMPILER_INFO',
             'LABEL_PACKER_INFO',
