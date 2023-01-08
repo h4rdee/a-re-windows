@@ -137,8 +137,8 @@ class MainIntegration:
         self.__loading_layer.set_sub_action('Calculating RICH Header Hash')
         self.__hash_rich.set_text(pe.get_rich_header_hash(), True)
         
-        self.__loading_layer.set_sub_action('Calculating SSDEEP')
-        self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
+        # self.__loading_layer.set_sub_action('Calculating SSDEEP')
+        # self.__hash_ssdeep.set_text(ppdeep.hash(self.__sample_buffer), True)
 
     def __dump_section_to_file(self, element_alias: str, pe: pefile.PE) -> None:
         section_name = element_alias[len('BUTTON_DUMP_'):-len('_SECTION')].lower()
