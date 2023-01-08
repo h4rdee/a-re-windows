@@ -4,6 +4,7 @@ from tksheet import Sheet
 
 class UITable:
     def __init__(self, root_object: tk.Tk, element_scheme: dict) -> None:
+        self.__alias = element_scheme['element_alias']
         self.__tk_object = tk.Frame(root_object)
 
         self.__sheet_object = Sheet(
@@ -56,3 +57,8 @@ class UITable:
 
     def get_tk_object(self) -> tk.Label:
         return self.__tk_object
+
+    def __del__(self):
+        # print(f"[>] destroying UITable ({self.__alias}) [{hex(id(self))}]")
+        self.__sheet_object.destroy()
+        self.__tk_object.destroy()

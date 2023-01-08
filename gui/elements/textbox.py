@@ -8,6 +8,8 @@ from chlorophyll import CodeView
 
 class UITextBox:
     def __init__(self, root_object: tk.Tk, element_scheme: dict) -> None:
+        self.__alias = element_scheme['element_alias']
+        
         self.__tk_object = CodeView(
             root_object, 
             lexer=pyg_lexers.CppLexer, 
@@ -38,3 +40,7 @@ class UITextBox:
 
     def get_tk_object(self) -> CodeView:
         return self.__tk_object
+
+    def __del__(self):
+        # print(f"[>] destroying UITextBox ({self.__alias}) [{hex(id(self))}]")
+        pass

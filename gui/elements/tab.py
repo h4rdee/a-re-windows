@@ -20,3 +20,7 @@ class UITab:
 
     def get_tk_object(self) -> ttk.Frame:
         return self.__tk_object
+
+    def __del__(self):
+        # print(f"[>] destroying UITab ({self.__alias}) [{hex(id(self))}]")
+        pass

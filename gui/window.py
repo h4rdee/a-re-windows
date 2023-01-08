@@ -82,6 +82,7 @@ class Window:
             if element.get_alias() == alias:
                 element.get().get_tk_object().destroy() # destroy widget
                 self.__elements.remove(element) # remove element object from elements list
+                del element
 
     def generate_element(self, root_object: tk.Tk, element_scheme: dict) -> Element:
         self.__elements.append(Element(root_object, element_scheme))
