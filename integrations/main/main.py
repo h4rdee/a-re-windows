@@ -36,6 +36,7 @@ class MainIntegration:
 
         self.__table_strings = None
         self.__table_user_strings = None
+        self.__table_guids = None
 
         self.__tab_dotnet = None
 
@@ -466,6 +467,37 @@ class MainIntegration:
                 }
             )
 
+        def analyze_guid_heap(stream: dnfile.stream.GuidHeap) -> None:
+            stream_name = stream.struct.Name.decode(encoding='ascii')
+            guids = list()
+            guid_index = 1
+
+            while True:
+                try:
+                    offset = (guid_index - 1) * (128 // 8)
+                    guids.append([stream.get(guid_index), hex(offset), guid_index])
+                    guid_index += 1
+                except IndexError:
+                    break
+
+            self.__table_guids = {
+                "element_id": 7,
+                "element_alias": "TABLE_DOTNET_GUIDS",
+                "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+                "element_headers": [ "String", "Heap Offset", "Index" ],
+                "element_data": guids
+            }
+
+            self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
+                {
+                    "element_id": 6,
+                    "element_text": stream_name,
+                    "element_alias": f"TAB_{stream_name.upper()}",
+                    "element_state": False,
+                    "elements": [ self.__table_guids ]
+                }
+            )
+
         def analyze_dot_net(dn: dnfile.dnPE) -> list:
             result = list()
 
@@ -490,12 +522,14 @@ class MainIntegration:
             }
 
             for stream in dn.net.metadata.streams_list:
-                if isinstance(stream, dnfile.stream.StringsHeap):
+                if isinstance(stream, dnfile.stream.MetaDataTables):
+                    analyze_md_tables(stream)
+                elif isinstance(stream, dnfile.stream.StringsHeap):
                     analyze_strings_heap(stream)
                 elif isinstance(stream, dnfile.stream.UserStringHeap):
                     analyze_us_heap(stream)
-                elif isinstance(stream, dnfile.stream.MetaDataTables):
-                    analyze_md_tables(stream)
+                elif isinstance(stream, dnfile.stream.GuidHeap):
+                    analyze_guid_heap(stream)
                 else:
                     stream_name = stream.struct.Name.decode(encoding='ascii')
                     self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
@@ -515,6 +549,7 @@ class MainIntegration:
         self.__tab_bar_sample_info.remove_tab(self.__tab_dotnet)
         self.__window_object.destroy_element_by_alias('TABLE_DOTNET_STRINGS')
         self.__window_object.destroy_element_by_alias('TABLE_DOTNET_USERSTRINGS')
+        self.__window_object.destroy_element_by_alias('TABLE_DOTNET_GUIDS')
         
         if not is_dotnet_sample:
             return
@@ -544,6 +579,11 @@ class MainIntegration:
         self.__table_strings.get_sheet_object().hide(canvas="x_scrollbar")
         self.__table_strings.get_sheet_object().show(canvas="y_scrollbar")
         self.__table_strings.set_column_widths([535, 120])
+
+        self.__table_strings = self.__window_object.get_element_by_alias('TABLE_DOTNET_GUIDS').get()
+        self.__table_strings.get_sheet_object().hide(canvas="x_scrollbar")
+        self.__table_strings.get_sheet_object().show(canvas="y_scrollbar")
+        self.__table_strings.set_column_widths([545, 80, 40])
 
     def __sample_loaded_event(self) -> None:
         is_dotnet_sample = False
