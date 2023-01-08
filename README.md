@@ -25,6 +25,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - [rdbende](https://gitlab.com/rdbende/chlorophyll) for tkinter `chlorophyll` add-on
 - [ragardner](https://github.com/ragardner/tksheet) for tkinter `tksheet` add-on
 - [erocarrera](https://github.com/erocarrera/pefile) for `pefile` library
+- [malwarefrank](https://github.com/malwarefrank/dnfile) for `dnfile` library
 - [elceef](https://github.com/elceef/ppdeep/blob/master/ppdeep.py) for pure python ssdeep hashing implementation (`ppdeep` library)
 
 ## Notes:
