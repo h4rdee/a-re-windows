@@ -1,4 +1,5 @@
 import dnfile
+import tkinter as tk
 
 class DotNetParser:
 
@@ -18,6 +19,26 @@ class DotNetParser:
         self.__table_strings = None
         self.__table_guids = None
 
+        self.__listbox_mdtables = None
+
+    def __mdtable_changed_event(self, *args) -> None:
+        idx = args[0].widget.curselection()
+        
+        if len(idx) != 0:
+            table = args[0].widget.get(idx)
+            for entry in self.__tables_headers:
+                if entry['table'] == table:
+                    self.__table_mdtables_info.update_headers(entry['headers'])
+                    self.__table_mdtables_info.update_data(entry['data'])
+
+                    # widths = list()
+                    # for _ in entry['headers']:
+                    #     widths.append(100)
+
+                    # self.__table_mdtables_info.set_column_widths(widths)
+        
+        #self.__imports.set_column_widths([370, 50, 50, 70])
+
     def __format_table(self, table_field, alias: str, column_widths: list) -> None:
         table_element = self.__win_obj.get_element_by_alias(alias)
 
@@ -29,15 +50,57 @@ class DotNetParser:
 
     def __analyze_md_tables(self, stream: dnfile.stream.MetaDataTables) -> None:
         self.__loading_layer.set_sub_action('Analyzing Metadata Tables')
-
         stream_name = stream.struct.Name.decode(encoding='ascii')
+
+        tables = list()
+        tables_data = list()
+        self.__tables_headers = list()
+
+        for table in stream.tables_list:
+            tables.append(table.name)
+            tables_data.append(table.rows)
+
+            row_values = list()
+            for row in table.rows:
+
+                temp_values = list()
+                for annotation_key in row.__annotations__.keys():
+
+                    temp_value = getattr(row, annotation_key)
+                    if type(temp_value) == str:
+                        temp_values.append(temp_value)
+                    else:
+                        temp_values.append('[Object]')
+
+                row_values.append(temp_values)
+
+            self.__tables_headers.append({
+                'table': table.name,
+                'headers': table.rows[0].__annotations__.keys(),
+                'data': row_values
+            })
+
+        self.__listbox_mdtables = {
+            "element_id": 5,
+            "element_alias": "LISTBOX_MDTABLES_INFO",
+            "element_pos": { "x": 10, "y": 10, "w": 110, "h": 150 },
+            "elements": tables
+        }
+
+        self.__table_mdtables_info = {
+            "element_id": 7,
+            "element_alias": "TABLE_DOTNET_MDTABLES",
+            "element_pos": { "x": 132, "y": 12, "w": 540, "h": 148 },
+            "element_data": [tables_data]
+        }
+
         self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
             {
                 "element_id": 6,
                 "element_text": stream_name,
                 "element_alias": f"TAB_{stream_name.upper()}",
                 "element_state": False,
-                "elements": []
+                "elements": [ self.__listbox_mdtables, self.__table_mdtables_info ]
             }
         )
 
@@ -55,7 +118,7 @@ class DotNetParser:
         self.__table_strings = {
             "element_id": 7,
             "element_alias": "TABLE_DOTNET_STRINGS",
-            "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+            "element_pos": { "x": 12, "y": 12, "w": 660, "h": 148 },
             "element_headers": [ "String", "Size" ],
             "element_data": result
         }
@@ -79,7 +142,7 @@ class DotNetParser:
         self.__table_user_strings = {
             "element_id": 7,
             "element_alias": "TABLE_DOTNET_USERSTRINGS",
-            "element_pos": { "x": 12, "y": 12, "w": 682, "h": 198 },
+            "element_pos": { "x": 12, "y": 12, "w": 660, "h": 148 },
             "element_headers": [ "String", "Heap Offset", "Size" ],
             "element_data": []
         }
@@ -159,6 +222,12 @@ class DotNetParser:
                 "elements": [ self.__table_guids ]
             }
         )
+
+    def __analyze_blob_heap(self, stream: dnfile.stream.GuidHeap) -> None:
+        # TODO
+        self.__loading_layer.set_sub_action('Analyzing Blob Heap')
+        stream_name = stream.struct.Name.decode(encoding='ascii')
+        raw_blob_data = self.__dn_object.get_data(stream.struct.Offset, stream.sizeof())
     
     def __analyze_dotnet(self) -> None:
         self.__loading_layer.set_action('Analyzing .NET structure')
@@ -167,7 +236,7 @@ class DotNetParser:
         self.__tab_bar_dotnet_info = {
             "element_id": 2,
             "element_alias": "TAB_BAR_DOTNET_INFO",
-            "element_pos": { "x": 10, "y": 10, "w": 708, "h": 253 },
+            "element_pos": { "x": 10, "y": 10, "w": 708, "h": 250 },
             "tabs": [ 
                 {
                     "element_id": 6,
@@ -177,7 +246,7 @@ class DotNetParser:
                     "elements": [{
                         "element_id": 2,
                         "element_alias": "TAB_BAR_STREAMS_INFO",
-                        "element_pos": { "x": 10, "y": 10, "w": 730, "h": 300 },
+                        "element_pos": { "x": 10, "y": 10, "w": 685, "h": 200 },
                         "tabs": []
                     }]
                 }
@@ -193,8 +262,12 @@ class DotNetParser:
                 self.__analyze_us_heap(stream)
             elif isinstance(stream, dnfile.stream.GuidHeap):
                 self.__analyze_guid_heap(stream)
+            elif isinstance(stream, dnfile.stream.BlobHeap):
+                continue
+                # self.__analyze_blob_heap(stream)
             else:
                 stream_name = stream.struct.Name.decode(encoding='ascii')
+                print(f"[!] unimplemented stream: {stream_name}")
                 self.__tab_bar_dotnet_info['tabs'][0]['elements'][0]['tabs'].append(
                     {
                         "element_id": 6,
@@ -216,6 +289,8 @@ class DotNetParser:
         # clear previous results
         self.__tab_bar_sample_info.remove_tab(self.__tab_dotnet)
 
+        self.__win_obj.destroy_element_by_alias('LISTBOX_MDTABLES_INFO')
+        self.__win_obj.destroy_element_by_alias('TABLE_DOTNET_MDTABLES')
         self.__win_obj.destroy_element_by_alias('TABLE_DOTNET_STRINGS')
         self.__win_obj.destroy_element_by_alias('TABLE_DOTNET_USERSTRINGS')
         self.__win_obj.destroy_element_by_alias('TABLE_DOTNET_GUIDS')
@@ -241,6 +316,14 @@ class DotNetParser:
         self.__tab_bar_sample_info.add_tab(self.__tab_dotnet)
 
         # format tables
-        self.__format_table(self.__table_user_strings, 'TABLE_DOTNET_USERSTRINGS', [535, 80, 40])
-        self.__format_table(self.__table_strings, 'TABLE_DOTNET_STRINGS', [535, 120])
-        self.__format_table(self.__table_guids, 'TABLE_DOTNET_GUIDS', [545, 80, 40])
+        self.__format_table(self.__table_user_strings, 'TABLE_DOTNET_USERSTRINGS', [505, 80, 40])
+        self.__format_table(self.__table_strings, 'TABLE_DOTNET_STRINGS', [535, 90])
+        self.__format_table(self.__table_guids, 'TABLE_DOTNET_GUIDS', [525, 80, 40])
+
+        self.__table_mdtables_info = self.__win_obj.get_element_by_alias('TABLE_DOTNET_MDTABLES').get()
+        self.__listbox_mdtables = self.__win_obj.get_element_by_alias('LISTBOX_MDTABLES_INFO').get()
+
+        # setup callbacks
+        self.__listbox_mdtables.get_tk_object().bind('<<ListboxSelect>>', self.__mdtable_changed_event)
+        self.__listbox_mdtables.get_tk_object().select_set(0)
+        self.__listbox_mdtables.get_tk_object().event_generate("<<ListboxSelect>>")
