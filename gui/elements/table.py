@@ -7,16 +7,20 @@ class UITable:
         self.__alias = element_scheme['element_alias']
         self.__tk_object = tk.Frame(root_object)
 
-        self.__sheet_object = Sheet(
-            self.__tk_object,
-            theme="dark green",
-            show_top_left=False,
-            show_row_index=False,
-            show_y_scrollbar=False,
-            headers=element_scheme['element_headers'],
-            data=element_scheme['element_data'],
-            width=element_scheme['element_pos']['w']
-        )
+        if 'element_headers' in element_scheme:
+            self.__sheet_object = Sheet(
+                self.__tk_object, theme="dark green",
+                show_top_left=False, show_row_index=False,
+                show_y_scrollbar=False, headers=element_scheme['element_headers'],
+                data=element_scheme['element_data'], width=element_scheme['element_pos']['w']
+            )
+        else:
+            self.__sheet_object = Sheet(
+                self.__tk_object, theme="dark green",
+                show_top_left=False, show_row_index=False,
+                show_y_scrollbar=False, data=element_scheme['element_data'], 
+                width=element_scheme['element_pos']['w']
+            )        
 
         self.__tk_object.grid_columnconfigure(0, weight=1)
         self.__tk_object.grid_rowconfigure(0, weight=1)
@@ -43,6 +47,13 @@ class UITable:
 
     def update_data(self, data, fit_to_text_size = True) -> None:
         self.__sheet_object.set_sheet_data(data)
+
+        if fit_to_text_size:
+            self.__sheet_object.set_all_cell_sizes_to_text()
+            self.__sheet_object.redraw()
+
+    def update_headers(self, headers: list, fit_to_text_size = True) -> None:
+        self.__sheet_object.headers(headers)
 
         if fit_to_text_size:
             self.__sheet_object.set_all_cell_sizes_to_text()

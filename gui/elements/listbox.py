@@ -8,6 +8,10 @@ class UIListBox:
             root_object
         )
 
+        if 'elements' in element_scheme:
+            for item in element_scheme['elements']:
+                self.add_entry(item)
+
         self.__tk_object.place(
             x = element_scheme['element_pos']['x'],
             y = element_scheme['element_pos']['y'],
