@@ -14,6 +14,7 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
   - Parsing strings from `Strings` heap
   - Parsing strings from `UserStrings` heap
   - Parsing guids from `Guid` heap
+  - Parsing metadata tables (WIP)
 - Custom **yara checker** for testing your own yara rules
 - Cross-platform **user-friendly** UI powered by Tkinter!
 
