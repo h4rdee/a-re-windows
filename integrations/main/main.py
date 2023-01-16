@@ -41,6 +41,13 @@ class MainIntegration:
 
             if dn.net != None:
                 is_dotnet_sample = True
+                if dn.net.metadata == None:
+                    print(
+                        "[!] warning: .net sample seems to be corrupted (metadata missing)\n"
+                        f"{dn.get_warnings()}"
+                    )
+                    self.__loading_layer.get_tk_object().place_forget()
+                    return
 
         except pefile.PEFormatError as ex:
             print(f"[!] exception: {ex}")
