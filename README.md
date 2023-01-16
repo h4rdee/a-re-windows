@@ -37,12 +37,5 @@ This project was made by me, and my python knowledge kinda sucks <br>
 Don't expect to see quality code here (PR's are welcomed!) <br>
 I'm working on this project at spare time, which means that no regular support of this tool will be provided
 
-## Screenshots:
-<img src="https://user-images.githubusercontent.com/37783231/211074437-d4baa9c6-9003-4a74-914c-8415b768f588.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211195836-5fc88387-363c-4ea3-8487-5c553d569d33.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211195815-86977e12-abfb-4240-898f-87c6710ef239.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211195736-314effed-c437-4d42-92dc-cf9916c93232.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211195698-30870937-0d21-4b9f-be1d-5850107abff5.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211217295-65e0fdf2-4f06-449b-b302-719ae842c528.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211410104-b5af671a-60c7-4abd-9088-50ed8ea88eb6.png" width="700" height="450">
-<img src="https://user-images.githubusercontent.com/37783231/211195955-f6a13216-5143-4d97-ad12-2d9c0246ab14.png" width="700" height="450">
+## Preview:
+<img src="https://user-images.githubusercontent.com/37783231/212688002-e08daa32-b362-4e9b-9207-6ca571c9cf83.gif" width="700" height="450">
