@@ -318,32 +318,6 @@
                   "element_pos": { "x": 10, "y": 350, "w": 775, "h": 110 }
                 }
               ]
-            },
-            {
-              "element_text": "VirusTotal",
-              "element_alias": "TAB_VIRUSTOTAL",
-              "element_state": false,
-              "elements": [
-                {
-                  "element_id": 1,
-                  "element_alias": "BUTTON_VT_ANALYZE",
-                  "element_text": "Connect to VirusTotal",
-                  "element_pos": { "x": 10, "y": 10, "w": 160, "h": 30 }
-                },
-                {
-                  "element_id": 7,
-                  "element_alias": "TABLE_VT_RESULTS",
-                  "element_pos": { "x": 10, "y": 80, "w": 760, "h": 350 },
-                  "element_headers": [ "AV/SandBox", "Verdict" ],
-                  "element_data": []
-                },
-                {
-                  "element_id": 0,
-                  "element_alias": "LABEL_VT_RESULT",
-                  "element_text": "Score: Safe: 0, Malicious: 0, Suspicious: 0, Undetected: 0, Total: 0",
-                  "element_pos": { "x": 10, "y": 50, "w": 0, "h": 0 }
-                }
-              ]
             }
           ]
         }
