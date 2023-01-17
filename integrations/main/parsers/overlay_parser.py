@@ -38,7 +38,7 @@ class OverlayParser:
                     overlay_chunk.extend(b'\x00' * (16 - len(overlay_chunk)))
 
                 hexed_chunk = binascii.hexlify(overlay_chunk, ' ').decode('ascii', 'ignore').split(' ')
-                hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore').replace('\x00', '.'))
+                hexed_chunk.append(overlay_chunk.decode('utf-8', 'ignore').replace('\x00', '.').replace('\n', ''))
 
                 result.append(hexed_chunk)
                 offset += 16
