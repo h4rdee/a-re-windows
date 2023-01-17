@@ -16,6 +16,8 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
   - Parsing guids from `Guid` heap
   - Parsing metadata tables (WIP)
 - Custom **yara checker** for testing your own yara rules
+* Performing **online scan** with following vendors:
+  - VirusTotal
 - Cross-platform **user-friendly** UI powered by Tkinter!
 
 ## Credits:
