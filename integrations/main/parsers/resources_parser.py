@@ -40,59 +40,58 @@ class ResourcesParser:
     def __update_resource_entries(self) -> None:
         self.__resources_data.clear()
 
-        if hasattr(self.__pe_object, 'DIRECTORY_ENTRY_RESOURCE'):
-            for entry in self.__pe_object.DIRECTORY_ENTRY_RESOURCE.entries:
-                
-                if entry.name is not None:
-                    name = str(entry.name)
-                else:
-                    name = str(pefile.RESOURCE_TYPE.get(entry.struct.Id))
+        for entry in self.__pe_object.DIRECTORY_ENTRY_RESOURCE.entries:
+            
+            if entry.name is not None:
+                name = str(entry.name)
+            else:
+                name = str(pefile.RESOURCE_TYPE.get(entry.struct.Id))
 
-                if name is None:
-                    name = str(entry.struct.Id)
+            if name is None:
+                name = str(entry.struct.Id)
 
-                if hasattr(entry, 'directory'):
-                    for resource_id in entry.directory.entries:
-                        if hasattr(resource_id, 'directory'):
-                            for resource_entry in resource_id.directory.entries:
+            if hasattr(entry, 'directory'):
+                for resource_id in entry.directory.entries:
+                    if hasattr(resource_id, 'directory'):
+                        for resource_entry in resource_id.directory.entries:
 
-                                data = self.__pe_object.get_data(
-                                    resource_entry.data.struct.OffsetToData, 
-                                    resource_entry.data.struct.Size
-                                )
+                            data = self.__pe_object.get_data(
+                                resource_entry.data.struct.OffsetToData, 
+                                resource_entry.data.struct.Size
+                            )
 
-                                lang = pefile.LANG.get(
-                                    resource_entry.data.lang, None
-                                )
+                            lang = pefile.LANG.get(
+                                resource_entry.data.lang, None
+                            )
 
-                                sublang = pefile.get_sublang_name_for_lang(
-                                    resource_entry.data.lang, 
-                                    resource_entry.data.sublang
-                                )
+                            sublang = pefile.get_sublang_name_for_lang(
+                                resource_entry.data.lang, 
+                                resource_entry.data.sublang
+                            )
 
-                                offset = hex(resource_entry.data.struct.OffsetToData)
-                                size = hex(resource_entry.data.struct.Size)
+                            offset = hex(resource_entry.data.struct.OffsetToData)
+                            size = hex(resource_entry.data.struct.Size)
 
-                                self.__resources_entries.add_entry(name)
+                            self.__resources_entries.add_entry(name)
 
-                                self.__resources_data.append([
-                                    name, offset, size, 
-                                    lang, sublang, []
-                                ])
+                            self.__resources_data.append([
+                                name, offset, size, 
+                                lang, sublang, []
+                            ])
 
-                                data_offset = 0
-                                for _ in range(0, len(data), 16):
-                                    overlay_chunk = bytearray(data[data_offset : data_offset + 16])
+                            data_offset = 0
+                            for _ in range(0, len(data), 16):
+                                overlay_chunk = bytearray(data[data_offset : data_offset + 16])
 
-                                    if len(overlay_chunk) != 16:
-                                        overlay_chunk.extend(b'\x00' * (16 - len(overlay_chunk)))
+                                if len(overlay_chunk) != 16:
+                                    overlay_chunk.extend(b'\x00' * (16 - len(overlay_chunk)))
 
-                                    hexed_chunk = binascii.hexlify(overlay_chunk, ' ').decode('ascii', 'ignore').split(' ')
-                                    hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore').replace('\x00', '.').replace('\n', ''))
+                                hexed_chunk = binascii.hexlify(overlay_chunk, ' ').decode('ascii', 'ignore').split(' ')
+                                hexed_chunk.append(overlay_chunk.decode('ascii', 'ignore').replace('\x00', '.').replace('\n', ''))
 
-                                    self.__resources_data[-1][-1].append(hexed_chunk)
+                                self.__resources_data[-1][-1].append(hexed_chunk)
 
-                                    data_offset += 16
+                                data_offset += 16
 
     def update(self, pe: pefile.PE) -> None:
         self.__resources_entries.get_tk_object().bind(
