@@ -262,7 +262,32 @@
                                     }
                                   ]
                                 },
-								{
+                                {
+                                  "element_text": "Resources",
+                                  "element_alias": "TAB_RESOURCES",
+                                  "element_state": false,
+                                  "elements": [
+                                    {
+                                      "element_id": 0,
+                                      "element_alias": "LABEL_RESOURCE_INFO",
+                                      "element_text": "Resources not found",
+                                      "element_pos": { "x": 144, "y": 8, "w": 0, "h": 0 }
+                                    },
+                                    {
+                                      "element_id": 5,
+                                      "element_alias": "LISTBOX_RESOURCES_ENTRIES",
+                                      "element_pos": { "x": 10, "y": 10, "w": 125, "h": 200 }
+                                    },
+                                    {
+                                      "element_id": 7,
+                                      "element_alias": "TABLE_RESOURCE_HEX",
+                                      "element_pos": { "x": 144, "y": 42, "w": 550, "h": 166 },
+                                      "element_headers": [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "Decoded" ],
+                                      "element_data": []
+                                    }
+                                  ]
+                                },
+                                {
                                   "element_text": "Overlay",
                                   "element_alias": "TAB_OVERLAY",
                                   "element_state": false,
