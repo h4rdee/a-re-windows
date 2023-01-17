@@ -11,6 +11,7 @@ from .parsers.sections_parser    import SectionsParser
 from .parsers.imports_parser     import ImportsParser
 from .parsers.exports_parser     import ExportsParser
 from .parsers.strings_parser     import StringsParser
+from .parsers.resources_parser   import ResourcesParser
 from .parsers.overlay_parser     import OverlayParser
 from .parsers.yara_parser        import YaraParser
 
@@ -66,18 +67,20 @@ class MainIntegration:
         self.__imports_parser.update(pe)
         self.__exports_parser.update(pe)
         self.__strings_parser.update(self.__sample_buffer)
+        self.__resources_parser.update(pe)
         self.__overlay_parser.update(pe)
         self.__yara_parser.update(self.__sample_buffer)
 
-        self.__dotnet_parser.parse()   # parse .net info
-        self.__hashes_parser.parse()   # parse hashes
-        self.__rich_hdr_parser.parse() # parse RICH header
-        self.__sections_parser.parse() # parse sections
-        self.__imports_parser.parse()  # parse imports
-        self.__exports_parser.parse()  # parse exports
-        self.__strings_parser.parse()  # parse strings
-        self.__overlay_parser.parse()  # parse overlay
-        self.__yara_parser.parse()     # parse YARA
+        self.__dotnet_parser.parse()    # parse .net info
+        self.__hashes_parser.parse()    # parse hashes
+        self.__rich_hdr_parser.parse()  # parse RICH header
+        self.__sections_parser.parse()  # parse sections
+        self.__imports_parser.parse()   # parse imports
+        self.__exports_parser.parse()   # parse exports
+        self.__strings_parser.parse()   # parse strings
+        self.__resources_parser.parse() # parse resources
+        self.__overlay_parser.parse()   # parse overlay
+        self.__yara_parser.parse()      # parse YARA
 
         self.__loading_layer.get_tk_object().place_forget()
 
@@ -116,15 +119,16 @@ class MainIntegration:
     def set_window_object(self, window_object) -> None:
         self.__window_object = window_object
 
-        self.__dotnet_parser   = DotNetParser(None, None, self.__window_object)
-        self.__hashes_parser   = HashesParser(None, None, self.__window_object)
-        self.__rich_hdr_parser = RichHeaderParser(None, self.__window_object)
-        self.__sections_parser = SectionsParser(None, self.__window_object)
-        self.__imports_parser  = ImportsParser(None, self.__window_object)
-        self.__exports_parser  = ExportsParser(None, self.__window_object)
-        self.__strings_parser  = StringsParser(None, self.__window_object)
-        self.__overlay_parser  = OverlayParser(None, self.__window_object)
-        self.__yara_parser     = YaraParser(None, self.__window_object)
+        self.__dotnet_parser    = DotNetParser(None, None, self.__window_object)
+        self.__hashes_parser    = HashesParser(None, None, self.__window_object)
+        self.__rich_hdr_parser  = RichHeaderParser(None, self.__window_object)
+        self.__sections_parser  = SectionsParser(None, self.__window_object)
+        self.__imports_parser   = ImportsParser(None, self.__window_object)
+        self.__exports_parser   = ExportsParser(None, self.__window_object)
+        self.__strings_parser   = StringsParser(None, self.__window_object)
+        self.__resources_parser = ResourcesParser(None, self.__window_object)
+        self.__overlay_parser   = OverlayParser(None, self.__window_object)
+        self.__yara_parser      = YaraParser(None, self.__window_object)
 
     def register_element(self, element) -> None:
         self.__elements.append(element)
