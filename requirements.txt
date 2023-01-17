@@ -5,3 +5,4 @@ pefile
 dnfile
 ppdeep
 tksheet
+requests
