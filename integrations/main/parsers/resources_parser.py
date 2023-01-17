@@ -70,8 +70,8 @@ class ResourcesParser:
                                     resource_entry.data.sublang
                                 )
 
-                                offset = ('%-8s' % hex(resource_entry.data.struct.OffsetToData)).strip()
-                                size = ('%-8s' % hex(resource_entry.data.struct.Size)).strip()
+                                offset = hex(resource_entry.data.struct.OffsetToData)
+                                size = hex(resource_entry.data.struct.Size)
 
                                 self.__resources_entries.add_entry(name)
 
@@ -93,9 +93,6 @@ class ResourcesParser:
                                     self.__resources_data[-1][-1].append(hexed_chunk)
 
                                     data_offset += 16
-
-        #print(self.__resources_data)
-        # self.__resources.update_data(self.__resources_data)
 
     def update(self, pe: pefile.PE) -> None:
         self.__resources_entries.get_tk_object().bind(
