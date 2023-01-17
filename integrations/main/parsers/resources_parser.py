@@ -119,7 +119,6 @@ class ResourcesParser:
 
         self.__loading_layer.set_action('Parsing Resources')
 
-        #threading.Thread(target=self.__update_resource_entries).start()
         self.__update_resource_entries()
 
         self.__resources.get_sheet_object().enable_bindings("drag_select")
