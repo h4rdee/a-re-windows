@@ -26,7 +26,7 @@ class ResourcesParser:
 
         if len(idx) != 0:
             resource_data = self.__resources_data[idx[0]]
-            self.__resources.update_data(resource_data[5])
+            self.__resources.update_data(resource_data[5], False)
             self.__resources_info.get_tk_object().config(
                 text = f"Resource: {resource_data[0]}; Offset: {resource_data[1]}; " \
                 f"Size: {resource_data[2]}\nLang: {resource_data[3]}; SubLang: {resource_data[4]}"
