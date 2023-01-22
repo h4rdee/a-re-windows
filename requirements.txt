@@ -6,3 +6,4 @@ dnfile
 ppdeep
 tksheet
 requests
+lief
