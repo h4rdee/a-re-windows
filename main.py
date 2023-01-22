@@ -12,9 +12,6 @@ def main() -> None:
     integrations = Integrations(main_window)
     integrations.setup()
 
-    yara_integration = integrations.get_yara_integration()
-    main_integration = integrations.get_main_integration()
-
     main_window.get().mainloop()
 
 if __name__ == '__main__':
