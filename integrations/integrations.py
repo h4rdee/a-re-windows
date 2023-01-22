@@ -45,7 +45,7 @@ class Integrations:
     def get_yara_integration(self) -> YaraIntegration:
         return self.__yara_integration
 
-    def get_plugins_integration(self) -> None:
+    def get_plugins_integration(self) -> PluginsIntegration:
         return self.__plugins_integration
 
     def setup(self) -> None:
