@@ -59,14 +59,18 @@ class Window:
         animation_label = self.get_element_by_alias('LABEL_LOADING').get().get_tk_object()
 
         while True:
-            action = loading_layer.get_action()
-            sub_action = loading_layer.get_sub_action()
-            for index, animation in enumerate(loading_animation):
-                animation_label.config(text=f"{action}\n{sub_action}\n{animation}")
-                time.sleep(0.06)
-            for index in range(len(loading_animation) - 1, 0, -1):
-                animation_label.config(text=f"{action}\n{sub_action}\n{loading_animation[index]}")
-                time.sleep(0.06)
+            try:
+                action = loading_layer.get_action()
+                sub_action = loading_layer.get_sub_action()
+                for index, animation in enumerate(loading_animation):
+                    animation_label.config(text=f"{action}\n{sub_action}\n{animation}")
+                    time.sleep(0.06)
+                for index in range(len(loading_animation) - 1, 0, -1):
+                    animation_label.config(text=f"{action}\n{sub_action}\n{loading_animation[index]}")
+                    time.sleep(0.06)
+
+            except RuntimeError: # ¯\_(ツ)_/¯
+                continue
 
     def __construct_loading_layer(self) -> None:
         win_width = self.__window_obj.winfo_width()
