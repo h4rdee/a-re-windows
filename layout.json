@@ -70,14 +70,56 @@
                             },
                             {
                               "element_id": 0,
+                              "element_alias": "LABEL_ARCHITECTURE_INFO",
+                              "element_text": "Architecture: <unknown>",
+                              "element_pos": { "x": 10, "y": 75, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_SUBSYSTEM_INFO",
+                              "element_text": "Subsystem: <unknown>",
+                              "element_pos": { "x": 10, "y": 95, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_CHECKSUM_INFO",
+                              "element_text": "Checksum: <unknown>",
+                              "element_pos": { "x": 10, "y": 115, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_SIGNATURE_INFO",
+                              "element_text": "Signature: <unknown>",
+                              "element_pos": { "x": 10, "y": 135, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_FORMAT_INFO",
+                              "element_text": "Format: <unknown>",
+                              "element_pos": { "x": 10, "y": 155, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_IMAGEBASE_INFO",
+                              "element_text": "ImageBase: <unknown>",
+                              "element_pos": { "x": 10, "y": 185, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
+                              "element_alias": "LABEL_EP_INFO",
+                              "element_text": "EP: <unknown>",
+                              "element_pos": { "x": 10, "y": 205, "w": 0, "h": 0 }
+                            },
+                            {
+                              "element_id": 0,
                               "element_alias": "LABEL_RICH_HEADER",
                               "element_text": "RICH header:",
-                              "element_pos": { "x": 10, "y": 75, "w": 0, "h": 0 }
+                              "element_pos": { "x": 415, "y": 10, "w": 0, "h": 0 }
                             },
                             {
                               "element_id": 5,
                               "element_alias": "LISTBOX_RICH_HEADER_INFO",
-                              "element_pos": { "x": 10, "y": 95, "w": 300, "h": 170 }
+                              "element_pos": { "x": 415, "y": 30, "w": 300, "h": 230 }
                             }
                           ]
                         },
