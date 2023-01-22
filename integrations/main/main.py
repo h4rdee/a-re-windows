@@ -4,6 +4,7 @@ import tkinter as tk
 from enum import IntEnum
 from tkinter import filedialog as fd
 
+from .parsers.pe_parser          import PEParser
 from .parsers.dotnet_parser      import DotNetParser
 from .parsers.hashes_parser      import HashesParser
 from .parsers.rich_header_parser import RichHeaderParser
@@ -60,6 +61,7 @@ class MainIntegration:
             integration.sample_loaded_event(self.__sample_buffer)
 
         # parse sample
+        self.__pe_parser.update(pe, self.__sample_buffer)
         self.__dotnet_parser.update(dn, is_dotnet_sample)
         self.__hashes_parser.update(pe, self.__sample_buffer)
         self.__rich_hdr_parser.update(pe)
@@ -71,6 +73,7 @@ class MainIntegration:
         self.__overlay_parser.update(pe)
         self.__yara_parser.update(self.__sample_buffer)
 
+        self.__pe_parser.parse()        # parse PE info
         self.__dotnet_parser.parse()    # parse .net info
         self.__hashes_parser.parse()    # parse hashes
         self.__rich_hdr_parser.parse()  # parse RICH header
@@ -119,6 +122,7 @@ class MainIntegration:
     def set_window_object(self, window_object) -> None:
         self.__window_object = window_object
 
+        self.__pe_parser        = PEParser(None, None, self.__window_object)
         self.__dotnet_parser    = DotNetParser(None, None, self.__window_object)
         self.__hashes_parser    = HashesParser(None, None, self.__window_object)
         self.__rich_hdr_parser  = RichHeaderParser(None, self.__window_object)
