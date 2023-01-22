@@ -2,7 +2,12 @@
 Windows applications analysis utility <br> (pretty simple at the moment, but who knows whats coming up next..) <br>
 
 ## Current features:
-- Retrieving basic sample information, such as **compiler info**, **packer info**, **installer info**
+* Retrieving basic sample information, such as:
+  - compiler info
+  - packer info
+  - installer info
+  - architecture, subsystem, PE format, imagebase and EP
+  - verifying **checksum** and **signature**
 - Obtaining info about PE **rich signature**
 - Detecting sample **capabilities** based on large collection of yara rules
 - Checking sample against vendor **signatures** (Detect It Easy, PE Tools, etc)
