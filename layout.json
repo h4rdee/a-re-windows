@@ -344,21 +344,21 @@
                 }
               ]
             },
-			{
-			  "element_text": "Plugins",
+            {
+              "element_text": "Plugins",
               "element_alias": "TAB_PLUGINS",
               "element_state": false,
-			  "elements": [
-			    {
-				  "element_id": 2,
-				  "element_alias": "TAB_BAR_PLUGINS",
-				  "element_pos": { "x": 10, "y": 10, "w": 758, "h": 430 },
-				  "tabs": [
-				    
-				  ]
-				}
-			  ]
-			}
+              "elements": [
+                {
+                  "element_id": 2,
+                  "element_alias": "TAB_BAR_PLUGINS",
+                  "element_pos": { "x": 10, "y": 10, "w": 758, "h": 430 },
+                  "tabs": [
+                    
+                  ]
+                }
+              ]
+            }
           ]
         }
       ]
