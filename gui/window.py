@@ -98,7 +98,7 @@ class Window:
             {
                 "element_id": 0,
                 "element_alias": "LABEL_LOADING",
-                "element_text": "ACTION",
+                "element_text": "",
                 "relative": True,
                 "element_pos": { 
                     "rel_x": 0.5, "rel_y": 0.5, 
