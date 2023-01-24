@@ -45,4 +45,4 @@ Don't expect to see quality code here (PR's are welcomed!) <br>
 I'm working on this project at spare time, which means that no regular support of this tool will be provided
 
 ## Preview:
-<img src="https://user-images.githubusercontent.com/37783231/212688002-e08daa32-b362-4e9b-9207-6ca571c9cf83.gif" width="700" height="450">
+<img src="https://user-images.githubusercontent.com/37783231/214241144-7858cce3-c2e1-4ef3-b430-df93e8a2603d.gif" width="700" height="450">
