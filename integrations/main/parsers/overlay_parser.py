@@ -43,7 +43,7 @@ class OverlayParser:
                 result.append(hexed_chunk)
                 offset += 16
 
-        self.__overlay.update_data(result)
+        self.__overlay.update_data(result, False)
         self.__overlay.set_column_widths(
             [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 180]
         )
