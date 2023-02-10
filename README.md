@@ -24,6 +24,13 @@ Windows applications analysis utility <br> (pretty simple at the moment, but who
 - Extendable by **plugins**
 - Cross-platform **user-friendly** UI powered by Tkinter!
 
+## Installation:
+- Clone this repository
+- Install requirements (`pip install -r requirements.py`)
+
+## Usage:
+`python3 main.py`
+
 ## Credits:
 - [VirusTotal](https://github.com/VirusTotal/yara-python) for `yara` ❤️
 - [RetDec](https://github.com/avast/retdec) for providing yara rules
